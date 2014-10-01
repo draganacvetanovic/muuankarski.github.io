@@ -8,8 +8,8 @@ title: resources
 ## R-language
 
 - [rOpenGov](http://ropengov.github.io/) - *Host project for rustfare and rQoG -packages*
-    - [rustfare-package](/rustfare_doc/) - *toolbox for R language for open welfare data from Russian Federation*
-    - [rQoG-package](/rqog_doc/) - *Search, extract and format data from the Quality of Government Institute data*
+    - [rustfare-package](/rustfare.html) - *toolbox for R language for open welfare data from Russian Federation*
+    - [rQoG-package](/rqog.html) - *Search, extract and format data from the Quality of Government Institute data*
 - [personal code repository](/r-tutorial) - *miscellaneous R-code for statistical programming*
 - [Avoimien tutkimusmenetelmien lunttisivusto](http://muuankarski.github.io/luntti/) - *cheat sheet in open research methods in Finnish*
 
