@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>ESA2013-conference - Where did the scholars come from?</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- change the folder below to switch themes -->
+    <link rel="stylesheet" href="/css/yeti/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="/css/assets/css/bootswatch.min.css"> 
+
+
+<!-- to quickly try out themes, activate this and tweak the url!
+    <link rel="stylesheet" href="./bootstrap.css" media="screen">
+-->
+
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="/css/syntax.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/footer.css">
+
+        <!-- Font avesome -->
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+  </head>
+  <body>
+    <script src="http://bootswatch.com/assets/js/bsa.js"></script>
+
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="" class="navbar-brand">Markus Kainu</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+         <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+          <li><a href="/blog.html" title="blog">blog</a></li>
+          <li><a href="/about.html" title="about">about</a></li>
+          <li><a href="/resources.html" title="resources">resources</a></li>
+         </ul>
+<!--        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+                <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">R<span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="R">
+                <li><a href="/R/lue.html">Datan lukeminen & kirjoittaminen</a></li>
+                <li><a href="/R/manipulointi.html">Manipuloiminen</a></li>
+                <li><a href="/R/funktiot.html">Funktiot</a></li>
+                <li><a href="/R/grafiikka.html">Grafiikka</a></li>
+                <li><a href="/R/survey.html">Survey</a></li>
+              </ul>         
+         </ul>
+          <ul class="nav navbar-nav">
+                <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Toistettava tutkimus<span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="toistettava">
+                <li><a href="/toistettava/knitr.html">knitr</a></li>
+                <li><a href="/toistettava/kirjoita.html">Kirjoittaminen</a></li>
+              </ul>         
+         </ul>
+         <ul class="nav navbar-nav">
+                <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Versiohallinta<span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="versio">
+                <li><a href="/versio/git.html">git</a></li>
+              </ul>         
+         </ul>
+         <ul class="nav navbar-nav">
+                <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Julkaiseminen<span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="julkaisu">
+                <li><a href="/julkaisu/latex.html">latex</a></li>
+                <li><a href="/julkaisu/jekyll.html">jekyll</a></li>
+                <li><a href="/julkaisu/pandoc.html">Pandoc</a></li>
+              </ul>         
+         </ul>
+-->
+
+
+         <ul class="nav navbar-nav navbar-right">
+            <li><a title="blog RSS" href="http://markuskainu.fi/feed.xml"><i class="fa fa-rss fa-2x"></i></a></li>li>
+            <li><a title="code" href="http://github.com/muuankarski"> <i class="fa fa-github fa-2x"></i></a></li>
+            <li><a title="tweets" href="https://twitter.com/muuankarski"> <i class="fa fa-twitter fa-2x"></i></a></li>
+            <li><a href="mailto:markuskainu@gmail.com?Subject=Email me!" title="Email!" target="_top"><i class="fa fa-envelope fa-2x"></i></a></li>                        
+            </li>
+
+                        
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container">
+
+          <h2>ESA2013-conference - Where did the scholars come from?</h2>
+<p class="meta">03 Sep 2013</p>
+
+<div class="post">
+<p>I went to Turin in Italy last week for the annual conference of European Sociological Association. It was my first time in this event and I was surprised by the extend of it. I flew home last night and though it would be interesting to see which universities and which geographical regions were best represented in the conference. Based on walking and talking for few days I was expecting Finns to do rather well. On the other hand, as the conference was themed around the current <em>crises</em> I was assuming that scholars from crises ridden countries would be around in numbers to discuss some real issues in their societies.</p>
+
+<p>Without thinking too much I decided to</p>
+
+<ol>
+<li>count the participants by each university and create a histogram of the most well represented one and </li>
+<li>geocode those universities and visualize them to see if there are any East-West or South-North issues in it.</li>
+</ol>
+
+<p>As this post aims to show who were participating at ESA2013, but also how to run such simple analysis in R, I&#39;m leaving the code there. You can copy-paste it to your R-console and it should work with the required packages installed.  </p>
+
+<h2>Parsing the data</h2>
+
+<p>As for <strong>data</strong> I use the up-to-date conference program at <a href="http://www.esa11thconference.eu/programme">http://www.esa11thconference.eu/programme</a>. It is obvious from the html code of the website the program is presented in one large html-table. Therefore I may apply <code>readHTMLtable</code>-function from <strong>XML</strong>-package  to extract the participants with their universities and titles of their presentations.</p>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>XML<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Loading required package: methods
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">url <span class="o">&lt;-</span> <span class="s">&quot;http://www.esa11thconference.eu/programme&quot;</span>
+x <span class="o">&lt;-</span> readHTMLTable<span class="p">(</span><span class="kp">url</span><span class="p">,</span> header <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+x <span class="o">&lt;-</span> x<span class="p">[[</span><span class="m">1</span><span class="p">]]</span>
+whole.program <span class="o">&lt;-</span> <span class="kp">as.character</span><span class="p">(</span>x<span class="o">$</span>V1<span class="p">)</span>
+<span class="kp">head</span><span class="p">(</span>whole.program<span class="p">,</span><span class="m">3</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## [1] &quot;PS Plenary Sessions&quot;                                                                                                                                                                              
+## [2] &quot;28/8 17:30 - 20:00 - Piazza Castello, Teatro Regio\r\n                            01PS - Opening Plenary: Crisis and Critique&quot;                                                                    
+## [3] &quot;ESA-4838 Finance in Crisis - the neglected critique of money\n                                ORAL PRESENTATION\r\n                                Mary Mellor, Northumbria University, Newcastle&quot;
+</code></pre></div>
+<p>You could participate in three waysm, with</p>
+
+<ol>
+<li>an oral presentation,</li>
+<li>a poster, or </li>
+<li>a distributed paper</li>
+</ol>
+
+<p>For this analysis I need only the university/institution from each presentations, so extracting only that information using <em>regular expressions</em>. <strong>Some papers were collaborative works with multiple authors, but my analysis will only include the affliation of the author listed last in the program. This may cause significant bias in the results.</strong></p>
+
+<p>However, below we can see the top six universities in all three categories.</p>
+
+<p><strong>I did a rough manual check to see if there are some universities missing due to misspelling etc. Higher schoolf of Economics from Moscow was written in three different ways and edited the names a bit to for them to merge</strong></p>
+<div class="highlight"><pre><code class="language-r" data-lang="r">oral <span class="o">&lt;-</span> <span class="kp">grep</span><span class="p">(</span><span class="s">&quot;ORAL PRESENTATION&quot;</span><span class="p">,</span> whole.program<span class="p">,</span> value<span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+poster <span class="o">&lt;-</span> <span class="kp">grep</span><span class="p">(</span><span class="s">&quot;POSTER&quot;</span><span class="p">,</span> whole.program<span class="p">,</span> value<span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+distributed <span class="o">&lt;-</span> <span class="kp">grep</span><span class="p">(</span><span class="s">&quot;DISTRIBUTED PAPER&quot;</span><span class="p">,</span> whole.program<span class="p">,</span> value<span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>stringr<span class="p">)</span>
+<span class="c1">## ORAL PRESENTATION</span>
+oral <span class="o">&lt;-</span> str_extract<span class="p">(</span>oral<span class="p">,</span> <span class="s">&quot;((\r\n))+.*&quot;</span><span class="p">)</span>
+oral <span class="o">&lt;-</span> str_replace_all<span class="p">(</span>oral<span class="p">,</span> <span class="s">&quot;(\r\n)+ *&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+oral <span class="o">&lt;-</span> str_replace_all<span class="p">(</span>oral<span class="p">,</span> <span class="s">&quot;.*, &quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="c1">## harminising HSE moscow</span>
+oral <span class="o">&lt;-</span> str_replace_all<span class="p">(</span>oral<span class="p">,</span> <span class="s">&quot;\&quot;&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+oral <span class="o">&lt;-</span> str_replace_all<span class="p">(</span>oral<span class="p">,</span> <span class="s">&quot;- &quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="c1">##</span>
+oral.df <span class="o">&lt;-</span> <span class="kp">as.data.frame</span><span class="p">(</span><span class="kp">table</span><span class="p">(</span>oral<span class="p">))</span>
+<span class="kp">names</span><span class="p">(</span>oral.df<span class="p">)</span> <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;University&quot;</span><span class="p">,</span><span class="s">&quot;Freq&quot;</span><span class="p">)</span>
+<span class="kp">head</span><span class="p">(</span>oral.df<span class="p">[</span><span class="kp">order</span><span class="p">(</span><span class="o">-</span>oral.df<span class="o">$</span>Freq<span class="p">),])</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">##                 University Freq
+## 788 University of Helsinki   41
+## 913    University of Turin   40
+## 926   University of Warsaw   36
+## 210       Ghent University   29
+## 343                 Lisbon   25
+## 347                 London   25
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">## POSTER</span>
+poster <span class="o">&lt;-</span> str_extract<span class="p">(</span>poster<span class="p">,</span> <span class="s">&quot;((\r\n))+.*&quot;</span><span class="p">)</span>
+poster <span class="o">&lt;-</span> str_replace_all<span class="p">(</span>poster<span class="p">,</span> <span class="s">&quot;(\r\n)+ *&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+poster <span class="o">&lt;-</span> str_replace_all<span class="p">(</span>poster<span class="p">,</span> <span class="s">&quot;.*, &quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="c1">## harminising HSE moscow</span>
+poster <span class="o">&lt;-</span> str_replace_all<span class="p">(</span>poster<span class="p">,</span> <span class="s">&quot;\&quot;&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+poster <span class="o">&lt;-</span> str_replace_all<span class="p">(</span>poster<span class="p">,</span> <span class="s">&quot;- &quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+poster.df <span class="o">&lt;-</span> <span class="kp">as.data.frame</span><span class="p">(</span><span class="kp">table</span><span class="p">(</span>poster<span class="p">))</span>
+<span class="kp">names</span><span class="p">(</span>poster.df<span class="p">)</span> <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;University&quot;</span><span class="p">,</span><span class="s">&quot;Freq&quot;</span><span class="p">)</span>
+<span class="kp">head</span><span class="p">(</span>poster.df<span class="p">[</span><span class="kp">order</span><span class="p">(</span><span class="o">-</span>poster.df<span class="o">$</span>Freq<span class="p">),])</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">##                 University Freq
+## 19 Kurgan State University    3
+## 25                  Moscow    3
+## 8                   Cracow    2
+## 50   University of Bologna    2
+## 63     University of Tartu    2
+## 1        Aarhus University    1
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">## DISTRIBUTED</span>
+distributed <span class="o">&lt;-</span> str_extract<span class="p">(</span>distributed<span class="p">,</span> <span class="s">&quot;((\r\n))+.*&quot;</span><span class="p">)</span>
+distributed <span class="o">&lt;-</span> str_replace_all<span class="p">(</span>distributed<span class="p">,</span> <span class="s">&quot;(\r\n)+ *&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+distributed <span class="o">&lt;-</span> str_replace_all<span class="p">(</span>distributed<span class="p">,</span> <span class="s">&quot;.*, &quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="c1">## harminising HSE moscow</span>
+distributed <span class="o">&lt;-</span> str_replace_all<span class="p">(</span>distributed<span class="p">,</span> <span class="s">&quot;\&quot;&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+distributed <span class="o">&lt;-</span> str_replace_all<span class="p">(</span>distributed<span class="p">,</span> <span class="s">&quot;- &quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+distributed.df <span class="o">&lt;-</span> <span class="kp">as.data.frame</span><span class="p">(</span><span class="kp">table</span><span class="p">(</span>distributed<span class="p">))</span>
+<span class="kp">names</span><span class="p">(</span>distributed.df<span class="p">)</span> <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;University&quot;</span><span class="p">,</span><span class="s">&quot;Freq&quot;</span><span class="p">)</span>
+<span class="kp">head</span><span class="p">(</span>distributed.df<span class="p">[</span><span class="kp">order</span><span class="p">(</span><span class="o">-</span>distributed.df<span class="o">$</span>Freq<span class="p">),])</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">##                                 University Freq
+## 43                  University of Helsinki    4
+## 21                                  Moscow    3
+## 26 St. Petersburg State Medical University    3
+## 45                  University of Lausanne    3
+## 15                 Kore University of Enna    2
+## 1                                  Antalya    1
+</code></pre></div>
+<p>As both, the <em>poster</em> and the <em>distributed paper</em> category are small, I will merge them to the <em>oral presentation</em> category.</p>
+<div class="highlight"><pre><code class="language-r" data-lang="r">esa.data <span class="o">&lt;-</span> <span class="kp">rbind</span><span class="p">(</span>oral.df<span class="p">,</span>poster.df<span class="p">,</span>distributed.df<span class="p">)</span>
+</code></pre></div>
+<h2>Which universities had ten or more scholars attending the conference?</h2>
+
+<p>As we now have our data formatted, we can plot the universities that had a team of ten or more scholars participating the conference.</p>
+<div class="highlight"><pre><code class="language-r" data-lang="r">plot.df <span class="o">&lt;-</span> esa.data<span class="p">[</span><span class="kp">order</span><span class="p">(</span><span class="o">-</span>esa.data<span class="o">$</span>Freq<span class="p">),]</span>
+plot.df <span class="o">&lt;-</span> plot.df<span class="p">[</span>plot.df<span class="o">$</span>Freq <span class="o">&gt;=</span> <span class="m">10</span><span class="p">,]</span>
+<span class="c1"># add ranking numbers to university names</span>
+plot.df<span class="o">$</span>rank <span class="o">&lt;-</span> <span class="kp">rank</span><span class="p">(</span><span class="o">-</span>plot.df<span class="o">$</span>Freq<span class="p">)</span>
+plot.df<span class="o">$</span>RankUniversity <span class="o">&lt;-</span> <span class="kp">paste</span><span class="p">(</span>plot.df<span class="o">$</span><span class="kp">rank</span><span class="p">,</span>plot.df<span class="o">$</span>University<span class="p">,</span>sep<span class="o">=</span><span class="s">&quot; &quot;</span><span class="p">)</span>
+<span class="c1"># order the data</span>
+order <span class="o">&lt;-</span> plot.df<span class="p">[</span><span class="kp">order</span><span class="p">(</span>plot.df<span class="o">$</span>Freq<span class="p">),]</span>
+plot.df<span class="o">$</span>RankUniversity <span class="o">&lt;-</span> <span class="kp">factor</span><span class="p">(</span>plot.df<span class="o">$</span>RankUniversity<span class="p">,</span> 
+                                 levels<span class="o">=</span><span class="kp">order</span><span class="o">$</span>RankUniversity<span class="p">)</span>
+<span class="c1"># Plot the histogram</span>
+<span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
+ggplot<span class="p">(</span>plot.df<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>RankUniversity<span class="p">,</span>y<span class="o">=</span>Freq<span class="p">,</span>label<span class="o">=</span>Freq<span class="p">))</span> <span class="o">+</span>
+  geom_bar<span class="p">(</span>stat<span class="o">=</span><span class="s">&quot;identity&quot;</span><span class="p">,</span> position<span class="o">=</span><span class="s">&quot;dodge&quot;</span><span class="p">)</span> <span class="o">+</span>
+  geom_text<span class="p">(</span>hjust<span class="o">=</span><span class="m">-0.2</span><span class="p">,</span> size<span class="o">=</span><span class="m">3</span><span class="p">)</span> <span class="o">+</span> coord_flip<span class="p">()</span> <span class="o">+</span>
+  theme_minimal<span class="p">()</span>
+</code></pre></div>
+<p><img src="/figure/source/2013-09-02-esa2013-participants/plot1.png" alt="plot of chunk plot1"> </p>
+
+<p>What caught my eye first is the strong presence of Finnish universities on the list. Helsinki at the top and four others in top 33. Not surprisingly, Italian Universities are well represented, too.</p>
+
+<h3>Where are those universities located?</h3>
+
+<p>To get a better understanding of which parts oh the Europe were represented at the conference it may be useful to plot the universities on map. </p>
+
+<p>First, we have to geocode the universities. I&#39;m using Google maps here and the <code>geocode</code>from <strong>ggmap</strong>-package. (Note that in most cases by using this function you are agreeing to the Google Maps API Terms of Service at <a href="https://developers.google.com/maps/terms">https://developers.google.com/maps/terms</a>)</p>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>ggmap<span class="p">)</span>
+location <span class="o">&lt;-</span> <span class="kp">as.character</span><span class="p">(</span>plot.df<span class="o">$</span>University<span class="p">)</span>
+code <span class="o">&lt;-</span> geocode<span class="p">(</span>location<span class="p">,</span>
+    output <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;latlon&quot;</span><span class="p">,</span> <span class="s">&quot;latlona&quot;</span><span class="p">,</span> <span class="s">&quot;more&quot;</span><span class="p">,</span> <span class="s">&quot;all&quot;</span><span class="p">),</span>
+    messaging <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> sensor <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span>
+    override_limit <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+spat.data <span class="o">&lt;-</span> <span class="kp">cbind</span><span class="p">(</span>location<span class="p">,</span>code<span class="p">)</span>
+plot.df2 <span class="o">&lt;-</span> <span class="kp">merge</span><span class="p">(</span>plot.df<span class="p">,</span>spat.data<span class="p">,</span>by.x<span class="o">=</span><span class="s">&quot;University&quot;</span><span class="p">,</span>by.y<span class="o">=</span><span class="s">&quot;location&quot;</span><span class="p">)</span>
+<span class="kp">head</span><span class="p">(</span>plot.df2<span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">##                           University Freq rank
+## 1                             Ankara   15 21.5
+## 2 Autonomous University of Barcelona   10 45.0
+## 3                             Berlin   20  8.5
+##                          RankUniversity       lon      lat
+## 1                           21.5 Ankara 32.854110 39.92077
+## 2 45 Autonomous University of Barcelona  2.173404 41.38506
+## 3                            8.5 Berlin 13.404954 52.52001
+</code></pre></div>
+<p>Second, we shall download a detailed <em>shapefile</em> of Europe from <a href="http://epp.eurostat.ec.europa.eu/portal/page/portal/gisco_Geographical_information_maps/popups/references/administrative_units_statistical_units_1">gisco</a> at the scale of 1:60 million, fortify it into <code>data.frame</code> and merge our data on university locations with it. This part follows my example from here: <a href="http://markuskainu.fi/r-tutorial/eurostat/spatial.html">Spatial visualisation of Eurostat Regional Data</a></p>
+<div class="highlight"><pre><code class="language-r" data-lang="r">download.file<span class="p">(</span><span class="s">&quot;http://epp.eurostat.ec.europa.eu/cache/GISCO/geodatafiles/NUTS_2010_60M_SH.zip&quot;</span><span class="p">,</span> 
+    destfile <span class="o">=</span> <span class="s">&quot;NUTS_2010_60M_SH.zip&quot;</span><span class="p">)</span>
+<span class="c1"># unzip to SpatialPolygonsDataFrame</span>
+unzip<span class="p">(</span><span class="s">&quot;NUTS_2010_60M_SH.zip&quot;</span><span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>rgdal<span class="p">)</span>
+map <span class="o">&lt;-</span> readOGR<span class="p">(</span>dsn <span class="o">=</span> <span class="s">&quot;./NUTS_2010_60M_SH/data&quot;</span><span class="p">,</span> layer <span class="o">=</span> <span class="s">&quot;NUTS_RG_60M_2010&quot;</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## OGR data source with driver: ESRI Shapefile 
+## Source: &quot;./NUTS_2010_60M_SH/data&quot;, layer: &quot;NUTS_RG_60M_2010&quot;
+## with 1920 features and 4 fields
+## Feature type: wkbPolygon with 2 dimensions
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">map <span class="o">&lt;-</span> <span class="kp">subset</span><span class="p">(</span>map<span class="p">,</span> STAT_LEVL_ <span class="o">&lt;=</span> <span class="m">0</span><span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>rgeos<span class="p">)</span>
+map<span class="o">$</span>id <span class="o">&lt;-</span> <span class="kp">rownames</span><span class="p">(</span>map<span class="o">@</span>data<span class="p">)</span>
+map.points <span class="o">&lt;-</span> fortify<span class="p">(</span>map<span class="p">,</span> region <span class="o">=</span> <span class="s">&quot;id&quot;</span><span class="p">)</span>
+map.df <span class="o">&lt;-</span> <span class="kp">merge</span><span class="p">(</span>map.points<span class="p">,</span> map<span class="p">,</span> by <span class="o">=</span> <span class="s">&quot;id&quot;</span><span class="p">)</span>
+<span class="c1">#</span>
+</code></pre></div>
+<p>And then we shall plot the map.</p>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
+<span class="c1"># plot faceted by year</span>
+ggplot<span class="p">(</span>map.df<span class="p">,</span> aes<span class="p">(</span>long<span class="p">,</span>lat<span class="p">,</span>group<span class="o">=</span>group<span class="p">))</span> <span class="o">+</span>
+  geom_polygon<span class="p">(</span>data <span class="o">=</span> map.df<span class="p">,</span> aes<span class="p">(</span>long<span class="p">,</span>lat<span class="p">),</span> 
+               fill<span class="o">=</span><span class="kc">NA</span><span class="p">,</span> 
+               color <span class="o">=</span> <span class="s">&quot;grey80&quot;</span><span class="p">,</span>
+               size<span class="o">=</span><span class="m">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="c1"># white borders</span>
+  geom_point<span class="p">(</span>data <span class="o">=</span> plot.df2<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>lon<span class="p">,</span>
+                                  y<span class="o">=</span>lat<span class="p">,</span>
+                                  group<span class="o">=</span>University<span class="p">,</span>
+                                  size<span class="o">=</span>Freq<span class="p">),</span> 
+               color <span class="o">=</span> <span class="s">&quot;blue&quot;</span><span class="p">,</span> alpha<span class="o">=</span><span class="m">.8</span><span class="p">,</span>shape<span class="o">=</span><span class="m">1</span><span class="p">)</span> <span class="o">+</span> 
+  coord_map<span class="p">(</span>project<span class="o">=</span><span class="s">&quot;orthographic&quot;</span><span class="p">,</span> xlim<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">-22</span><span class="p">,</span><span class="m">34</span><span class="p">),</span>
+              ylim<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">35</span><span class="p">,</span><span class="m">70</span><span class="p">))</span> <span class="o">+</span> <span class="c1"># projection</span>
+  theme_minimal<span class="p">()</span>
+</code></pre></div>
+<p><img src="/figure/source/2013-09-02-esa2013-participants/mapplot1.png" alt="plot of chunk mapplot1"> </p>
+
+<p>Spatial view gives perhaps a better view to see which regions/countries we represented and which we not. There seems to be conventration by Gulf of Finland (Estonia &amp; Finland), in Poland and on both sides of English Channel in addition to Italy. </p>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
+<span class="c1"># plot faceted by year</span>
+ggplot<span class="p">(</span>map.df<span class="p">,</span> aes<span class="p">(</span>long<span class="p">,</span>lat<span class="p">,</span>group<span class="o">=</span>group<span class="p">))</span> <span class="o">+</span>
+  geom_polygon<span class="p">(</span>data <span class="o">=</span> map.df<span class="p">,</span> aes<span class="p">(</span>long<span class="p">,</span>lat<span class="p">),</span> 
+               fill<span class="o">=</span><span class="kc">NA</span><span class="p">,</span> 
+               color <span class="o">=</span> <span class="s">&quot;grey80&quot;</span><span class="p">,</span>
+               size<span class="o">=</span><span class="m">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="c1"># white borders</span>
+  geom_point<span class="p">(</span>data <span class="o">=</span> plot.df2<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>lon<span class="p">,</span>
+                                  y<span class="o">=</span>lat<span class="p">,</span>
+                                  group<span class="o">=</span>University<span class="p">,</span>
+                                  size<span class="o">=</span>Freq<span class="p">),</span> 
+               color <span class="o">=</span> <span class="s">&quot;blue&quot;</span><span class="p">,</span> alpha<span class="o">=</span><span class="m">.8</span><span class="p">,</span>shape<span class="o">=</span><span class="m">1</span><span class="p">)</span> <span class="o">+</span>  
+  geom_text<span class="p">(</span>data <span class="o">=</span> plot.df2<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>lon<span class="p">,</span>
+                                  y<span class="o">=</span>lat<span class="p">,</span>
+                                 label<span class="o">=</span>University<span class="p">,</span> 
+                                 group<span class="o">=</span>University<span class="p">),</span>
+            size<span class="o">=</span><span class="m">3.5</span><span class="p">,</span>vjust<span class="o">=</span><span class="m">-1</span><span class="p">,</span>color<span class="o">=</span><span class="s">&quot;dim grey&quot;</span><span class="p">)</span> <span class="o">+</span> 
+  coord_map<span class="p">(</span>project<span class="o">=</span><span class="s">&quot;orthographic&quot;</span><span class="p">,</span> xlim<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">-22</span><span class="p">,</span><span class="m">34</span><span class="p">),</span>
+              ylim<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">35</span><span class="p">,</span><span class="m">70</span><span class="p">))</span> <span class="o">+</span> <span class="c1"># projection</span>
+  theme_minimal<span class="p">()</span>
+</code></pre></div>
+<p><img src="/figure/source/2013-09-02-esa2013-participants/mapplot2.png" alt="plot of chunk mapplot2"> </p>
+
+<h2>Visualizing all participants on a map</h2>
+
+<p>Sure, some of the readers will say that we had several universities with nine scholars attending, let say from Germany. As a final plot, I have included all the participants and geocoded them on the map below. Each dot represents one presentation, poster or distributed paper. (this takes some processing time from Google..)</p>
+
+<p>This block of code processes and geocodes the data.</p>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>stringr<span class="p">)</span>
+
+whole <span class="o">&lt;-</span> <span class="kp">grep</span><span class="p">(</span><span class="s">&quot;ORAL PRESENTATION|POSTER|DISTRIBUTED PAPER&quot;</span><span class="p">,</span> whole.program<span class="p">,</span> value<span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="c1">## WHOLE PROGRAM</span>
+whole <span class="o">&lt;-</span> str_extract<span class="p">(</span>whole<span class="p">,</span> <span class="s">&quot;((\r\n))+.*&quot;</span><span class="p">)</span>
+whole <span class="o">&lt;-</span> str_replace_all<span class="p">(</span>whole<span class="p">,</span> <span class="s">&quot;(\r\n)+ *&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+whole <span class="o">&lt;-</span> str_replace_all<span class="p">(</span>whole<span class="p">,</span> <span class="s">&quot;.*, &quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="c1">## harminising HSE moscow</span>
+whole <span class="o">&lt;-</span> str_replace_all<span class="p">(</span>whole<span class="p">,</span> <span class="s">&quot;\&quot;&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+whole <span class="o">&lt;-</span> str_replace_all<span class="p">(</span>whole<span class="p">,</span> <span class="s">&quot;- &quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="c1">## geocoding each individual paper</span>
+<span class="c1">### Extracting unique locations and geocode them</span>
+uniq <span class="o">&lt;-</span> <span class="kp">unique</span><span class="p">(</span>whole<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>ggmap<span class="p">)</span>
+coord <span class="o">&lt;-</span> geocode<span class="p">(</span>uniq<span class="p">,</span>
+    output <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;latlon&quot;</span><span class="p">,</span> <span class="s">&quot;latlona&quot;</span><span class="p">,</span> <span class="s">&quot;more&quot;</span><span class="p">,</span> <span class="s">&quot;all&quot;</span><span class="p">),</span>
+    messaging <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> sensor <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span>
+    override_limit <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: cannot open the connection
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">spat.data <span class="o">&lt;-</span> <span class="kp">cbind</span><span class="p">(</span>uniq<span class="p">,</span>coord<span class="p">)</span>
+whole.df <span class="o">&lt;-</span> <span class="kp">as.data.frame</span><span class="p">(</span>whole<span class="p">)</span>
+plot.df3 <span class="o">&lt;-</span> <span class="kp">merge</span><span class="p">(</span>whole.df<span class="p">,</span>spat.data<span class="p">,</span>by.x<span class="o">=</span><span class="s">&quot;whole&quot;</span><span class="p">,</span>by.y<span class="o">=</span><span class="s">&quot;uniq&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>And finally we shall plot it on map. I&#39;m using jittered plotting with transparency to tackle problem of overplotting the dots. As a results the locations are not correctly showed, but it is perhaps more informative for this purpose.</p>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
+<span class="c1"># plot faceted by year</span>
+ggplot<span class="p">(</span>map.df<span class="p">,</span> aes<span class="p">(</span>long<span class="p">,</span>lat<span class="p">,</span>group<span class="o">=</span>group<span class="p">))</span> <span class="o">+</span>
+  geom_polygon<span class="p">(</span>data <span class="o">=</span> map.df<span class="p">,</span> aes<span class="p">(</span>long<span class="p">,</span>lat<span class="p">),</span> 
+               fill<span class="o">=</span><span class="kc">NA</span><span class="p">,</span> 
+               color <span class="o">=</span> <span class="s">&quot;grey80&quot;</span><span class="p">,</span>
+               size<span class="o">=</span><span class="m">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="c1"># white borders</span>
+  geom_point<span class="p">(</span>data <span class="o">=</span> plot.df3<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>lon<span class="p">,</span>
+                                  y<span class="o">=</span>lat<span class="p">,</span>
+                                  group<span class="o">=</span>whole<span class="p">),</span> 
+               color <span class="o">=</span> <span class="s">&quot;blue&quot;</span><span class="p">,</span> alpha<span class="o">=</span><span class="m">.3</span><span class="p">,</span> size<span class="o">=</span><span class="m">2</span><span class="p">,</span>shape<span class="o">=</span><span class="m">1</span><span class="p">,</span>
+             position<span class="o">=</span>position_jitter<span class="p">(</span>width<span class="o">=</span><span class="m">.3</span><span class="p">,</span>height<span class="o">=</span><span class="m">.3</span><span class="p">))</span> <span class="o">+</span> 
+  coord_map<span class="p">(</span>project<span class="o">=</span><span class="s">&quot;orthographic&quot;</span><span class="p">,</span> xlim<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">-15</span><span class="p">,</span><span class="m">34</span><span class="p">),</span>
+              ylim<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">35</span><span class="p">,</span><span class="m">70</span><span class="p">))</span> <span class="o">+</span> <span class="c1"># projection</span>
+  theme_minimal<span class="p">()</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;lon&#39; not found
+</code></pre></div>
+<p>This figure adds a lot to the two previous plots. It seems that other countries were also present there, just that the participants came from a greater number of universities. Ex-Jugoslavian countries and Bulgaria could perhaps have been better represented at the conference. A strong participation from Russia and Turkey is obvious.</p>
+
+<h2>Conclusions</h2>
+
+<p>Eventhough the conference was themed after the current crisis, scholars from the most crises ridden countries were under represented in the conference. This may well be one of the consequences of crisis or just pure coincidence.</p>
+
+<p>Finnish scholars seem to well in this comparison. Whether it is the well-budgeted travel funds or just high ambition to contribute at the international level, I don&#39;t know. However, interaction with other European scholars is a thing to embrace.</p>
+
+<p>Feel free to re-use the code and advance the analysis. As we all know, it&#39;s not just the quantity, but the quality that matters. I will leave that part for someone else.</p>
+
+</div>
+
+
+      <footer>
+
+        <div class="row">
+          <div class="col-lg-12">
+
+            <ul class="list-unstyled">
+              <li class="pull-right"><a href="#top">Back to top</a></li>     
+            </ul>
+
+<!--
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons -käyttölupa" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Tämä teos on lisensoitu <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Nimeä 4.0 Kansainvälinen -käyttöluvalla</a>.
+
+-->
+
+            
+
+            <p>Theme by <a href="http://thomaspark.me" rel="nofollow">Thomas Park</a>
+            <p>Code released under the <a href="https://github.com/thomaspark/bootswatch/blob/gh-pages/LICENSE">MIT License</a>.</p>
+            <p>Based on <a href="http://getbootstrap.com" rel="nofollow">Bootstrap</a>. Icons from <a href="http://fortawesome.github.io/Font-Awesome/" rel="nofollow">Font Awesome</a>. Web fonts from <a href="http://www.google.com/webfonts" rel="nofollow">Google</a>.</p>
+
+        </div>
+
+<!--
+<blockquote class="pull-left">
+  <p>Give a man a fish and you feed him for a day; teach a man to fish and you feed him for a lifetime</p>
+  <small>Anne Isabella Thackeray Ritchie <cite title="Source Title">Mrs. Dymond (1885)</cite></small>
+</blockquote>
+-->
+      </footer>
+
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://bootswatch.com/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="http://bootswatch.com/assets/js/bootswatch.js"></script>
+  </body>
+</html>
+
+

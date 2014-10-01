@@ -1,0 +1,7 @@
+name: Markus Kainu home
+description: Something here
+markdown: redcarpet
+redcarpet:
+  extensions: ["tables"]
+higlighter: rouge
+baseurl: http://muuankarski.github.io

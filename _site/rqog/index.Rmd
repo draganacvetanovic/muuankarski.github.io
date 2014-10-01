@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>rQog</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- change the folder below to switch themes -->
+    <link rel="stylesheet" href="/css/yeti/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="/css/assets/css/bootswatch.min.css"> 
+
+
+<!-- to quickly try out themes, activate this and tweak the url!
+    <link rel="stylesheet" href="./bootstrap.css" media="screen">
+-->
+
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="/css/syntax.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/footer.css">
+
+        <!-- Font avesome -->
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+  </head>
+  <body>
+    <script src="http://bootswatch.com/assets/js/bsa.js"></script>
+
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="" class="navbar-brand">Markus Kainu</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+         <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+          <li><a href="/blog.html" title="blog">blog</a></li>
+          <li><a href="/about.html" title="about">about</a></li>
+          <li><a href="/resources.html" title="resources">resources</a></li>
+         </ul>
+<!--        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+                <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">R<span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="R">
+                <li><a href="/R/lue.html">Datan lukeminen & kirjoittaminen</a></li>
+                <li><a href="/R/manipulointi.html">Manipuloiminen</a></li>
+                <li><a href="/R/funktiot.html">Funktiot</a></li>
+                <li><a href="/R/grafiikka.html">Grafiikka</a></li>
+                <li><a href="/R/survey.html">Survey</a></li>
+              </ul>         
+         </ul>
+          <ul class="nav navbar-nav">
+                <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Toistettava tutkimus<span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="toistettava">
+                <li><a href="/toistettava/knitr.html">knitr</a></li>
+                <li><a href="/toistettava/kirjoita.html">Kirjoittaminen</a></li>
+              </ul>         
+         </ul>
+         <ul class="nav navbar-nav">
+                <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Versiohallinta<span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="versio">
+                <li><a href="/versio/git.html">git</a></li>
+              </ul>         
+         </ul>
+         <ul class="nav navbar-nav">
+                <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Julkaiseminen<span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="julkaisu">
+                <li><a href="/julkaisu/latex.html">latex</a></li>
+                <li><a href="/julkaisu/jekyll.html">jekyll</a></li>
+                <li><a href="/julkaisu/pandoc.html">Pandoc</a></li>
+              </ul>         
+         </ul>
+-->
+
+
+         <ul class="nav navbar-nav navbar-right">
+            <li><a title="blog RSS" href="http://markuskainu.fi/feed.xml"><i class="fa fa-rss fa-2x"></i></a></li>li>
+            <li><a title="code" href="http://github.com/muuankarski"> <i class="fa fa-github fa-2x"></i></a></li>
+            <li><a title="tweets" href="https://twitter.com/muuankarski"> <i class="fa fa-twitter fa-2x"></i></a></li>
+            <li><a href="mailto:markuskainu@gmail.com?Subject=Email me!" title="Email!" target="_top"><i class="fa fa-envelope fa-2x"></i></a></li>                        
+            </li>
+
+                        
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container">
+
+          ## rQog-package for R - Download data from the Quality of Government Institute data
+
+
+**Note**: *Package is early phase of development and should be used with caution. Package is not yet submitted to CRAN and the code is hosted under [rOpenGov](http://ropengov.github.io/)-initiative at: [github.com/rOpenGov/rqog](https://github.com/rOpenGov/rqog).  Please join rOpenGov-community and submit your ideas as issues and concrete improvements as pull requests!*
+
+```{r rtimestamp, eval=TRUE, message=FALSE}
+Sys.time()
+```
+
+***
+
+Quotation from [ Quality of Governance institute website](http://www.qog.pol.gu.se/)
+
+>The QoG Institute was founded in 2004 by Professor Bo Rothstein and Professor Sören Holmberg. It is an independent research institute within the Department of Political Science at the University of Gothenburg. We conduct and promote research on the causes, consequences and nature of Good Governance and the Quality of Government (QoG) - that is, trustworthy, reliable, impartial, uncorrupted and competent government institutions.
+
+>The main objective of our research is to address the theoretical and empirical problem of how political institutions of high quality can be created and maintained. A second objective is to study the effects of Quality of Government on a number of policy areas, such as health, the environment, social policy, and poverty. We approach these problems from a variety of different theoretical and methodological angles.
+
+**Quality of Government institute** provides data in five different data sets, both in cross-sectional and longitudinal versions:
+
+1. [QoG Basic Data](http://www.qog.pol.gu.se/data/datadownloads/qogbasicdata/)
+2. [QoG Standard Data](http://www.qog.pol.gu.se/data/datadownloads/qogstandarddata/)
+3. [QoG Social Policy Data](http://www.qog.pol.gu.se/data/datadownloads/qogsocialpolicydata/)
+4. [QoG Expert Survey Data](http://www.qog.pol.gu.se/data/datadownloads/qogexpertsurveydata/) 
+5. [QoG EU Regional Data](http://www.qog.pol.gu.se/data/datadownloads/qogeuregionaldata/)
+
+**rqog**-package provides access to **Basic**, **Standard** and **Social Policy** datasets through function `read_qog()`. **Standard** data has all the same indicators as in **Basic** data (143 variables) and an additional 585 indicators. Both **basic** and **standard** datasets have 211 countries. **Social Policy** dataset has 1009 indicators from 40 countries. **rqog** uses *longitudinal* datasets by default that have time-series of varying duration from majority of the indicators and countries.
+
+Quality of Government Institute provides codebooks for all datasets: 
+
+1. [Basic data codebook](http://www.qogdata.pol.gu.se/codebook/codebook_basic_30aug13.pdf)
+2. [Standard data codebook](http://www.qogdata.pol.gu.se/codebook/codebook_standard_15may13.pdf)) 
+3. [Social Policy data codebook](http://www.qogdata.pol.gu.se/codebook/codebook_social_4apr12.pdf)
+
+You consult the codebooks for description of the data and indicators.
+
+
+## Installation
+
+```{r, eval=TRUE, message=FALSE}
+library(devtools)
+install_github(repo = "rqog", username = "ropengov")
+library(rqog)
+```
+
+## Examples
+
+### Basic Data
+
+Basic data has a limited selection of most common indicators incluiding totally 143 variables. Below is an example on how to extract data on human development index and Democracy (Freedom House/Polity) index from BRIC-countries from 1990 to 2010 and plo
+
+
+```{rExampleBasic, cache=FALSE, message=FALSE,warning=FALSE, eval=TRUE, fig.width=12}
+library(rqog)
+# Download a local coppy of the file
+dat <- read_qog(which.data="basic")
+# Subset the data
+dat2 <- dat[dat$cname %in% c("Russia","China","India","Brazil"), ]
+dat2 <- dat2[c("cname","year","undp_hdi","fh_polity2")]
+dat2 <- dat2[dat2$year %in% 1990:2010,]
+# melt to long format
+library(reshape2)
+dat.l <- melt(dat2, id.vars=c("cname","year"))
+dat.l <- dat.l[!is.na(dat.l$value), ]
+library(ggplot2)
+# Plot the data
+ggplot(dat.l, aes(x=year,y=value,color=cname)) + 
+  geom_point() + geom_line() +
+  geom_text(data=merge(dat.l,aggregate(year ~ cname, dat.l, max),
+                     by=c("year","cname")),
+          aes(x=year,y=value,label=cname),
+          hjust=1,vjust=-1,size=3,alpha=.8) +
+  facet_wrap(~variable, scales="free") +
+  theme(legend.position="none")
+```
+
+
+### Standard data
+
+Standard data includes a all the indicators 748 variables. Below is an example on how to extract data on *Environmental Performance Index*  and *Party of Chief Executive: How Long in Office* from BRIC-countries and plot it.
+
+
+```{rExampleStandard, cache=FALSE, message=FALSE,warning=FALSE, eval=TRUE, fig.width=12}
+library(rqog)
+# Download a local coppy of the file
+dat <- read_qog("standard")
+# Subset the data
+dat2 <- dat[dat$cname %in% c("Russia","China","India","Brazil"), ]
+dat2 <- dat2[c("cname","year","epi_epi","dpi_hlio")]
+dat2 <- dat2[dat2$year %in% 2000:2010,]
+# melt to long format
+library(reshape2)
+dat.l <- melt(dat2, id.vars=c("cname","year"))
+dat.l <- dat.l[!is.na(dat.l$value), ]
+# Plot the data
+library(ggplot2)
+ggplot(dat.l, aes(x=year,y=value,color=cname)) + 
+  geom_point() + geom_line() +
+  geom_text(data=merge(dat.l,aggregate(year ~ cname, dat.l, max),
+                     by=c("year","cname")),
+          aes(x=year,y=value,label=cname),
+          hjust=1,vjust=-1,size=3,alpha=.8) +
+  facet_wrap(~variable, scales="free") +
+  theme(legend.position="none")
+```
+
+### Social Policy data
+
+Social Policy data includes 1009 variables, but from a smaller number of wealthier countries of 41. In the example below four indicators:
+
+1. Total social expenditure (public) `socx_tput`
+2. Total social expenditure (mandatory private) `socx_tmpt`
+3. Old age expenditure (public) `socx_oput`
+4. Old age expenditure (mandatory private) `socx_ompt`
+
+We will include all the countries and all the years included in the data.
+
+
+```{rExampleSocialPolicy, cache=FALSE, message=FALSE,warning=FALSE, eval=TRUE, fig.width=12}
+library(rqog)
+# Download a local coppy of the file
+dat <- read_qog("social_policy")
+# Subset the data
+dat2 <- dat[c("cname","year","socx_tput","socx_tmpt","socx_oput","socx_ompt")]
+# melt to long format
+library(reshape2)
+dat.l <- melt(dat2, id.vars=c("cname","year"))
+dat.l <- dat.l[!is.na(dat.l$value), ]
+library(ggplot2)
+# Plot the data
+ggplot(dat.l, aes(x=year,y=value,color=cname)) + 
+  geom_point() + geom_line() +
+  geom_text(data=merge(dat.l,aggregate(year ~ cname, dat.l, max),
+                     by=c("year","cname")),
+          aes(x=year,y=value,label=cname),
+          hjust=1,vjust=-1,size=3,alpha=.8) +
+  facet_wrap(~variable, scales="free") +
+  theme(legend.position="none")
+```
+
+
+### Spatial visualisation of Quality of Government data
+
+First I extract the *Enviromental Performance Index* from **Standard** data and merge it with map data using `joinCountryData2Map()`-funktion from [**rworldmap**](http://cran.r-project.org/web/packages/rworldmap/index.html), then fortify the `SpatialPolygonDataFrame` into regular `data.frame` using `fortify`-function from **ggplot2**,  and finally plot whole world using mercator projetion. Grey color stands for missing data.
+
+```{rExampleQogSpatial, cache=FALSE, message=FALSE,warning=FALSE, eval=TRUE, fig.width=12}
+library(rqog)
+dat <- read_qog("standard")
+# Subset the data
+dat2 <- dat[c("cname","year","epi_epi")]
+dat2 <- dat2[dat2$year %in% 2008,]
+# melt to long format
+library(reshape2)
+dat.l <- melt(dat2, id.vars=c("cname","year"))
+dat.l <- dat.l[!is.na(dat.l$value), ]
+# merge the data using rworldmap
+library(rworldmap)
+shape <- joinCountryData2Map(dat.l,joinCode = "NAME",nameJoinColumn = "cname")
+# fortify the SpatialPolygonDataFrame into data.frame
+library(ggplot2)
+shape$id <- rownames(shape@data)
+map.points <- fortify(shape, region = "id")
+map.df <- merge(map.points, shape, by = "id")
+# order the data for smooth plotting
+map.df <- map.df[order(map.df$order), ]
+# and plot
+library(ggplot2)
+ggplot(map.df, aes(long,lat,group=group)) +
+  geom_polygon(aes(fill=value)) +
+  geom_polygon(data = map.df, aes(long,lat), 
+               fill=NA, 
+               color = "white",
+               size=0.1) + # white borders
+  scale_fill_gradient2(low="white", high="blue")+
+    theme(legend.position="top") +
+  labs(title=paste("Indicator mapped is ",
+                    as.character(dat.l[1, "variable"]),
+                   " from year ",
+                   as.character(dat.l[1, "year"]),
+                    sep=""))
+```
+
+### Session info
+
+This tutorial was created with
+
+```{r sessioninfo, message=FALSE, warning=FALSE}
+sessionInfo()
+```
+
+
+
+
+### STATA-package
+
+*Christoph Thewes, from University of Potsdam* has already written a package for STATA users. [See details from QoG website](http://www.qog.pol.gu.se/data/dataextras/forstatausers/)
+
+
+
+
+
+      <footer>
+
+        <div class="row">
+          <div class="col-lg-12">
+
+            <ul class="list-unstyled">
+              <li class="pull-right"><a href="#top">Back to top</a></li>     
+            </ul>
+
+<!--
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons -käyttölupa" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Tämä teos on lisensoitu <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Nimeä 4.0 Kansainvälinen -käyttöluvalla</a>.
+
+-->
+
+            
+
+            <p>Theme by <a href="http://thomaspark.me" rel="nofollow">Thomas Park</a>
+            <p>Code released under the <a href="https://github.com/thomaspark/bootswatch/blob/gh-pages/LICENSE">MIT License</a>.</p>
+            <p>Based on <a href="http://getbootstrap.com" rel="nofollow">Bootstrap</a>. Icons from <a href="http://fortawesome.github.io/Font-Awesome/" rel="nofollow">Font Awesome</a>. Web fonts from <a href="http://www.google.com/webfonts" rel="nofollow">Google</a>.</p>
+
+        </div>
+
+<!--
+<blockquote class="pull-left">
+  <p>Give a man a fish and you feed him for a day; teach a man to fish and you feed him for a lifetime</p>
+  <small>Anne Isabella Thackeray Ritchie <cite title="Source Title">Mrs. Dymond (1885)</cite></small>
+</blockquote>
+-->
+      </footer>
+
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://bootswatch.com/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="http://bootswatch.com/assets/js/bootswatch.js"></script>
+  </body>
+</html>
+
+

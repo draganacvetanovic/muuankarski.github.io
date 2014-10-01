@@ -1,0 +1,16 @@
+{
+    "contents" : "name: Markus Kainu home\ndescription: Something here\nmarkdown: redcarpet\nredcarpet:\n  extensions: [\"tables\"]\nhiglighter: rouge\nbaseurl: http://muuankarski.github.io\n",
+    "created" : 1412178207324.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "122625244",
+    "id" : "93424EF9",
+    "lastKnownWriteTime" : 1412178223,
+    "path" : "~/web/markuskainu/_config.yml",
+    "project_path" : "_config.yml",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "text"
+}

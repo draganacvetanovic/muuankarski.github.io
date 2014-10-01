@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "Avointa dataa tutkimukseen Avoin Suomi 2014 -messuilla"
+date:   2014-09-15 08:23:45
+categories: R
+---
+
+Olen tänään ja huomenna (15.-16.9) pitämässä [Open Knowledge Suomen](http://fi.okfn.org/) [*avoimen tieteen työryhmän*](http://fi.okfn.org/wg/openscience/) ständilla [Avoin Suomi 2014](http://avoinsuomi2014.fi/) -messuilla demoamassa sitä kuinka tehokkaita avoimet analyysimenetelmät ovat yhdessä avoimen (tutkimus)datan kanssa ja millainen potentiaali niillä on tieteen, tutkimuksen ja opetuksen suhteen. 
+
+Kokeile demoa täällä: [Eurooppalaisten asenteista, elinoloista ja avoimesta datasta](https://okffi-science.github.io/avoin-suomi-2014/)
+
+
+
+[jekyll-gh]: https://github.com/mojombo/jekyll
+[jekyll]:    http://jekyllrb.com

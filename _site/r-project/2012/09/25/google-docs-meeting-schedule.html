@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Google Docs, R and ggplot2 for fixing meeting scedules</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- change the folder below to switch themes -->
+    <link rel="stylesheet" href="/css/yeti/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="/css/assets/css/bootswatch.min.css"> 
+
+
+<!-- to quickly try out themes, activate this and tweak the url!
+    <link rel="stylesheet" href="./bootstrap.css" media="screen">
+-->
+
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="/css/syntax.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/footer.css">
+
+        <!-- Font avesome -->
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+  </head>
+  <body>
+    <script src="http://bootswatch.com/assets/js/bsa.js"></script>
+
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="" class="navbar-brand">Markus Kainu</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+         <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+          <li><a href="/blog.html" title="blog">blog</a></li>
+          <li><a href="/about.html" title="about">about</a></li>
+          <li><a href="/resources.html" title="resources">resources</a></li>
+         </ul>
+<!--        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+                <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">R<span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="R">
+                <li><a href="/R/lue.html">Datan lukeminen & kirjoittaminen</a></li>
+                <li><a href="/R/manipulointi.html">Manipuloiminen</a></li>
+                <li><a href="/R/funktiot.html">Funktiot</a></li>
+                <li><a href="/R/grafiikka.html">Grafiikka</a></li>
+                <li><a href="/R/survey.html">Survey</a></li>
+              </ul>         
+         </ul>
+          <ul class="nav navbar-nav">
+                <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Toistettava tutkimus<span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="toistettava">
+                <li><a href="/toistettava/knitr.html">knitr</a></li>
+                <li><a href="/toistettava/kirjoita.html">Kirjoittaminen</a></li>
+              </ul>         
+         </ul>
+         <ul class="nav navbar-nav">
+                <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Versiohallinta<span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="versio">
+                <li><a href="/versio/git.html">git</a></li>
+              </ul>         
+         </ul>
+         <ul class="nav navbar-nav">
+                <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Julkaiseminen<span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="julkaisu">
+                <li><a href="/julkaisu/latex.html">latex</a></li>
+                <li><a href="/julkaisu/jekyll.html">jekyll</a></li>
+                <li><a href="/julkaisu/pandoc.html">Pandoc</a></li>
+              </ul>         
+         </ul>
+-->
+
+
+         <ul class="nav navbar-nav navbar-right">
+            <li><a title="blog RSS" href="http://markuskainu.fi/feed.xml"><i class="fa fa-rss fa-2x"></i></a></li>li>
+            <li><a title="code" href="http://github.com/muuankarski"> <i class="fa fa-github fa-2x"></i></a></li>
+            <li><a title="tweets" href="https://twitter.com/muuankarski"> <i class="fa fa-twitter fa-2x"></i></a></li>
+            <li><a href="mailto:markuskainu@gmail.com?Subject=Email me!" title="Email!" target="_top"><i class="fa fa-envelope fa-2x"></i></a></li>                        
+            </li>
+
+                        
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container">
+
+          <h2>Google Docs, R and ggplot2 for fixing meeting scedules</h2>
+<p class="meta">25 Sep 2012</p>
+
+<div class="post">
+<p>First you have to <a href="http://support.google.com/docs/bin/answer.py?hl=en&amp;amp;answer=87809">create a form</a>. The code I&#39;m using here is embedded below. I use one <strong>text</strong> type of question for name and two sets of questions for suitable dates for two different weeks, namely weeks 40 and 41 in 2012. Question type for these is <strong>grid.</strong> I allow three options <strong>Yes!</strong>, <strong>No!</strong> and <strong>Maybe</strong>.</p>
+
+<p>I have made three entries for this demo through that form below and use that data below.</p>
+
+<p><iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dHAtUmdPcGVNMDlkUzh4SFhWMDBqT3c6MQ" frameborder="0" marginwidth="0" marginheight="0" width="630" height="800">Ladataan...</iframe></p>
+
+<p>Then I looked <a href="http://blog.revolutionanalytics.com/2009/09/how-to-use-a-google-spreadsheet-as-data-in-r.html">this blog post by Revolution Analytics</a> and had a look how to make your google docs spreadsheet data available as .csv -file.</p>
+
+<p>Then I wrote a small piece of R-code and came up with a plot below. The code is embedded.</p>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#Download and clean the data</span>
+
+<span class="c1"># load the packages</span>
+<span class="kn">library</span><span class="p">(</span>RCurl<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Loading required package: methods
+## Loading required package: bitops
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>reshape2<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>car<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>plyr<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>stringr<span class="p">)</span>
+<span class="c1"># copy the url of the csv-file from google docs</span>
+myCsv <span class="o">&lt;-</span> getURL<span class="p">(</span><span class="s">&quot;https://docs.google.com/spreadsheet/pub?key=0AqQZEZLGjzKAdHAtUmdPcGVNMDlkUzh4SFhWMDBqT3c&amp;single=true&amp;gid=0&amp;output=csv&quot;</span><span class="p">)</span>
+<span class="c1"># read as data frame</span>
+df <span class="o">&lt;-</span> read.csv<span class="p">(</span><span class="kp">textConnection</span><span class="p">(</span>myCsv<span class="p">),</span> na.strings <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="c1"># choose all but the first colunm (time stamp)</span>
+df2 <span class="o">&lt;-</span> df<span class="p">[</span><span class="kt">c</span><span class="p">(</span><span class="m">2</span><span class="o">:</span><span class="m">12</span><span class="p">)]</span>
+
+<span class="c1"># melt it into long format for ggplot2</span>
+df.l <span class="o">&lt;-</span> melt<span class="p">(</span>data<span class="o">=</span>df2<span class="p">,</span>
+id.vars<span class="o">=</span><span class="s">&quot;Name&quot;</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Warning: attributes are not identical across measure variables; they will
+## be dropped
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># remove missing values</span>
+df.l <span class="o">&lt;-</span> df.l<span class="p">[</span><span class="o">!</span><span class="kp">is.na</span><span class="p">(</span>df.l<span class="o">$</span>value<span class="p">),]</span>
+<span class="c1"># replace queues of dots from variable names</span>
+df.l<span class="o">$</span>variable <span class="o">&lt;-</span> str_replace_all<span class="p">(</span>df.l<span class="o">$</span>variable<span class="p">,</span>
+pattern<span class="o">=</span><span class="s">&quot;[..]&quot;</span><span class="p">,</span> replacement<span class="o">=</span><span class="s">&quot;_&quot;</span><span class="p">)</span>
+<span class="c1"># we remove the string &quot;what suits you&quot;</span>
+df.l<span class="o">$</span>variable <span class="o">&lt;-</span> str_replace_all<span class="p">(</span>df.l<span class="o">$</span>variable<span class="p">,</span>
+pattern<span class="o">=</span><span class="s">&quot;What_day_suits_you____&quot;</span><span class="p">,</span> replacement<span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+
+<span class="c1">#And then for plotting</span>
+
+ggplot<span class="p">(</span>df.l<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>Name<span class="p">,</span>y<span class="o">=</span>variable<span class="p">))</span> <span class="o">+</span>
+geom_dotplot<span class="p">(</span>aes<span class="p">(</span>fill<span class="o">=</span>value<span class="p">),</span> binaxis<span class="o">=</span><span class="s">&quot;y&quot;</span><span class="p">,</span>
+stackdir<span class="o">=</span><span class="s">&quot;center&quot;</span><span class="p">,</span> binwidth<span class="o">=</span><span class="m">0.8</span><span class="p">)</span> <span class="o">+</span>
+theme<span class="p">(</span>axis.text.x<span class="o">=</span>element_text<span class="p">(</span>angle<span class="o">=</span><span class="m">90</span><span class="p">))</span> <span class="o">+</span>
+theme<span class="p">(</span>legend.position<span class="o">=</span><span class="s">&quot;top&quot;</span><span class="p">)</span> <span class="o">+</span>
+guides<span class="p">(</span>fill <span class="o">=</span> guide_legend<span class="p">(</span>keywidth<span class="o">=</span><span class="m">3</span><span class="p">))</span> <span class="o">+</span>
+scale_fill_manual<span class="p">(</span>values<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;yellow&quot;</span><span class="p">,</span><span class="s">&quot;red&quot;</span><span class="p">,</span><span class="s">&quot;green&quot;</span><span class="p">))</span>
+</code></pre></div>
+<p><img src="/figure/source/2012-09-25-google-docs-meeting-schedule/unnamed-chunk-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
+
+<p>And here is the plot. You can vote in that for yourself and try to reproduce the plot using the exact same code. You answer should be incorporated.</p>
+
+</div>
+
+
+      <footer>
+
+        <div class="row">
+          <div class="col-lg-12">
+
+            <ul class="list-unstyled">
+              <li class="pull-right"><a href="#top">Back to top</a></li>     
+            </ul>
+
+<!--
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons -käyttölupa" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Tämä teos on lisensoitu <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Nimeä 4.0 Kansainvälinen -käyttöluvalla</a>.
+
+-->
+
+            
+
+            <p>Theme by <a href="http://thomaspark.me" rel="nofollow">Thomas Park</a>
+            <p>Code released under the <a href="https://github.com/thomaspark/bootswatch/blob/gh-pages/LICENSE">MIT License</a>.</p>
+            <p>Based on <a href="http://getbootstrap.com" rel="nofollow">Bootstrap</a>. Icons from <a href="http://fortawesome.github.io/Font-Awesome/" rel="nofollow">Font Awesome</a>. Web fonts from <a href="http://www.google.com/webfonts" rel="nofollow">Google</a>.</p>
+
+        </div>
+
+<!--
+<blockquote class="pull-left">
+  <p>Give a man a fish and you feed him for a day; teach a man to fish and you feed him for a lifetime</p>
+  <small>Anne Isabella Thackeray Ritchie <cite title="Source Title">Mrs. Dymond (1885)</cite></small>
+</blockquote>
+-->
+      </footer>
+
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://bootswatch.com/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="http://bootswatch.com/assets/js/bootswatch.js"></script>
+  </body>
+</html>
+
+

@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Markus Kainu home</title>
+		<description>Something here</description>
+		<link></link>
+		<atom:link href="/blog/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>Avointa dataa tutkimukseen Avoin Suomi 2014 -messuilla</title>
+				<description>&lt;p&gt;Olen tänään ja huomenna (15.-16.9) pitämässä &lt;a href=&quot;http://fi.okfn.org/&quot;&gt;Open Knowledge Suomen&lt;/a&gt; &lt;a href=&quot;http://fi.okfn.org/wg/openscience/&quot;&gt;&lt;em&gt;avoimen tieteen työryhmän&lt;/em&gt;&lt;/a&gt; ständilla &lt;a href=&quot;http://avoinsuomi2014.fi/&quot;&gt;Avoin Suomi 2014&lt;/a&gt; -messuilla demoamassa sitä kuinka tehokkaita avoimet analyysimenetelmät ovat yhdessä avoimen (tutkimus)datan kanssa ja millainen potentiaali niillä on tieteen, tutkimuksen ja opetuksen suhteen. &lt;/p&gt;
+
+&lt;p&gt;Kokeile demoa täällä: &lt;a href=&quot;https://okffi-science.github.io/avoin-suomi-2014/&quot;&gt;Eurooppalaisten asenteista, elinoloista ja avoimesta datasta&lt;/a&gt;&lt;/p&gt;
+</description>
+				<pubDate>Mon, 15 Sep 2014 11:23:45 +0300</pubDate>
+				<link>/r/2014/09/15/avoin-suomi-2014.html</link>
+				<guid isPermaLink="true">/r/2014/09/15/avoin-suomi-2014.html</guid>
+			</item>
+		
+			<item>
+				<title>Esitelmä Kelan tutkimus 50-vuotta tilaisuudessa</title>
+				<description>&lt;p&gt;Pidin tänään esitelmän otsikolla &lt;strong&gt;EU2020: Köyhyyden ja sosiaalisen syrjäytymisen vähentämistavoitteet&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Seuraavista linkeistä: &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://muuankarski.github.io/kelan-tutkimus-50-vuotta/#/&quot;&gt;slaidit&lt;/a&gt; - toimii ainakin firefox, chrome tai safari -selaimilla&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/muuankarski/kelan-tutkimus-50-vuotta&quot;&gt;lähdekoodi github:ssa&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+				<pubDate>Wed, 04 Jun 2014 16:15:45 +0300</pubDate>
+				<link>/ropengov/2014/06/04/kelan-tutkimus-50-vuotta.html</link>
+				<guid isPermaLink="true">/ropengov/2014/06/04/kelan-tutkimus-50-vuotta.html</guid>
+			</item>
+		
+			<item>
+				<title>Commuting by bicycle in Moscow</title>
+				<description>&lt;p&gt;Once a day throughout the year you can take a direct train from Helsinki railway station to Moscow. A week ago I stepped into the train once again, but this time with bicycle. Early spring had cleared the streets and forecast proposed excellent cycling conditions. I was attending a week long seminar at the Higher School of Economics, and I was lucky to have nice 10k commute from Leninsky prospekt metro to Myasnitskaya street along the Moscow river and through Red Square. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://koti.kapsi.fi/muuankarski/kuvat/moskova2014/reitti.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://mapsengine.google.com/map/edit?mid=znZwBvYyFk-Q.kJN79Xb9Pg9s&quot;&gt;Map in googlemaps&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Temperature was around zero and streets were dry and clean after winter. The bike path by the Moscow river is great.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://koti.kapsi.fi/muuankarski/kuvat/moskova2014/gorki_small.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://koti.kapsi.fi/muuankarski/kuvat/moskova2014/pyoratie.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Moscow is filled with grand statues and buildings. It&amp;#39;s important to fit your bike in the photo.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://koti.kapsi.fi/muuankarski/kuvat/moskova2014/kreml.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://koti.kapsi.fi/muuankarski/kuvat/moskova2014/pietarisuuri.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://koti.kapsi.fi/muuankarski/kuvat/moskova2014/redsquare1_small.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://koti.kapsi.fi/muuankarski/kuvat/moskova2014/tverskaja.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://koti.kapsi.fi/muuankarski/kuvat/moskova2014/vapahtaja.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Cycling can be bit intense on the larger streets, but often you can pick a smaller and safer side street, and sometimes footpath is your only option. But in general, I strongly recommend cycling in Moscow.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://forum.fixedgearmoscow.ru/&quot;&gt;forum.fixedgearmoscow.ru/&lt;/a&gt; is a good resource for further information.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;keywords:&lt;/strong&gt; cycling, moscow, fixed gear, safer than you might think&lt;/p&gt;
+</description>
+				<pubDate>Tue, 08 Apr 2014 16:15:45 +0300</pubDate>
+				<link>/misc/2014/04/08/cycling-in-moscow.html</link>
+				<guid isPermaLink="true">/misc/2014/04/08/cycling-in-moscow.html</guid>
+			</item>
+		
+			<item>
+				<title>Esitelmä aiheesta: rOpenGov - R ekosysteemi avoimelle julkishallinnon datalle ja laskennalliselle yhteiskuntatutkimukselle</title>
+				<description>&lt;p&gt;Pidän esitelmän tänään Turun yliopistolla &lt;a href=&quot;https://www.utu.fi/fi/yksikot/soc/yksikot/sosiaalitieteet/tcwr/Sivut/home.aspx&quot;&gt;TCWR&lt;/a&gt;-seminaarissa aiheesta &amp;quot;rOpenGov - R ekosysteemi avoimelle julkishallinnon datalle ja laskennalliselle yhteiskuntatutkimukselle&amp;quot;. &lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://muuankarski.github.io/workshop-tcwr-2014-03-07/&quot;&gt;Esitemän materiaalit löydät täältä!&lt;/a&gt;&lt;/p&gt;
+</description>
+				<pubDate>Fri, 07 Mar 2014 15:15:45 +0200</pubDate>
+				<link>/ropengov/2014/03/07/luento-ropengov-tcwr.html</link>
+				<guid isPermaLink="true">/ropengov/2014/03/07/luento-ropengov-tcwr.html</guid>
+			</item>
+		
+			<item>
+				<title>My text 'Open research methods in computational social sciences and humanities: introducing R' published at digihist.se</title>
+				<description>&lt;p&gt;I wrote a brief introduction for &lt;em&gt;open research methods&lt;/em&gt; for &lt;a href=&quot;http://digihist.se/&quot;&gt;digihist.se - Historia i en digital värld&lt;/a&gt; that is a project by two historians, &lt;a href=&quot;http://essetter.blogspot.fi/&quot;&gt;Jessica Parland-von Essen&lt;/a&gt; and &lt;a href=&quot;http://kennethnyberg.org/&quot;&gt;Kenneth Nyberg&lt;/a&gt;, to come up with textbook in &lt;em&gt;Digital Humanities&lt;/em&gt; in Swedish. &lt;/p&gt;
+
+&lt;p&gt;You read and comment the text here: &lt;a href=&quot;http://digihist.se/5-metoder-inom-digital-historia/fordjupning-open-research-methods-in-computational-social-sciences-and-humanities-introducing-r/&quot;&gt;Fördjupning: Open research methods in computational social sciences and humanities: introducing R&lt;/a&gt;.&lt;/p&gt;
+</description>
+				<pubDate>Wed, 12 Feb 2014 18:23:45 +0200</pubDate>
+				<link>/r/2014/02/12/open-research-methods-digihist.html</link>
+				<guid isPermaLink="true">/r/2014/02/12/open-research-methods-digihist.html</guid>
+			</item>
+		
+			<item>
+				<title>Luento aiheesta: Sosiaalipolitiikka ja elinolot Venäjällä</title>
+				<description>&lt;p&gt;Luennoin tänään Porvoossa aiheesta &amp;quot;Sosiaalipolitiikka ja elinolot Venäjällä&amp;quot;. &lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/muuankarski/sosiaalipolitiikka-venaja&quot;&gt;Luentomateriaalit löydät täältä!&lt;/a&gt;&lt;/p&gt;
+</description>
+				<pubDate>Thu, 06 Feb 2014 10:23:45 +0200</pubDate>
+				<link>/git/2014/02/06/luento-sosiaalipolitiikka-venaja.html</link>
+				<guid isPermaLink="true">/git/2014/02/06/luento-sosiaalipolitiikka-venaja.html</guid>
+			</item>
+		
+			<item>
+				<title>Presentation on: Git & Github in collaborative writing</title>
+				<description>&lt;p&gt;I gave a presentation at our &lt;a href=&quot;https://github.com/digieast/digicoffee&quot;&gt;digicoffee&lt;/a&gt; meeting on &lt;a href=&quot;http://git-scm.com/&quot;&gt;git&lt;/a&gt;-version control and how to leverage it with &lt;a href=&quot;https://github.com/&quot;&gt;GitHub&lt;/a&gt; for collaborative work and web publishing with title &lt;em&gt;Git version control &amp;amp; GitHub hosting service in creating and sharing born-digital content&lt;/em&gt;. If you appreciate your born-digital content you deliver it in git.&lt;/p&gt;
+
+&lt;p&gt;You may browse my slides at: &lt;a href=&quot;http://muuankarski.github.io/git&quot;&gt;muuankarski.github.io/git&lt;/a&gt;&lt;/p&gt;
+</description>
+				<pubDate>Wed, 22 Jan 2014 10:23:45 +0200</pubDate>
+				<link>/git/2014/01/22/git-version-control.html</link>
+				<guid isPermaLink="true">/git/2014/01/22/git-version-control.html</guid>
+			</item>
+		
+			<item>
+				<title>Visualising World Values Survey on a Map in R</title>
+				<description>&lt;p&gt;I&amp;#39;m attending the &lt;em&gt;3rd international annual research conference: &amp;quot;Cultural and Economic changes under cross-national perspective&amp;quot;&lt;/em&gt; at the &lt;a href=&quot;http://lcsr.hse.ru/&quot;&gt;Laboratory for Comparative Social Reseach at the Moscow Higher School of Economics&lt;/a&gt; currently that gathers together scholars around the world interested in comparative social research. &lt;a href=&quot;https://rawgithub.com/muuankarski/attributions/master/attrib_slides.html&quot;&gt;in my presentation&lt;/a&gt; I used some spatial visualizations and therefore I received several questions on how to implement such illustrations. In this brief demonstration I will show how to visualize country level data from &lt;a href=&quot;http://www.worldvaluessurvey.org/&quot;&gt;World Values Survey&lt;/a&gt;(WVS) that is a widely used dataset in this context.&lt;/p&gt;
+
+&lt;p&gt;I used the data for the first time yesterday when I downloaded the A &amp;amp; B datasets from year 2005. As I&amp;#39;m not familiar with dataset I won&amp;#39;t go into details of if, but just bluntly implement a simple workflow for these spatial illustrations.&lt;/p&gt;
+
+&lt;h2&gt;Loading the WVS and extracting the summary statistics&lt;/h2&gt;
+
+&lt;p&gt;Again due to my incompetence in using the data I&amp;#39;m not using any weights in deriving the summary statistics but just rely on the data as it is. If you want to improve this aspect you can consult for example &lt;a href=&quot;http://markuskainu.fi/r-tutorial/survey/&quot;&gt;my tutorial on using survey-package in R&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The variable of interest here is &lt;code&gt;V75: BE WILLING TO FIGHT IN WAR FOR YOUR COUNTRY&lt;/code&gt; as it was discussed in the presentation by professor Ronald Inglehart. I found it interesting in his presentation that all the Scandinavian countries had a relatively high rates for this willingness, and I felt that there may a spatial story behind this, ie. approximity to Russian Federation.&lt;/p&gt;
+
+&lt;p&gt;The question behind the key variable is formulated as:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;V75. Of course, we all hope that there will not be another war, but if it were to come to that, would you be
+willing to fight for your country? (Code one answer):&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;And it has values and labels as:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;tr&gt;
+&lt;th&gt;Value&lt;/th&gt;&lt;th&gt;Label&lt;/th&gt;
+&lt;tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-5&lt;/td&gt;&lt;td&gt;Missing; Unknown&lt;/td&gt;
+&lt;tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-4&lt;/td&gt;&lt;td&gt;Not asked&lt;/td&gt;
+&lt;tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-3&lt;/td&gt;&lt;td&gt;Not applicable&lt;/td&gt;
+&lt;tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-2&lt;/td&gt;&lt;td&gt;No answer&lt;/td&gt;
+&lt;tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-1&lt;/td&gt;&lt;td&gt;Don't know'&lt;/td&gt;
+&lt;tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;&lt;td&gt;yes&lt;/td&gt;
+&lt;tr&gt;
+&lt;tr&gt;
+&lt;td&gt;0&lt;/td&gt;&lt;td&gt;no&lt;/td&gt;
+&lt;tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;#39;m focusing only in the &lt;code&gt;yes&lt;/code&gt; or &lt;code&gt;no&lt;/code&gt; values, or in &lt;code&gt;yes&lt;/code&gt; in particular.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error: object &amp;#39;opts_chunk&amp;#39; not found
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The data is not provided in any generic for but only in proprietary SAS/SPSS/Stata format, but using &lt;strong&gt;foreign&lt;/strong&gt;-package it is doable. (a .csv or .Rdata would perhaps be a good idea in these days!)&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;foreign&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Load the oridinal dataset into R&lt;/span&gt;
+datB &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; read.dta&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;DATA_LOCATION_HERE/wvs2005_v20090901b.dta&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+datA &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; read.dta&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;DATA_LOCATION_HERE/wvs2005_v20090901a.dta&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Create  proportional tables from both data by country&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;## there are some issues with country labels so I convert&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;## the variable into a string&lt;/span&gt;
+datA&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;v2 &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;as.character&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;datA&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;v2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+datB&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;v2 &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;as.character&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;datB&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;v2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Create unweighted proportional tables from both datas&lt;/span&gt;
+tblA &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;as.data.frame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;prop.table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;datA&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;v2&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;datA&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;v75&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+tblB &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;as.data.frame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;prop.table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;datB&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;v2&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;datB&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;v75&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Combine the tables&lt;/span&gt;
+tbl &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;rbind&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;tblA&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;tblB&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# subset the tables to include only ues or no options&lt;/span&gt;
+tbl2 &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; tbl&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;tbl&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;Var2 &lt;span class=&quot;o&quot;&gt;%in%&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;yes&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;no&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),]&lt;/span&gt;
+tbl2&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;Var2 &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;factor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;tbl2&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;Var2&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; levels&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;yes&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;no&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error: unable to open file: &amp;#39;Tiedostoa tai hakemistoa ei ole&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error: unable to open file: &amp;#39;Tiedostoa tai hakemistoa ei ole&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error: object &amp;#39;datA&amp;#39; not found
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error: object &amp;#39;datB&amp;#39; not found
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error: object &amp;#39;datA&amp;#39; not found
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error: object &amp;#39;datB&amp;#39; not found
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error: object &amp;#39;tblA&amp;#39; not found
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error: object &amp;#39;tbl&amp;#39; not found
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error: object &amp;#39;tbl2&amp;#39; not found
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Distribution of answers by country as histogram&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;## To nicely order the plot I will melt the data into wide format, reorder it &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;## and convert it back to long format for plotting&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;reshape2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+orderDat &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; dcast&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;tbl2&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Var1 &lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;Var2&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; value.var&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Freq&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error: object &amp;#39;tbl2&amp;#39; not found
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;orderDat&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;Var1 &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; reorder&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;orderDat&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;Var1&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; orderDat&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;yes&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; median&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error: object &amp;#39;orderDat&amp;#39; not found
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;tblPlot &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; melt&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;orderDat&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; id.vars&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Var1&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; measure.vars&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;yes&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;no&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error: object &amp;#39;orderDat&amp;#39; not found
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# And then the plot&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;## relevelling the levels to match the daulft colors better&lt;/span&gt;
+tblPlot&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;variable &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;factor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;tblPlot&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;variable&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+                           levels&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;no&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;yes&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error: object &amp;#39;tblPlot&amp;#39; not found
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;ggplot2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Loading required package: methods
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;ggplot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;tblPlot&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; aes&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;x&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;Var1&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;y&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;value&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;fill&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;variable&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+    geom_bar&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;stat&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;identity&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+      coord_flip&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; 
+  theme&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;legend.position&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;top&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+  theme&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;axis.text.x &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; element_text&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;size&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;14&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+        axis.text.y &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; element_text&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;size&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;14&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+        legend.text &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; element_text&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;size&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;14&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error: object &amp;#39;tblPlot&amp;#39; not found
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Plotting the data on the map&lt;/h2&gt;
+
+&lt;h3&gt;Downloading the geographical data&lt;/h3&gt;
+
+&lt;p&gt;Here I&amp;#39;m downloading the whole world shapefile from &lt;a href=&quot;http://www-mappinghacks.com&quot;&gt;www-mappinghacks.com&lt;/a&gt;. Of course there are many more options if available, but I picked it as it small size file but it still has the details needed. (I&amp;#39;m a novice in using world levels shapefiles fo please let me know of better resources).&lt;/p&gt;
+
+&lt;p&gt;I greatly recommend you to familiarize yourself with theoretical literature of spatial reasoning in social sciences for example by reading &lt;a href=&quot;http://books.google.ru/books/about/The_Sociology_of_Spatial_Inequality.html?id=67P6jXQ05LAC&amp;amp;redir_esc=y&quot;&gt;&lt;em&gt;Lobao, Linda M., Gregory Hooks, ja Ann R. Tickamyer. The Sociology of Spatial Inequality. State University of New York Press, 2007.&lt;/em&gt;&lt;/a&gt; as well as with open source ecosystem for geographics information systems through &lt;a href=&quot;http://www.asdar-book.org/&quot;&gt;Bivand, Roger S., Edzer J. Pebesma, ja Virgilio Gómez-Rubio. Applied Spatial Data Analysis with R. 2. p. Springer, 2013.&lt;/a&gt;. &lt;a href=&quot;http://cran.r-project.org/web/views/Spatial.html&quot;&gt;CRAN Task View: Analysis of Spatial Data&lt;/a&gt; is a crucial resources if you want to push this approach further in your analysis. &lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;download.file&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://www.mappinghacks.com/data/TM_WORLD_BORDERS-0.2.zip&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+              destfile &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;worldborders.zip&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# unzip to SpatialPolygonsDataFrame&lt;/span&gt;
+unzip&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;worldborders.zip&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rgdal&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+shape &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; readOGR&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dsn &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;YOUR WORKING DIRECTORY HERE/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+                 layer &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;TM_WORLD_BORDERS-0.2&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Loading required package: sp
+## rgdal: version: 0.8-16, (SVN revision 498)
+## Geospatial Data Abstraction Library extensions to R successfully loaded
+## Loaded GDAL runtime: GDAL 1.10.1, released 2013/08/26
+## Path to GDAL shared files: /usr/share/gdal/1.10
+## Loaded PROJ.4 runtime: Rel. 4.8.0, 6 March 2012, [PJ_VERSION: 480]
+## Path to PROJ.4 shared files: (autodetected)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error: Cannot open file
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Converting the shape into data.frame and merging the attribute data with it&lt;/h3&gt;
+
+&lt;p&gt;I&amp;#39;m taking a bit of a shortcut here as I&amp;#39;m converting the &lt;code&gt;SpatialPolygonDataFrame&lt;/code&gt; right away into regular &lt;code&gt;data.frame&lt;/code&gt; using &lt;code&gt;fortify&lt;/code&gt;-function from &lt;strong&gt;ggplot2&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thereafter I will merge the &lt;code&gt;yes&lt;/code&gt; values from the WVS data summary. This merging is often problematic due to mismatch in the country names in different datasets. In this example I&amp;#39;m only changing the first letters of countrynames from WVS into uppercase and hope that match will happen. Most probably you would need to create a key table for perfect match.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# fortify the data&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;ggplot2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+shape&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;id &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;rownames&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;shape&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;data&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error: object &amp;#39;shape&amp;#39; not found
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;map.points &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; fortify&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;shape&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; region &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;id&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error: object &amp;#39;shape&amp;#39; not found
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;map.df &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;merge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;map.points&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; shape&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; by &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;id&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error: error in evaluating the argument &amp;#39;x&amp;#39; in selecting a method for function &amp;#39;merge&amp;#39;: Error: object &amp;#39;map.points&amp;#39; not found
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# subset only the yeas options&lt;/span&gt;
+yesDat &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; tblPlot&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;tblPlot&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;variable &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;yes&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error: object &amp;#39;tblPlot&amp;#39; not found
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# Function the uppercase the first characters&lt;/span&gt;
+&lt;span class=&quot;m&quot;&gt;.&lt;/span&gt;simpleCap &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;x&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    s &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;strsplit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;x&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot; &amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
+    &lt;span class=&quot;kp&quot;&gt;paste&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;toupper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;substring&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;s&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)),&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;substring&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;s&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+          sep &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; collapse &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot; &amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+yesDat&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;Var1 &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;as.character&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;yesDat&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;Var1&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error: object &amp;#39;yesDat&amp;#39; not found
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;yesDat&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;Var1C &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;sapply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;yesDat&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;Var1&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;.&lt;/span&gt;simpleCap&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error: object &amp;#39;yesDat&amp;#39; not found
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# merge the datas using country names&lt;/span&gt;
+map.df &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;merge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;map.df&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;yesDat&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                by.x&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;NAME&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                by.y&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Var1C&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+                all.x&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error: error in evaluating the argument &amp;#39;x&amp;#39; in selecting a method for function &amp;#39;merge&amp;#39;: Error: object &amp;#39;map.df&amp;#39; not found
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# order the data for smooth plotting&lt;/span&gt;
+map.df &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; map.df&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;order&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;map.df&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;order&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error: object &amp;#39;map.df&amp;#39; not found
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;A whole world using mercator projetion&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;ggplot2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ggplot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;map.df&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; aes&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;long&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;lat&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;group&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;group&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+  geom_polygon&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;aes&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;fill&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;value&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+  geom_polygon&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;data &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; map.df&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; aes&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;long&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;lat&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; 
+               fill&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;NA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+               color &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;white&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+               size&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# white borders&lt;/span&gt;
+  scale_fill_gradient2&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;low&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;white&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; high&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;blue&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+    theme&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;legend.position&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;top&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error: object &amp;#39;map.df&amp;#39; not found
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Using Orthographic projection centered at Moscow&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;ggplot2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ggplot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;map.df&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; aes&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;long&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;lat&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;group&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;group&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+  geom_polygon&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;aes&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;fill&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;value&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+  geom_polygon&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;data &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; map.df&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; aes&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;long&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;lat&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; 
+               fill&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;NA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+               color &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;white&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+               size&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# white borders&lt;/span&gt;
+  scale_fill_gradient2&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;low&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;white&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; high&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;blue&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+    theme&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;legend.position&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;top&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+    coord_map&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;ortho&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; orientation&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;55&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;37&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Error: object &amp;#39;map.df&amp;#39; not found
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The grey stands for missing data that covers most of the countries. That is due to both missing data in VWS 2005 and errors in merging the attribute data with the shape. Also, the issue of spatial story behind the scandinavians willingness to fight wars did not become much clearer as a results of this one hour exercise.&lt;/p&gt;
+</description>
+				<pubDate>Thu, 14 Nov 2013 13:23:45 +0200</pubDate>
+				<link>/r-project/2013/11/14/world-values-survey-on-map.html</link>
+				<guid isPermaLink="true">/r-project/2013/11/14/world-values-survey-on-map.html</guid>
+			</item>
+		
+			<item>
+				<title>Markdown ja pandoc - tekstipohjaisen tieteellisen kirjoittamisen työvirta</title>
+				<description>&lt;p&gt;Tässä kirjoituksessa esitellään tekstipohjainen työvirta digitaalisten tekstien kirjoittajalle, joka haluaa tehdä yksinkertaiset asiat yksinkertaisesti ja keskittyä monimutkaisten asioiden monimutkaisuuteen.&lt;/p&gt;
+
+&lt;h2&gt;Digitaalisuus ja MS Wordin kuolema&lt;/h2&gt;
+
+&lt;p&gt;Skottilaisen scifi-kirjailijan Charles Strossin lauantaina julkaisema blogiposti &lt;em&gt;&lt;a href=&quot;http://www.antipope.org/charlie/blog-static/2013/10/why-microsoft-word-must-die.html&quot;&gt;Why Microsoft Word must Die&lt;/a&gt;&lt;/em&gt; on herättänyt vilkasta keskustelua blogin kommenttiosiossa, ja tekstiä on jaettu ahkerasti sosiaalisessa mediassa viime päivinä. Stross on läpensä kyllästynyt Microsoftin tekstinkäsittelyohjelman yleiseen epätarkoituksenmukaisuuteen, tekniseen takapajuisuuteen sekä ansaitsemattomaan valta-asemaan ja haluaa sen kuolevan.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Microsoft Word is a tyrant of the imagination, a petty, unimaginative, inconsistent dictator that is ill-suited to any creative writer&amp;#39;s use. Worse: it is a near-monopolist, dominating the word processing field. Its pervasive near-monopoly status has brainwashed software developers to such an extent that few can imagine a word processing tool that exists as anything other than as a shallow imitation of the Redmond Behemoth. But what exactly is wrong with it?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Stross kirjoittaa ansiokkaasti siitä, mikä kaikki ohjelmassa on vialla kirjoja kirjoittavan ammattilaisen näkökulmasta. Tieteellisen kirjoittamisen näkökulmasta MS Wordissä on vialla huomattavasti useampi seikka kuin mihin Stross puuttuu, mutta silti sillä on yhä vankka asema myös tieteellisen kirjoittamisessa.&lt;/p&gt;
+
+&lt;p&gt;Wordin suosion ja kelvottomuuden ydin on sen &lt;strong&gt;WYSIWYG&lt;/strong&gt;, eli &lt;em&gt;What You See Is What You Get&lt;/em&gt; (mitä näet, sitä saat) -tyyppinen käyttöliittymä. Useat ihmiset haluavat edelleen hahmottaa tekstinsä vasten valkoista A4-koodin paperia, vaikka yhä useampi teksti julkaistaan vain digitaalisessa muodossa (blogi,e-kirja,www-sivu, tms.) tai se tullaan taittamaan uudelleen ennen paperille tulostamista. Tämä on tietysti seurausta laajemmasta tiedonvälityksen digitalisoitumisesta, jota ei ole tarpeen tässä laajemmin käsitella kuin vain todeta että &lt;strong&gt;MS Wordin &lt;em&gt;What You See Is What You Get&lt;/em&gt; -lupaus pitää paikkansa koko ajan yhä harvemmin&lt;/strong&gt;. Kirjoittajat tuottavat tekstejä yhä laajemmalle kirjolle julkaisualustoja, mikä tarkoittanee MS Wordille nopeaa kuolemaa ja siihen luottaville kirjoittajille lisääntyviä ongelmia. &lt;/p&gt;
+
+&lt;h2&gt;Lähdekoodiajattelu tieteellisessä kirjoittamisessa&lt;/h2&gt;
+
+&lt;p&gt;Tämä blogipäivitys valmistaa lukijaansa Wordin kuolemaan esittelemällä nokkelan lähestymistavan digitaaliseen kirjoittamiseen. (mikäli kirjoitat käsin tai mekaanisella kirjoituskoneella et tule hyötymään tästä) Kutsun sitä &lt;em&gt;lähdekoodiajatteluksi kirjoittamisessa&lt;/em&gt; ja ajattelun ydin on siinä, että &lt;strong&gt;kirjoittaja laatii tekstistä &lt;em&gt;tekstimuotoisen lähdekoodin&lt;/em&gt;, joka käännetään kulloinkin tarvittavaan asiakirjaformaattiin&lt;/strong&gt;. Tässä esimerkissä teksti kirjoitetaan &lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot;&gt;markdown&lt;/a&gt;-merkintäkielellä ja käännetään &lt;a href=&quot;http://johnmacfarlane.net/pandoc/README.html&quot;&gt;pandoc&lt;/a&gt;-dokumentinkääntäjällä haluttuun julkaisuformaattiin, joka voi olla esim: &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;HTML formaatit: XHTML, HTML5, ja HTML esitysgrafiikka käyttäen
+&lt;a href=&quot;http://www.w3.org/Talks/Tools/Slidy&quot;&gt;Slidy&lt;/a&gt;,
+&lt;a href=&quot;http://lab.hakim.se/reveal-js/&quot;&gt;reveal.js&lt;/a&gt;,
+&lt;a href=&quot;http://goessner.net/articles/slideous/&quot;&gt;Slideous&lt;/a&gt;,
+&lt;a href=&quot;http://meyerweb.com/eric/tools/s5/&quot;&gt;S5&lt;/a&gt;, tai
+&lt;a href=&quot;http://paulrouget.com/dzslides/&quot;&gt;DZSlides&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Tekstinkäsittelyohjelmien formaatit: Microsoft Word
+&lt;a href=&quot;http://www.microsoft.com/interop/openup/openxml/default.aspx&quot;&gt;docx&lt;/a&gt;,
+OpenOffice/LibreOffice
+&lt;a href=&quot;http://en.wikipedia.org/wiki/OpenDocument&quot;&gt;ODT&lt;/a&gt;, &lt;a href=&quot;http://opendocument.xml.org/&quot;&gt;OpenDocument
+XML&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;E-kirjat: &lt;a href=&quot;http://en.wikipedia.org/wiki/EPUB&quot;&gt;EPUB&lt;/a&gt; version 2 or 3,
+&lt;a href=&quot;http://www.fictionbook.org/index.php/Eng:XML_Schema_Fictionbook_2.1&quot;&gt;FictionBook2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt; Dokumentaatio-formaatit: &lt;a href=&quot;http://www.docbook.org/&quot;&gt;DocBook&lt;/a&gt;, &lt;a href=&quot;http://www.gnu.org/software/texinfo/&quot;&gt;GNU
+TexInfo&lt;/a&gt;, &lt;a href=&quot;http://www.gnu.org/software/groff/groff.html&quot;&gt;Groff
+man&lt;/a&gt; pages, &lt;a href=&quot;http://www.haskell.org/haddock/doc/html/ch03s08.html&quot;&gt;Haddock
+markup&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Outline-formaatit: &lt;a href=&quot;http://dev.opml.org/spec2.html&quot;&gt;OPML&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;TeX-formaatit: &lt;a href=&quot;http://www.latex-project.org/&quot;&gt;LaTeX&lt;/a&gt;,
+&lt;a href=&quot;http://www.pragma-ade.nl/&quot;&gt;ConTeXt&lt;/a&gt;, LaTeX Beamer esitysgrafiikka&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Portable_Document_Format&quot;&gt;PDF&lt;/a&gt; via
+LaTeX&lt;/li&gt;
+&lt;li&gt;Kevyet merkintäkielet:
+&lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot;&gt;Markdown&lt;/a&gt;,
+&lt;a href=&quot;http://docutils.sourceforge.net/docs/ref/rst/introduction.html&quot;&gt;reStructuredText&lt;/a&gt;,
+&lt;a href=&quot;http://www.methods.co.nz/asciidoc/&quot;&gt;AsciiDoc&lt;/a&gt;, &lt;a href=&quot;http://www.mediawiki.org/wiki/Help:Formatting&quot;&gt;MediaWiki
+markup&lt;/a&gt;, Emacs
+&lt;a href=&quot;http://orgmode.org&quot;&gt;Org-Mode&lt;/a&gt;,
+&lt;a href=&quot;http://redcloth.org/textile&quot;&gt;Textile&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Kustomoidut formaatit: &lt;a href=&quot;http://www.lua.org&quot;&gt;lua&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Kun tekstistä on olemassa &lt;em&gt;tekstimuotoinen lähdekoodi&lt;/em&gt; täytyy kirjoittajan ylläpitää vain tätä yhtä tekstiä ja kaikki muut formaatit on käännettävissä tästä lähteestä tarpeen mukaan. Tekstimuotoinen lähdekoodi luo puitteet myös kunnollisen versionhallinnan, kuten &lt;a href=&quot;http://linux.fi/wiki/Git&quot;&gt;git&lt;/a&gt;:in käytölle. Sillä on myös monia muita etuja, joista kenties myöhemmissä kirjoituksissa lisää.&lt;/p&gt;
+
+&lt;h2&gt;Tekstipohjaisen kirjoittamisen ohjelmistoympäristö&lt;/h2&gt;
+
+&lt;p&gt;Tekstin kirjoittamiseen tietokoneella vaaditaan vain &lt;a href=&quot;http://fi.wikipedia.org/wiki/Tekstieditori&quot;&gt;tekstieditori&lt;/a&gt;, joista &lt;em&gt;muistio/notepad&lt;/em&gt; lienee Windows-käyttäjille tutuin. &lt;a href=&quot;http://en.wikipedia.org/wiki/List_of_text_editors&quot;&gt;Wikipediassa&lt;/a&gt; on kattava lista editoreista, mutta hyvään alkuun pääsee Windowsissa &lt;a href=&quot;http://notepad-plus-plus.org/&quot;&gt;notepad++&lt;/a&gt;:lla ja OS X:ssä esim. &lt;a href=&quot;http://aquamacs.org/&quot;&gt;Aquamacs&lt;/a&gt;-emacs-pohjaisella editorilla. Linux-jakeluiden oletuseditorit ovat aivan kelpoja.&lt;/p&gt;
+
+&lt;p&gt;Markdown on tekstipohjainen merkintäkieli, joten sen kirjoittaminen ei vaadi kuin tekstieditorin. Markdown-muotoisen lähdekoodin kääntämiseen haluttuun formaattiin tarvitaan jo aiemmin mainittu pandoc, jota kehittää aktiivisesti Berkeleyn yliopiston filosofian professorin &lt;a href=&quot;http://johnmacfarlane.net/&quot;&gt;John MacFarlane&lt;/a&gt;. Mikäli haluat kääntää tekstin tieteellisissä julkaisuissa suosittuun &lt;a href=&quot;http://fi.wikipedia.org/wiki/Latex&quot;&gt;LaTeX&lt;/a&gt;-formaattiin, niin sinun tulee asentaa koneellesi myös LaTeX. Alla on ohjeet sekä pandocin että latexin asentamiseen:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://johnmacfarlane.net/pandoc/installing.html&quot;&gt;Pandoc:in asentaminen linuxiin, Mac OS X:ään ja Windowsiin&lt;/a&gt;  - latauksen ja asennuksen kesto n. 30s.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.latex-project.org/ftp.html&quot;&gt;Latex:in asentaminen linuxiin, Mac OS X:ään ja Windowsiin&lt;/a&gt; - latauksen ja asennuksen kesto n. 60 min.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Seuraava esimerkki perustuu uusimpaan pandocin versioon &lt;a href=&quot;http://johnmacfarlane.net/pandoc/releases.html#pandoc-1.12.0.2-2013-09-20&quot;&gt;pandoc 1.12.0.2 (2013-09-20)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Esimerkki tieteellisen tekstin lähdekoodista&lt;/h2&gt;
+
+&lt;p&gt;Seuraavassa esiteltävä minimaalinen esimerkki sisältää: &lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;julkaisun tekstin markdown-muodossa sekä&lt;/li&gt;
+&lt;li&gt;viitattujen julkaisujen bibliografiset tiedot &lt;a href=&quot;http://en.wikipedia.org/wiki/BibTeX&quot;&gt;BibTeX&lt;/a&gt;-muodossa.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3&gt;1. teksti markdown-muodossa&lt;/h3&gt;
+
+&lt;p&gt;Tekstin alussa on &lt;a href=&quot;http://en.wikipedia.org/wiki/YAML&quot;&gt;YAML&lt;/a&gt;-muotoinen metadata-osio, johon tulee dokumentin metatiedot. Muilta osin teksti noudattelee markup-syntaxia lisättynä kahdella matemaattisella kaavalla sekä erityyppisillä lähdeviittauksilla kahteen artikkeliin. Merkintäkieli on helppolukuista myös &lt;em&gt;lähdekoodi&lt;/em&gt;-muodossaan. Tässä demossa lähdeviitetiedoston nimi on &lt;em&gt;teksti.md&lt;/em&gt;.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;o&quot;&gt;---&lt;/span&gt;
+title&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;&amp;#39;Esimerkkiteksti kirjoitettuna markdown-merkintäkielellä&amp;#39;&lt;/span&gt;
+author&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; Markus Kainu
+affiliation&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; Turun yliopisto
+&lt;span class=&quot;kp&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; Lokakuu &lt;span class=&quot;m&quot;&gt;2013&lt;/span&gt;
+bibliography&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; bibtex.bib
+lang&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; finnish
+tags&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;markdown&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; pandoc&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;kc&quot;&gt;...&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Suhteellisuusteoriasta ja Higgsin bosonista&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;## Suhteellisuusteoriasta&lt;/span&gt;
+
+Lorem ipsum&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;einstein1935can dolor sit amet&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; consectetur adipiscing elit. Etiam at augue et quam placerat tristique &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;s. &lt;span class=&quot;m&quot;&gt;12-15&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;einstein1935can&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;.&lt;/span&gt; 
+
+&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;e &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; mc&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;
+
+Vestibulum ante ipsum &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-@&lt;/span&gt;einstein1935can&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; primis &lt;span class=&quot;kr&quot;&gt;in&lt;/span&gt; faucibus orci luctus et ultrices posuere cubilia Curae&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; Mauris imperdiet sem odio&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; at pharetra mauris congue dignissim.
+
+&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;Massa aiheuttaa poikkeaman avaruuden geometriassa&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;http&lt;span class=&quot;o&quot;&gt;://&lt;/span&gt;upload.wikimedia.org&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;wikipedia&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;commons&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;22&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;Spacetime_curvature.png&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; Alaviitteen teksti on &lt;span class=&quot;kp&quot;&gt;t&lt;/span&gt;ässä&lt;span class=&quot;m&quot;&gt;.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;## Higgsin bosonista&lt;/span&gt;
+
+Donec tortor justo&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; venenatis sodales fermentum ut&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; eleifend sit amet lorem. Curabitur rutrum faucibus leo&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; nec porttitor est consequat sit amet. &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;lee1977weak&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;Tiettyjen partikkeleiden välisten suhteiden standardi&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;mallin mukainen tiivistelmä&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;kuvat&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;higgs.png&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+Lorem ipsum dolor &lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;lee1977weak &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;s. &lt;span class=&quot;m&quot;&gt;35&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; sit amet&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; consectetur adipiscing elit. Etiam at augue et quam placerat tristique. 
+
+&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;M_Z&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;\frac&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;v\&lt;span class=&quot;kp&quot;&gt;sqrt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;g&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;g&lt;span class=&quot;s&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}^2}}2$&lt;/span&gt;
+
+Vestibulum ante ipsum primis &lt;span class=&quot;kr&quot;&gt;in&lt;/span&gt; faucibus orci luctus et ultrices posuere cubilia Curae&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; Mauris imperdiet sem odio&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; at pharetra mauris congue dignissim. Donec tortor justo&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; venenatis sodales fermentum ut&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; eleifend sit amet lorem. Curabitur rutrum faucibus leo&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; nec porttitor est consequat sit amet.
+
+&lt;span class=&quot;c1&quot;&gt;# Taulukot&lt;/span&gt;
+
+Table&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; Einsteinin lapset
+
+Syntymäaika Etunimet        Sukunimi    Sukupuoli
+&lt;span class=&quot;o&quot;&gt;---------&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;--------&lt;/span&gt;        &lt;span class=&quot;o&quot;&gt;--------&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;----------&lt;/span&gt;
+&lt;span class=&quot;m&quot;&gt;14.05.1904&lt;/span&gt;  Hans&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Albert    Einstein    mies
+&lt;span class=&quot;m&quot;&gt;28.06.1910&lt;/span&gt;  Eduard          Einstein    mies
+
+&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;Lähde&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;wikipedia&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;http&lt;span class=&quot;o&quot;&gt;://&lt;/span&gt;fi.wikipedia.org&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;wiki&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;Albert_Einstein&lt;span class=&quot;c1&quot;&gt;#Einsteinin_avioliitot)*&lt;/span&gt;
+
+
+&lt;span class=&quot;c1&quot;&gt;# Lähdeviitteet&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;2. lähdeviitteet BiBTeX-muodossa&lt;/h3&gt;
+
+&lt;p&gt;Kenties yksinkertaisin tapa käyttää lähdeviitteitä on LaTeX-ladontajärjestelmästä tuttu &lt;a href=&quot;http://en.wikipedia.org/wiki/BibTeX&quot;&gt;BibTeX&lt;/a&gt;-muoto. Viitteet on mahdollista viedä kaikista viitteidenhallintaohjelmista ko. muotoiseen tekstitiedostoon. Google Scholar -palvelun hakutuloksissa on mm. &lt;a href=&quot;http://www.youtube.com/watch?v=SsJSR2b4_qc&quot;&gt;suora linkki osuman bibliografisten tietojen lataamiseen BibTeX-muodossa&lt;/a&gt;. Tässä demossa lähdeviitetiedoston nimi on &lt;em&gt;bibtex.bib&lt;/em&gt; ja se näyttää seuraavalta:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;article&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;einstein1935can&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  title&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;Can quantum&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;mechanical description of physical reality be considered complete&lt;span class=&quot;o&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  author&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;Einstein&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Albert and Podolsky&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Boris and Rosen&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Nathan&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  journal&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;Physical review&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  volume&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;47&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  number&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  pages&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;777&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  year&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1935&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  publisher&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;APS&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;article&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;lee1977weak&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  title&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;Weak interactions at very high energies&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; The role of the Higgs&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;boson mass&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  author&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;Lee&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Benjamin W and Quigg&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Chris and Thacker&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Harry B&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  journal&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;Physical Review D&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  volume&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  number&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  pages&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1519&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  year&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1977&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  publisher&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;APS&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Dokumentin kääntäminen pandoc-ohjelmalla&lt;/h2&gt;
+
+&lt;p&gt;Pandoc-ohjelmaan ei ole olemassa graafista käyttöliittymää, vaan komennot tulee ajaa ns. &lt;em&gt;komentorivissä&lt;/em&gt;. Windowsissa komentorivi voi olla hankalasti löydettävissä, mutta oheinen Jyväskylän yliopiston ohje auttaa asiassa: &lt;a href=&quot;http://users.jyu.fi/%7Enieminen/ohj1/materiaalia/tyokaluohjeet/komentorivi_selviytyminen.html#komentorivit-windowsissa-command-prompt&quot;&gt;Komentorivit Windowsissa: Command Prompt&lt;/a&gt;. OS X:ssä komentorivin saa auki klikkailemalla: &lt;code&gt;Applications&amp;gt;Utilities&amp;gt;Terminal&lt;/code&gt;. Linuxissa pikanäppäin &lt;code&gt;Ctrl + Alt + t&lt;/code&gt;avaa päätteen.&lt;/p&gt;
+
+&lt;p&gt;Kun olet avannut komentorivin, sinun tulee vaihtaa hakemistoksi se hakemistoksi, jossa lähdekoodisi sijaitsee. Mikäli se on kansio &lt;code&gt;essee&lt;/code&gt; työpöydällä, niin oikea komento voisi olla &lt;code&gt;cd desktop/essee&lt;/code&gt;. Komentorivin komennot eroavat eri käyttöjärjestelmissä hieman, joten katso apua täältä: &lt;a href=&quot;http://users.jyu.fi/%7Enieminen/ohj1/materiaalia/tyokaluohjeet/komentorivi_selviytyminen.html&quot;&gt;Selviytymisopas: Komentorivin käyttö&lt;/a&gt; tai käytä googlea.&lt;/p&gt;
+
+&lt;p&gt;Kun olet saanut navigoitua itsesi oikeaan hakemistoon komentorivillä tulee sinun enää syöttää komento, joka kääntää lähdekoodin haluamaasi formaattiin. Erityisen yksinkertaisissa käännöksissä riittää yleensä &lt;code&gt;pandoc lahdekoodi.md -o haluttu_formaatti.xxx&lt;/code&gt;. &lt;a href=&quot;http://johnmacfarlane.net/pandoc/README.html&quot;&gt;Pandocin ohjeista&lt;/a&gt; löytyy miltei rajaton määrä ohjeita kääntämisen hienosäätämiseen. Alla on komennot yleisimpiin käännöksiin siten, että myös matemaattiset kaavat sekä lähdeviitteet generoituvat käännettäessä.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# latex-pdf -muotoon&lt;/span&gt;
+pandoc teksti.md &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;o teksti.pdf &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;toc &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;number&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;section &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;latexmathml &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;filter pandoc&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;citeproc
+&lt;span class=&quot;c1&quot;&gt;# .html-muotoon&lt;/span&gt;
+pandoc &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;s teksti.md &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;o teksti.html &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;toc &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;number&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;section &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;latexmathml &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;filter pandoc&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;citeproc
+&lt;span class=&quot;c1&quot;&gt;# .odt-muotoon&lt;/span&gt;
+pandoc teksti.md &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;o teksti.odt &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;toc &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;number&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;section &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;latexmathml &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;filter pandoc&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;citeproc
+&lt;span class=&quot;c1&quot;&gt;# .docx-muotoon&lt;/span&gt;
+pandoc teksti.md &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;o teksti.docx &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;toc &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;number&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;section &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;latexmathml &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;filter pandoc&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;citeproc
+&lt;span class=&quot;c1&quot;&gt;# .epub-muotoon&lt;/span&gt;
+pandoc teksti.md &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;o teksti.epub &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;toc &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;number&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;section &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;latexmathml &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;filter pandoc&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;citeproc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Lataukset&lt;/h2&gt;
+
+&lt;h3&gt;Lähdekoodi, viitetiedot, kuvat ja komennot zipattuna&lt;/h3&gt;
+
+&lt;p&gt;Zipatussa paketissa on lähdeteksti (teksti.md), viitteet (bibtex.bib), pandoc-komennot (komennot.md) sekä kansio &lt;code&gt;kuvat&lt;/code&gt;, jossa kuva higgs.png. Toinen kuva tulee suoraan wikipediasta.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://markuskainu.fi/material/blog/pandocmarkdown2013/demo.zip&quot;&gt;demo.zip&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Esimerkkiteksti eri formaateissa&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://markuskainu.fi/material/blog/pandocmarkdown2013/teksti.pdf&quot;&gt;teksti.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://markuskainu.fi/material/blog/pandocmarkdown2013/teksti.html&quot;&gt;teksti.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://markuskainu.fi/material/blog/pandocmarkdown2013/teksti.odt&quot;&gt;teksti.odt&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://markuskainu.fi/material/blog/pandocmarkdown2013/teksti.docx&quot;&gt;teksti.docx&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://markuskainu.fi/material/blog/pandocmarkdown2013/teksti.epub&quot;&gt;teksti.epub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;html-käännös ilman tyylitiedostoa näyttää nykypäivän silmään luotaantyöntävältä ja sitä voi ehostaa esim. tämän css-tiedoston avulla: &lt;a href=&quot;http://markuskainu.fi/material/css/article.css&quot;&gt;markuskainu.fi/material/css/article.css&lt;/a&gt;. Voit lisätä sen lähdekoodiin vaikkapa metatietojen alle oheisella koodilla&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;link href=&amp;quot;http://markuskainu.fi/material/css/article.css&amp;quot;&lt;/code&gt;
+&lt;code&gt;rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; title=&amp;quot;compact&amp;quot;&amp;gt;&amp;lt;/link&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Muotoiltu html-muotoinen teksti näyttäisi sitten tältä: &lt;a href=&quot;http://markuskainu.fi/material/blog/pandocmarkdown2013/teksti_css.html&quot;&gt;teksti_css.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Lopuksi&lt;/h2&gt;
+
+&lt;p&gt;Kirjoituksessa kuvattu työvirta ei tietenkään ole virheetön saati ns. &lt;em&gt;valmis&lt;/em&gt;, mutta toimii hyvin jo tällaisenaan. Aivan erityisen hyödylliseksi kuvatun kaltainen työvirta tulee, mikäli tieteellinen tutkimus sisältää laskennallista analyysiä, jonka tuloksia (taulukoita, kuvioita) tekstissä esitellään. Mm. R-kielessä on olemassa erinomainen ekosysteemi laskennallisen analyysin ja sitä kuvaavan tekstin kirjoittamiseen rinnakkain yhteen tekstiin. Tähän ns. &lt;em&gt;toistettavan analyysin&lt;/em&gt; lähdetymistapaan voi tutustua englanniksi juuri julkaistussa kirjassa &lt;a href=&quot;http://www.crcpress.com/product/isbn/9781482203530&quot;&gt;Xie, Yihui. 2014. Dynamic Documents with R and Knitr&lt;/a&gt; (&lt;a href=&quot;https://github.com/yihui/knitr-book&quot;&gt;kirjan lähde githubissa&lt;/a&gt;) tai suomeksi vaikka osoitteessa: &lt;a href=&quot;http://markuskainu.fi/workshop/toistettava/&quot;&gt;markuskainu.fi/workshop/toistettava/&lt;/a&gt;. Asiaa käsiteltäneen myös tässä blogissa syksyn aikana. &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Kysymyksiä ja kommentteja rohkeasti tuohon alapuolelle!&lt;/strong&gt;&lt;/p&gt;
+</description>
+				<pubDate>Tue, 15 Oct 2013 13:53:45 +0300</pubDate>
+				<link>/tools/2013/10/15/markdown-pandoc-tieteellinen-teksti.html</link>
+				<guid isPermaLink="true">/tools/2013/10/15/markdown-pandoc-tieteellinen-teksti.html</guid>
+			</item>
+		
+			<item>
+				<title>Open Science in the Digital Era - data, research and open access publishing</title>
+				<description>&lt;p&gt;I gave presentation with title: &lt;a href=&quot;http://markuskainu.fi/workshop/openscience2013/openscience2013_slides.html#/&quot;&gt;Open Science in the Digital Era - data, research and open access publishing&lt;/a&gt;&lt;/p&gt;
+</description>
+				<pubDate>Fri, 20 Sep 2013 16:15:45 +0300</pubDate>
+				<link>/presentation/2013/09/20/workshop-open-science.html</link>
+				<guid isPermaLink="true">/presentation/2013/09/20/workshop-open-science.html</guid>
+			</item>
+		
+	</channel>
+</rss>
+

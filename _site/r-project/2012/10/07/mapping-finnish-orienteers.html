@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Mapping Finnish orienteers using R</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- change the folder below to switch themes -->
+    <link rel="stylesheet" href="/css/yeti/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="/css/assets/css/bootswatch.min.css"> 
+
+
+<!-- to quickly try out themes, activate this and tweak the url!
+    <link rel="stylesheet" href="./bootstrap.css" media="screen">
+-->
+
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="/css/syntax.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/footer.css">
+
+        <!-- Font avesome -->
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+  </head>
+  <body>
+    <script src="http://bootswatch.com/assets/js/bsa.js"></script>
+
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="" class="navbar-brand">Markus Kainu</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+         <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+          <li><a href="/blog.html" title="blog">blog</a></li>
+          <li><a href="/about.html" title="about">about</a></li>
+          <li><a href="/resources.html" title="resources">resources</a></li>
+         </ul>
+<!--        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+                <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">R<span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="R">
+                <li><a href="/R/lue.html">Datan lukeminen & kirjoittaminen</a></li>
+                <li><a href="/R/manipulointi.html">Manipuloiminen</a></li>
+                <li><a href="/R/funktiot.html">Funktiot</a></li>
+                <li><a href="/R/grafiikka.html">Grafiikka</a></li>
+                <li><a href="/R/survey.html">Survey</a></li>
+              </ul>         
+         </ul>
+          <ul class="nav navbar-nav">
+                <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Toistettava tutkimus<span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="toistettava">
+                <li><a href="/toistettava/knitr.html">knitr</a></li>
+                <li><a href="/toistettava/kirjoita.html">Kirjoittaminen</a></li>
+              </ul>         
+         </ul>
+         <ul class="nav navbar-nav">
+                <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Versiohallinta<span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="versio">
+                <li><a href="/versio/git.html">git</a></li>
+              </ul>         
+         </ul>
+         <ul class="nav navbar-nav">
+                <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Julkaiseminen<span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="julkaisu">
+                <li><a href="/julkaisu/latex.html">latex</a></li>
+                <li><a href="/julkaisu/jekyll.html">jekyll</a></li>
+                <li><a href="/julkaisu/pandoc.html">Pandoc</a></li>
+              </ul>         
+         </ul>
+-->
+
+
+         <ul class="nav navbar-nav navbar-right">
+            <li><a title="blog RSS" href="http://markuskainu.fi/feed.xml"><i class="fa fa-rss fa-2x"></i></a></li>li>
+            <li><a title="code" href="http://github.com/muuankarski"> <i class="fa fa-github fa-2x"></i></a></li>
+            <li><a title="tweets" href="https://twitter.com/muuankarski"> <i class="fa fa-twitter fa-2x"></i></a></li>
+            <li><a href="mailto:markuskainu@gmail.com?Subject=Email me!" title="Email!" target="_top"><i class="fa fa-envelope fa-2x"></i></a></li>                        
+            </li>
+
+                        
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container">
+
+          <h2>Mapping Finnish orienteers using R</h2>
+<p class="meta">07 Oct 2012</p>
+
+<div class="post">
+<h2>Introduction</h2>
+
+<p>The code below can be used to map Finnish orienteers based on the home town of the club they are membering. Some documentation is provided within the code, but most of it is rather self-explanatory.</p>
+
+<p>As a conclusion one can say that the elite runners in mens class are highly concentrated into the top clubs. There are some alternatives clubs with few elite runners, eg. Vetelin Urheilijat. As a spatial representation this is misleading in a way that many of the runners in country teams do actually live in larger centers. Which is also the case with famous Vetelin Urheilijat</p>
+
+<p>In addition, top 100 in working age classes are the most regionally concentrated. A more detailed analysis can be done by tweaking the code, but this requires slightly more memory than what is currently available.</p>
+
+<h2>The Analysis</h2>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>XML<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>plyr<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>reshape2<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>stringr<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>gpclib<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>RColorBrewer<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>mapproj<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>maptools<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>rgdal<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>RJSONIO<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>car<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">####################################</span>
+<span class="c1">####################################</span>
+<span class="c1"># rankidata ssl:n Irmasta</span>
+
+temp <span class="o">&lt;-</span> <span class="kp">tempfile</span><span class="p">()</span>
+<span class="c1">####################################</span>
+<span class="c1"># Men</span>
+<span class="c1">#h16</span>
+download.file<span class="p">(</span><span class="s">&quot;https://irma.suunnistusliitto.fi/irma/haku/ranki?id=2800&amp;laji=SUUNNISTUS&quot;</span><span class="p">,</span>
+              destfile<span class="o">=</span>temp<span class="p">,</span> method<span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
+df.h16 <span class="o">&lt;-</span> read.csv<span class="p">(</span>temp<span class="p">,</span> sep<span class="o">=</span><span class="s">&quot;;&quot;</span><span class="p">,</span> skip<span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: cannot open the connection
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.h16<span class="o">$</span><span class="kp">class</span><span class="p">[</span>df.h16<span class="o">$</span>Place <span class="o">&lt;</span> <span class="m">2000</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;h16&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.h16&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#h18</span>
+download.file<span class="p">(</span><span class="s">&quot;https://irma.suunnistusliitto.fi/irma/haku/ranki?id=2600&amp;laji=SUUNNISTUS&quot;</span><span class="p">,</span>
+              destfile<span class="o">=</span>temp<span class="p">,</span> method<span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
+df.h18 <span class="o">&lt;-</span> read.csv<span class="p">(</span>temp<span class="p">,</span> sep<span class="o">=</span><span class="s">&quot;;&quot;</span><span class="p">,</span> skip<span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: cannot open the connection
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.h18<span class="o">$</span><span class="kp">class</span><span class="p">[</span>df.h18<span class="o">$</span>Place <span class="o">&lt;</span> <span class="m">2000</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;h18&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.h18&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#h20</span>
+download.file<span class="p">(</span><span class="s">&quot;https://irma.suunnistusliitto.fi/irma/haku/ranki?id=2500&amp;laji=SUUNNISTUS&quot;</span><span class="p">,</span>
+              destfile<span class="o">=</span>temp<span class="p">,</span> method<span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
+df.h20 <span class="o">&lt;-</span> read.csv<span class="p">(</span>temp<span class="p">,</span> sep<span class="o">=</span><span class="s">&quot;;&quot;</span><span class="p">,</span> skip<span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: cannot open the connection
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.h20<span class="o">$</span><span class="kp">class</span><span class="p">[</span>df.h20<span class="o">$</span>Place <span class="o">&lt;</span> <span class="m">2000</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;h20&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.h20&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#h21</span>
+download.file<span class="p">(</span><span class="s">&quot;https://irma.suunnistusliitto.fi/irma/haku/ranki?id=1100&amp;laji=SUUNNISTUS&quot;</span><span class="p">,</span>
+              destfile<span class="o">=</span>temp<span class="p">,</span> method<span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
+df.h21 <span class="o">&lt;-</span> read.csv<span class="p">(</span>temp<span class="p">,</span> sep<span class="o">=</span><span class="s">&quot;;&quot;</span><span class="p">,</span> skip<span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: cannot open the connection
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.h21<span class="o">$</span><span class="kp">class</span><span class="p">[</span>df.h21<span class="o">$</span>Place <span class="o">&lt;</span> <span class="m">2000</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;h21&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.h21&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#h35</span>
+download.file<span class="p">(</span><span class="s">&quot;https://irma.suunnistusliitto.fi/irma/haku/ranki?id=1200&amp;laji=SUUNNISTUS&quot;</span><span class="p">,</span>
+              destfile<span class="o">=</span>temp<span class="p">,</span> method<span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
+df.h35 <span class="o">&lt;-</span> read.csv<span class="p">(</span>temp<span class="p">,</span> sep<span class="o">=</span><span class="s">&quot;;&quot;</span><span class="p">,</span> skip<span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: cannot open the connection
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.h35<span class="o">$</span><span class="kp">class</span><span class="p">[</span>df.h35<span class="o">$</span>Place <span class="o">&lt;</span> <span class="m">2000</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;h35&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.h35&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#h40</span>
+download.file<span class="p">(</span><span class="s">&quot;https://irma.suunnistusliitto.fi/irma/haku/ranki?id=1300&amp;laji=SUUNNISTUS&quot;</span><span class="p">,</span>
+              destfile<span class="o">=</span>temp<span class="p">,</span> method<span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
+df.h40 <span class="o">&lt;-</span> read.csv<span class="p">(</span>temp<span class="p">,</span> sep<span class="o">=</span><span class="s">&quot;;&quot;</span><span class="p">,</span> skip<span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: cannot open the connection
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.h40<span class="o">$</span><span class="kp">class</span><span class="p">[</span>df.h40<span class="o">$</span>Place <span class="o">&lt;</span> <span class="m">2000</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;h40&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.h40&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#h45</span>
+download.file<span class="p">(</span><span class="s">&quot;https://irma.suunnistusliitto.fi/irma/haku/ranki?id=1400&amp;laji=SUUNNISTUS&quot;</span><span class="p">,</span>
+              destfile<span class="o">=</span>temp<span class="p">,</span> method<span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
+df.h45 <span class="o">&lt;-</span> read.csv<span class="p">(</span>temp<span class="p">,</span> sep<span class="o">=</span><span class="s">&quot;;&quot;</span><span class="p">,</span> skip<span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: cannot open the connection
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.h45<span class="o">$</span><span class="kp">class</span><span class="p">[</span>df.h45<span class="o">$</span>Place <span class="o">&lt;</span> <span class="m">2000</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;h45&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.h45&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#h50</span>
+download.file<span class="p">(</span><span class="s">&quot;https://irma.suunnistusliitto.fi/irma/haku/ranki?id=1500&amp;laji=SUUNNISTUS&quot;</span><span class="p">,</span>
+              destfile<span class="o">=</span>temp<span class="p">,</span> method<span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
+df.h50 <span class="o">&lt;-</span> read.csv<span class="p">(</span>temp<span class="p">,</span> sep<span class="o">=</span><span class="s">&quot;;&quot;</span><span class="p">,</span> skip<span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: cannot open the connection
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.h50<span class="o">$</span><span class="kp">class</span><span class="p">[</span>df.h50<span class="o">$</span>Place <span class="o">&lt;</span> <span class="m">2000</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;h50&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.h50&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#h55</span>
+download.file<span class="p">(</span><span class="s">&quot;https://irma.suunnistusliitto.fi/irma/haku/ranki?id=1600&amp;laji=SUUNNISTUS&quot;</span><span class="p">,</span>
+              destfile<span class="o">=</span>temp<span class="p">,</span> method<span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
+df.h55 <span class="o">&lt;-</span> read.csv<span class="p">(</span>temp<span class="p">,</span> sep<span class="o">=</span><span class="s">&quot;;&quot;</span><span class="p">,</span> skip<span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: cannot open the connection
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.h55<span class="o">$</span><span class="kp">class</span><span class="p">[</span>df.h55<span class="o">$</span>Place <span class="o">&lt;</span> <span class="m">2000</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;h55&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.h55&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#h60</span>
+download.file<span class="p">(</span><span class="s">&quot;https://irma.suunnistusliitto.fi/irma/haku/ranki?id=1700&amp;laji=SUUNNISTUS&quot;</span><span class="p">,</span>
+              destfile<span class="o">=</span>temp<span class="p">,</span> method<span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
+df.h60 <span class="o">&lt;-</span> read.csv<span class="p">(</span>temp<span class="p">,</span> sep<span class="o">=</span><span class="s">&quot;;&quot;</span><span class="p">,</span> skip<span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: cannot open the connection
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.h60<span class="o">$</span><span class="kp">class</span><span class="p">[</span>df.h60<span class="o">$</span>Place <span class="o">&lt;</span> <span class="m">2000</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;h60&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.h60&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#h65</span>
+download.file<span class="p">(</span><span class="s">&quot;https://irma.suunnistusliitto.fi/irma/haku/ranki?id=1800&amp;laji=SUUNNISTUS&quot;</span><span class="p">,</span>
+              destfile<span class="o">=</span>temp<span class="p">,</span> method<span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
+df.h65 <span class="o">&lt;-</span> read.csv<span class="p">(</span>temp<span class="p">,</span> sep<span class="o">=</span><span class="s">&quot;;&quot;</span><span class="p">,</span> skip<span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: cannot open the connection
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.h65<span class="o">$</span><span class="kp">class</span><span class="p">[</span>df.h65<span class="o">$</span>Place <span class="o">&lt;</span> <span class="m">2000</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;h65&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.h65&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#h70</span>
+download.file<span class="p">(</span><span class="s">&quot;https://irma.suunnistusliitto.fi/irma/haku/ranki?id=1900&amp;laji=SUUNNISTUS&quot;</span><span class="p">,</span>
+              destfile<span class="o">=</span>temp<span class="p">,</span> method<span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
+df.h70 <span class="o">&lt;-</span> read.csv<span class="p">(</span>temp<span class="p">,</span> sep<span class="o">=</span><span class="s">&quot;;&quot;</span><span class="p">,</span> skip<span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: cannot open the connection
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.h70<span class="o">$</span><span class="kp">class</span><span class="p">[</span>df.h70<span class="o">$</span>Place <span class="o">&lt;</span> <span class="m">2000</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;h70&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.h70&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#h75</span>
+download.file<span class="p">(</span><span class="s">&quot;https://irma.suunnistusliitto.fi/irma/haku/ranki?id=2000&amp;laji=SUUNNISTUS&quot;</span><span class="p">,</span>
+              destfile<span class="o">=</span>temp<span class="p">,</span> method<span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
+df.h75 <span class="o">&lt;-</span> read.csv<span class="p">(</span>temp<span class="p">,</span> sep<span class="o">=</span><span class="s">&quot;;&quot;</span><span class="p">,</span> skip<span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: cannot open the connection
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.h75<span class="o">$</span><span class="kp">class</span><span class="p">[</span>df.h75<span class="o">$</span>Place <span class="o">&lt;</span> <span class="m">2000</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;h75&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.h75&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.h <span class="o">&lt;-</span> <span class="kp">rbind</span><span class="p">(</span>df.h16<span class="p">,</span>df.h18<span class="p">,</span>
+              df.h20<span class="p">,</span>df.h21<span class="p">,</span>
+              df.h35<span class="p">,</span>df.h40<span class="p">,</span>
+              df.h45<span class="p">,</span>df.h50<span class="p">,</span>
+              df.h55<span class="p">,</span>df.h60<span class="p">,</span>
+              df.h65<span class="p">,</span>df.h70<span class="p">,</span>df.h75<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.h16&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.h<span class="o">$</span>sex<span class="p">[</span>df.h<span class="o">$</span>Place <span class="o">&lt;</span> <span class="m">2000</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;herr&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.h&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">####################################</span>
+<span class="c1">####################################</span>
+<span class="c1"># Women</span>
+<span class="c1">#d16</span>
+download.file<span class="p">(</span><span class="s">&quot;https://irma.suunnistusliitto.fi/irma/haku/ranki?id=6800&amp;laji=SUUNNISTUS&quot;</span><span class="p">,</span>
+              destfile<span class="o">=</span>temp<span class="p">,</span> method<span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
+df.d16 <span class="o">&lt;-</span> read.csv<span class="p">(</span>temp<span class="p">,</span> sep<span class="o">=</span><span class="s">&quot;;&quot;</span><span class="p">,</span> skip<span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: cannot open the connection
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.d16<span class="o">$</span><span class="kp">class</span><span class="p">[</span>df.d16<span class="o">$</span>Place <span class="o">&lt;</span> <span class="m">2000</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;d16&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.d16&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#d18</span>
+download.file<span class="p">(</span><span class="s">&quot;https://irma.suunnistusliitto.fi/irma/haku/ranki?id=6600&amp;laji=SUUNNISTUS&quot;</span><span class="p">,</span>
+              destfile<span class="o">=</span>temp<span class="p">,</span> method<span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
+df.d18 <span class="o">&lt;-</span> read.csv<span class="p">(</span>temp<span class="p">,</span> sep<span class="o">=</span><span class="s">&quot;;&quot;</span><span class="p">,</span> skip<span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: cannot open the connection
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.d18<span class="o">$</span><span class="kp">class</span><span class="p">[</span>df.d18<span class="o">$</span>Place <span class="o">&lt;</span> <span class="m">2000</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;d18&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.d18&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#d20</span>
+download.file<span class="p">(</span><span class="s">&quot;https://irma.suunnistusliitto.fi/irma/haku/ranki?id=6500&amp;laji=SUUNNISTUS&quot;</span><span class="p">,</span>
+              destfile<span class="o">=</span>temp<span class="p">,</span> method<span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
+df.d20 <span class="o">&lt;-</span> read.csv<span class="p">(</span>temp<span class="p">,</span> sep<span class="o">=</span><span class="s">&quot;;&quot;</span><span class="p">,</span> skip<span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: cannot open the connection
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.d20<span class="o">$</span><span class="kp">class</span><span class="p">[</span>df.d20<span class="o">$</span>Place <span class="o">&lt;</span> <span class="m">2000</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;d20&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.d20&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#d21</span>
+download.file<span class="p">(</span><span class="s">&quot;https://irma.suunnistusliitto.fi/irma/haku/ranki?id=5100&amp;laji=SUUNNISTUS&quot;</span><span class="p">,</span>
+              destfile<span class="o">=</span>temp<span class="p">,</span> method<span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
+df.d21 <span class="o">&lt;-</span> read.csv<span class="p">(</span>temp<span class="p">,</span> sep<span class="o">=</span><span class="s">&quot;;&quot;</span><span class="p">,</span> skip<span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: cannot open the connection
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.d21<span class="o">$</span><span class="kp">class</span><span class="p">[</span>df.d21<span class="o">$</span>Place <span class="o">&lt;</span> <span class="m">2000</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;d21&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.d21&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#d35</span>
+download.file<span class="p">(</span><span class="s">&quot;https://irma.suunnistusliitto.fi/irma/haku/ranki?id=5200&amp;laji=SUUNNISTUS&quot;</span><span class="p">,</span>
+              destfile<span class="o">=</span>temp<span class="p">,</span> method<span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
+df.d35 <span class="o">&lt;-</span> read.csv<span class="p">(</span>temp<span class="p">,</span> sep<span class="o">=</span><span class="s">&quot;;&quot;</span><span class="p">,</span> skip<span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: cannot open the connection
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.d35<span class="o">$</span><span class="kp">class</span><span class="p">[</span>df.d35<span class="o">$</span>Place <span class="o">&lt;</span> <span class="m">2000</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;d35&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.d35&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#d40</span>
+download.file<span class="p">(</span><span class="s">&quot;https://irma.suunnistusliitto.fi/irma/haku/ranki?id=5300&amp;laji=SUUNNISTUS&quot;</span><span class="p">,</span>
+              destfile<span class="o">=</span>temp<span class="p">,</span> method<span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
+df.d40 <span class="o">&lt;-</span> read.csv<span class="p">(</span>temp<span class="p">,</span> sep<span class="o">=</span><span class="s">&quot;;&quot;</span><span class="p">,</span> skip<span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: cannot open the connection
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.d40<span class="o">$</span><span class="kp">class</span><span class="p">[</span>df.d40<span class="o">$</span>Place <span class="o">&lt;</span> <span class="m">2000</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;d40&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.d40&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#d45</span>
+download.file<span class="p">(</span><span class="s">&quot;https://irma.suunnistusliitto.fi/irma/haku/ranki?id=5400&amp;laji=SUUNNISTUS&quot;</span><span class="p">,</span>
+              destfile<span class="o">=</span>temp<span class="p">,</span> method<span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
+df.d45 <span class="o">&lt;-</span> read.csv<span class="p">(</span>temp<span class="p">,</span> sep<span class="o">=</span><span class="s">&quot;;&quot;</span><span class="p">,</span> skip<span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: cannot open the connection
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.d45<span class="o">$</span><span class="kp">class</span><span class="p">[</span>df.d45<span class="o">$</span>Place <span class="o">&lt;</span> <span class="m">2000</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;d45&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.d45&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#d50</span>
+download.file<span class="p">(</span><span class="s">&quot;https://irma.suunnistusliitto.fi/irma/haku/ranki?id=5500&amp;laji=SUUNNISTUS&quot;</span><span class="p">,</span>
+              destfile<span class="o">=</span>temp<span class="p">,</span> method<span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
+df.d50 <span class="o">&lt;-</span> read.csv<span class="p">(</span>temp<span class="p">,</span> sep<span class="o">=</span><span class="s">&quot;;&quot;</span><span class="p">,</span> skip<span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: cannot open the connection
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.d50<span class="o">$</span><span class="kp">class</span><span class="p">[</span>df.d50<span class="o">$</span>Place <span class="o">&lt;</span> <span class="m">2000</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;d50&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.d50&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#d55</span>
+download.file<span class="p">(</span><span class="s">&quot;https://irma.suunnistusliitto.fi/irma/haku/ranki?id=5600&amp;laji=SUUNNISTUS&quot;</span><span class="p">,</span>
+              destfile<span class="o">=</span>temp<span class="p">,</span> method<span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
+df.d55 <span class="o">&lt;-</span> read.csv<span class="p">(</span>temp<span class="p">,</span> sep<span class="o">=</span><span class="s">&quot;;&quot;</span><span class="p">,</span> skip<span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: cannot open the connection
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.d55<span class="o">$</span><span class="kp">class</span><span class="p">[</span>df.d55<span class="o">$</span>Place <span class="o">&lt;</span> <span class="m">2000</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;d55&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.d55&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#d60</span>
+download.file<span class="p">(</span><span class="s">&quot;https://irma.suunnistusliitto.fi/irma/haku/ranki?id=5700&amp;laji=SUUNNISTUS&quot;</span><span class="p">,</span>
+              destfile<span class="o">=</span>temp<span class="p">,</span> method<span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
+df.d60 <span class="o">&lt;-</span> read.csv<span class="p">(</span>temp<span class="p">,</span> sep<span class="o">=</span><span class="s">&quot;;&quot;</span><span class="p">,</span> skip<span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: cannot open the connection
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.d60<span class="o">$</span><span class="kp">class</span><span class="p">[</span>df.d60<span class="o">$</span>Place <span class="o">&lt;</span> <span class="m">2000</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;d60&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.d60&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#d65</span>
+download.file<span class="p">(</span><span class="s">&quot;https://irma.suunnistusliitto.fi/irma/haku/ranki?id=5800&amp;laji=SUUNNISTUS&quot;</span><span class="p">,</span>
+              destfile<span class="o">=</span>temp<span class="p">,</span> method<span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
+df.d65 <span class="o">&lt;-</span> read.csv<span class="p">(</span>temp<span class="p">,</span> sep<span class="o">=</span><span class="s">&quot;;&quot;</span><span class="p">,</span> skip<span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: cannot open the connection
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.d65<span class="o">$</span><span class="kp">class</span><span class="p">[</span>df.d65<span class="o">$</span>Place <span class="o">&lt;</span> <span class="m">2000</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;d65&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.d65&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#d70</span>
+download.file<span class="p">(</span><span class="s">&quot;https://irma.suunnistusliitto.fi/irma/haku/ranki?id=5900&amp;laji=SUUNNISTUS&quot;</span><span class="p">,</span>
+              destfile<span class="o">=</span>temp<span class="p">,</span> method<span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
+df.d70 <span class="o">&lt;-</span> read.csv<span class="p">(</span>temp<span class="p">,</span> sep<span class="o">=</span><span class="s">&quot;;&quot;</span><span class="p">,</span> skip<span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: cannot open the connection
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.d70<span class="o">$</span><span class="kp">class</span><span class="p">[</span>df.d70<span class="o">$</span>Place <span class="o">&lt;</span> <span class="m">2000</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;d70&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.d70&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#d75</span>
+download.file<span class="p">(</span><span class="s">&quot;https://irma.suunnistusliitto.fi/irma/haku/ranki?id=6000&amp;laji=SUUNNISTUS&quot;</span><span class="p">,</span>
+              destfile<span class="o">=</span>temp<span class="p">,</span> method<span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
+df.d75 <span class="o">&lt;-</span> read.csv<span class="p">(</span>temp<span class="p">,</span> sep<span class="o">=</span><span class="s">&quot;;&quot;</span><span class="p">,</span> skip<span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: cannot open the connection
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.d75<span class="o">$</span><span class="kp">class</span><span class="p">[</span>df.d75<span class="o">$</span>Place <span class="o">&lt;</span> <span class="m">2000</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;d75&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.d75&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.d <span class="o">&lt;-</span> <span class="kp">rbind</span><span class="p">(</span>df.d16<span class="p">,</span>df.d18<span class="p">,</span>
+              df.d20<span class="p">,</span>df.d21<span class="p">,</span>
+              df.d35<span class="p">,</span>df.d40<span class="p">,</span>
+              df.d45<span class="p">,</span>df.d50<span class="p">,</span>
+              df.d55<span class="p">,</span>df.d60<span class="p">,</span>
+              df.d65<span class="p">,</span>df.d70<span class="p">,</span>df.d75<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.d16&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.d<span class="o">$</span>sex<span class="p">[</span>df.d<span class="o">$</span>Place <span class="o">&lt;</span> <span class="m">2000</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;damen&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.d&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df <span class="o">&lt;-</span> <span class="kp">rbind</span><span class="p">(</span>df.d<span class="p">,</span>df.h<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.d&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">####################################</span>
+<span class="c1">####################################</span>
+<span class="c1"># Next, we need a data file where clubnames are linked with town and their coordinates</span>
+<span class="c1"># You can make the data, </span>
+<span class="c1"># 1. by taking the list of clubs from here:</span>
+<span class="c1"># https://irma.suunnistusliitto.fi/irma/public/club/list</span>
+<span class="c1"># And,</span>
+<span class="c1"># A good tutorial for making the geocoding can be found in here</span>
+<span class="c1"># http://allthingsr.blogspot.fi/2012/01/geocode-your-data-using-r-json-and.html</span>
+<span class="c1">####################################</span>
+<span class="c1"># Here I&#39;m provind a link to a file </span>
+<span class="c1"># Load a data, which structures as</span>
+<span class="c1"># Town,Club,lat,long</span>
+<span class="c1">####################################</span>
+
+df.loc <span class="o">&lt;-</span> read.csv<span class="p">(</span><span class="s">&quot;http://markuskainu.fi/data/blog/df.seura.loc.en.csv&quot;</span><span class="p">)</span>
+
+df.x <span class="o">&lt;-</span> join<span class="p">(</span>df<span class="p">,</span>df.loc<span class="p">,</span>by<span class="o">=</span><span class="s">&quot;Club&quot;</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object of type &#39;closure&#39; is not subsettable
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">####################################</span>
+<span class="c1">####################################</span>
+<span class="c1"># Suomen shapefile GADM-tietokannasta</span>
+<span class="c1">####################################</span>
+<span class="kn">library</span><span class="p">(</span>sp<span class="p">)</span>
+con <span class="o">&lt;-</span> <span class="kp">url</span><span class="p">(</span><span class="s">&quot;http://gadm.org/data/rda/FIN_adm0.RData&quot;</span><span class="p">)</span>
+<span class="kp">print</span><span class="p">(</span><span class="kp">load</span><span class="p">(</span>con<span class="p">))</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## [1] &quot;gadm&quot;
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kp">close</span><span class="p">(</span>con<span class="p">)</span>
+
+<span class="c1"># shapefile into data.frame</span>
+gpclibPermit<span class="p">()</span> 
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## [1] TRUE
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">gadm<span class="o">@</span>data<span class="o">$</span>id <span class="o">&lt;-</span> <span class="kp">rownames</span><span class="p">(</span>gadm<span class="o">@</span>data<span class="p">)</span>
+gadm.points <span class="o">&lt;-</span> fortify<span class="p">(</span>gadm<span class="p">,</span> region<span class="o">=</span><span class="s">&quot;id&quot;</span><span class="p">)</span>
+gadm.df <span class="o">&lt;-</span> <span class="kp">merge</span><span class="p">(</span>gadm.points<span class="p">,</span> gadm<span class="o">@</span>data<span class="p">,</span> by<span class="o">=</span><span class="s">&quot;id&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h2>Top 100 runners in H21-class</h2>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">###########################################</span>
+<span class="c1">###########################################</span>
+<span class="c1"># Kaikki yhdellä kartalla </span>
+df.x.h21 <span class="o">&lt;-</span> <span class="kp">subset</span><span class="p">(</span>df.x<span class="p">,</span> class <span class="o">==</span> <span class="s">&#39;h21&#39;</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.x.h21 <span class="o">&lt;-</span> <span class="kp">subset</span><span class="p">(</span>df.x.h21<span class="p">,</span> Place <span class="o">&lt;</span> <span class="m">101</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x.h21&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">cnames <span class="o">&lt;-</span> df.x.h21<span class="p">[</span><span class="o">-</span><span class="kp">which</span><span class="p">(</span><span class="kp">duplicated</span><span class="p">(</span>df.x.h21<span class="o">$</span>Club<span class="p">)),</span> <span class="p">]</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x.h21&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">ggplot<span class="p">(</span>gadm.df<span class="p">,</span> aes<span class="p">(</span>long<span class="p">,</span>lat<span class="p">,</span>group<span class="o">=</span>group<span class="p">))</span> <span class="o">+</span>
+  geom_polygon<span class="p">(</span>fill<span class="o">=</span><span class="s">&quot;Azure 1&quot;</span><span class="p">,</span> color <span class="o">=</span> <span class="s">&quot;Dark Gray&quot;</span><span class="p">)</span> <span class="o">+</span> geom_point<span class="p">(</span>data<span class="o">=</span>df.x.h21<span class="p">,</span> aes<span class="p">(</span>long<span class="p">,</span>lat<span class="p">,</span> group<span class="o">=</span>Club<span class="p">,</span> color<span class="o">=</span>Place<span class="p">),</span> size<span class="o">=</span><span class="m">3</span><span class="p">,</span> <span class="c1">#shape=1,</span>
+             position<span class="o">=</span>position_jitter<span class="p">(</span>width<span class="o">=</span><span class="m">.1</span><span class="p">,</span>height<span class="o">=</span><span class="m">.1</span><span class="p">))</span> <span class="o">+</span>
+  coord_map<span class="p">(</span>project<span class="o">=</span><span class="s">&quot;orthographic&quot;</span><span class="p">)</span> <span class="o">+</span> 
+  geom_text<span class="p">(</span>data<span class="o">=</span>cnames<span class="p">,</span> aes<span class="p">(</span>long<span class="p">,</span> lat<span class="p">,</span> label <span class="o">=</span> Club<span class="p">,</span> group<span class="o">=</span>Club<span class="p">),</span> 
+            size<span class="o">=</span><span class="m">3</span><span class="p">,</span> color<span class="o">=</span><span class="s">&quot;black&quot;</span><span class="p">,</span> hjust<span class="o">=</span><span class="m">0.5</span><span class="p">,</span> vjust<span class="o">=</span><span class="m">-2.0</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x.h21&#39; not found
+</code></pre></div>
+<h2>Top 100 runners in all classes (16-75, men and women)</h2>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">###########################################</span>
+<span class="c1">###########################################</span>
+<span class="c1"># Kaikki yhdellä kartalla </span>
+cnames <span class="o">&lt;-</span> df.x<span class="p">[</span><span class="o">-</span><span class="kp">which</span><span class="p">(</span><span class="kp">duplicated</span><span class="p">(</span>df.x<span class="o">$</span>Club<span class="p">)),</span> <span class="p">]</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">ggplot<span class="p">(</span>gadm.df<span class="p">,</span> aes<span class="p">(</span>long<span class="p">,</span>lat<span class="p">,</span>group<span class="o">=</span>group<span class="p">))</span> <span class="o">+</span>
+  geom_polygon<span class="p">(</span>fill<span class="o">=</span><span class="s">&quot;Azure 1&quot;</span><span class="p">,</span> color <span class="o">=</span> <span class="s">&quot;Dark Gray&quot;</span><span class="p">)</span> <span class="o">+</span> 
+  coord_map<span class="p">(</span>project<span class="o">=</span><span class="s">&quot;orthographic&quot;</span><span class="p">)</span> <span class="o">+</span>
+  geom_point<span class="p">(</span>data<span class="o">=</span>df.x<span class="p">,</span> aes<span class="p">(</span>long<span class="p">,</span>lat<span class="p">,</span> group<span class="o">=</span>Club<span class="p">,</span> color<span class="o">=</span>Place<span class="p">),</span> size<span class="o">=</span><span class="m">2</span><span class="p">,</span> shape<span class="o">=</span><span class="m">1</span><span class="p">,</span>
+             position<span class="o">=</span>position_jitter<span class="p">(</span>width<span class="o">=</span><span class="m">.1</span><span class="p">,</span>height<span class="o">=</span><span class="m">.1</span><span class="p">))</span> <span class="o">+</span>
+  geom_text<span class="p">(</span>data<span class="o">=</span>cnames<span class="p">,</span> aes<span class="p">(</span>long<span class="p">,</span> lat<span class="p">,</span> label <span class="o">=</span> Town<span class="p">,</span> group<span class="o">=</span>Town<span class="p">),</span> 
+            size<span class="o">=</span><span class="m">3</span><span class="p">,</span> color<span class="o">=</span><span class="s">&quot;black&quot;</span><span class="p">,</span> hjust<span class="o">=</span><span class="m">0.5</span><span class="p">,</span> vjust<span class="o">=</span><span class="m">-2.0</span><span class="p">,</span>
+            family<span class="o">=</span><span class="s">&quot;Russo One&quot;</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x&#39; not found
+</code></pre></div>
+<h2>Top 100 in each class by sex</h2>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># Kunkin sarjan 100 parasta sukupuolittain</span>
+df.x.100 <span class="o">&lt;-</span> <span class="kp">subset</span><span class="p">(</span>df.x<span class="p">,</span> Place <span class="o">&lt;</span> <span class="m">100</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">ggplot<span class="p">(</span>gadm.df<span class="p">,</span> aes<span class="p">(</span>long<span class="p">,</span>lat<span class="p">,</span>group<span class="o">=</span>group<span class="p">))</span> <span class="o">+</span>
+  geom_polygon<span class="p">(</span>fill<span class="o">=</span><span class="s">&quot;Azure 1&quot;</span><span class="p">,</span> color <span class="o">=</span> <span class="s">&quot;Dark Gray&quot;</span><span class="p">)</span> <span class="o">+</span> 
+  coord_map<span class="p">(</span>project<span class="o">=</span><span class="s">&quot;orthographic&quot;</span><span class="p">)</span> <span class="o">+</span>
+  geom_point<span class="p">(</span>data<span class="o">=</span>df.x.100<span class="p">,</span> aes<span class="p">(</span>long<span class="p">,</span>lat<span class="p">,</span> group<span class="o">=</span>Club<span class="p">,</span> color<span class="o">=</span>Place<span class="p">),</span> size<span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="c1">#shape=1,</span>
+             position<span class="o">=</span>position_jitter<span class="p">(</span>width<span class="o">=</span><span class="m">.1</span><span class="p">,</span>height<span class="o">=</span><span class="m">.1</span><span class="p">))</span> <span class="o">+</span>
+  facet_wrap<span class="p">(</span><span class="o">~</span>sex<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x.100&#39; not found
+</code></pre></div>
+<h2>Top 100 in each classes faceted by sex and grouped class</h2>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># Koukkupolvet vs. aikuiset vs. nuoret</span>
+df.x.100 <span class="o">&lt;-</span> <span class="kp">subset</span><span class="p">(</span>df.x<span class="p">,</span> Place <span class="o">&lt;</span> <span class="m">100</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.x.100<span class="o">$</span><span class="kp">cat</span><span class="p">[</span>df.x.100<span class="o">$</span>class <span class="o">==</span> <span class="s">&#39;d16&#39;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;1. junior&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x.100&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.x.100<span class="o">$</span><span class="kp">cat</span><span class="p">[</span>df.x.100<span class="o">$</span>class <span class="o">==</span> <span class="s">&#39;d18&#39;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;1. junior&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x.100&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.x.100<span class="o">$</span><span class="kp">cat</span><span class="p">[</span>df.x.100<span class="o">$</span>class <span class="o">==</span> <span class="s">&#39;d20&#39;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;1. junior&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x.100&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.x.100<span class="o">$</span><span class="kp">cat</span><span class="p">[</span>df.x.100<span class="o">$</span>class <span class="o">==</span> <span class="s">&#39;h16&#39;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;1. junior&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x.100&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.x.100<span class="o">$</span><span class="kp">cat</span><span class="p">[</span>df.x.100<span class="o">$</span>class <span class="o">==</span> <span class="s">&#39;h18&#39;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;1. junior&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x.100&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.x.100<span class="o">$</span><span class="kp">cat</span><span class="p">[</span>df.x.100<span class="o">$</span>class <span class="o">==</span> <span class="s">&#39;h20&#39;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;1. junior&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x.100&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.x.100<span class="o">$</span><span class="kp">cat</span><span class="p">[</span>df.x.100<span class="o">$</span>class <span class="o">==</span> <span class="s">&#39;h21&#39;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;2. work-age&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x.100&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.x.100<span class="o">$</span><span class="kp">cat</span><span class="p">[</span>df.x.100<span class="o">$</span>class <span class="o">==</span> <span class="s">&#39;h35&#39;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;2. work-age&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x.100&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.x.100<span class="o">$</span><span class="kp">cat</span><span class="p">[</span>df.x.100<span class="o">$</span>class <span class="o">==</span> <span class="s">&#39;h40&#39;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;2. work-age&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x.100&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.x.100<span class="o">$</span><span class="kp">cat</span><span class="p">[</span>df.x.100<span class="o">$</span>class <span class="o">==</span> <span class="s">&#39;h45&#39;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;2. work-age&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x.100&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.x.100<span class="o">$</span><span class="kp">cat</span><span class="p">[</span>df.x.100<span class="o">$</span>class <span class="o">==</span> <span class="s">&#39;h50&#39;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;2. work-age&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x.100&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.x.100<span class="o">$</span><span class="kp">cat</span><span class="p">[</span>df.x.100<span class="o">$</span>class <span class="o">==</span> <span class="s">&#39;h55&#39;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;2. work-age&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x.100&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.x.100<span class="o">$</span><span class="kp">cat</span><span class="p">[</span>df.x.100<span class="o">$</span>class <span class="o">==</span> <span class="s">&#39;d21&#39;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;2. work-age&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x.100&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.x.100<span class="o">$</span><span class="kp">cat</span><span class="p">[</span>df.x.100<span class="o">$</span>class <span class="o">==</span> <span class="s">&#39;d35&#39;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;2. work-age&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x.100&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.x.100<span class="o">$</span><span class="kp">cat</span><span class="p">[</span>df.x.100<span class="o">$</span>class <span class="o">==</span> <span class="s">&#39;d40&#39;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;2. work-age&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x.100&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.x.100<span class="o">$</span><span class="kp">cat</span><span class="p">[</span>df.x.100<span class="o">$</span>class <span class="o">==</span> <span class="s">&#39;d45&#39;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;2. work-age&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x.100&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.x.100<span class="o">$</span><span class="kp">cat</span><span class="p">[</span>df.x.100<span class="o">$</span>class <span class="o">==</span> <span class="s">&#39;d50&#39;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;2. work-age&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x.100&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.x.100<span class="o">$</span><span class="kp">cat</span><span class="p">[</span>df.x.100<span class="o">$</span>class <span class="o">==</span> <span class="s">&#39;d55&#39;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;2. work-age&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x.100&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.x.100<span class="o">$</span><span class="kp">cat</span><span class="p">[</span>df.x.100<span class="o">$</span>class <span class="o">==</span> <span class="s">&#39;h60&#39;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;3. senior&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x.100&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.x.100<span class="o">$</span><span class="kp">cat</span><span class="p">[</span>df.x.100<span class="o">$</span>class <span class="o">==</span> <span class="s">&#39;h65&#39;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;3. senior&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x.100&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.x.100<span class="o">$</span><span class="kp">cat</span><span class="p">[</span>df.x.100<span class="o">$</span>class <span class="o">==</span> <span class="s">&#39;h70&#39;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;3. senior&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x.100&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.x.100<span class="o">$</span><span class="kp">cat</span><span class="p">[</span>df.x.100<span class="o">$</span>class <span class="o">==</span> <span class="s">&#39;h75&#39;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;3. senior&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x.100&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.x.100<span class="o">$</span><span class="kp">cat</span><span class="p">[</span>df.x.100<span class="o">$</span>class <span class="o">==</span> <span class="s">&#39;d60&#39;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;3. senior&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x.100&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.x.100<span class="o">$</span><span class="kp">cat</span><span class="p">[</span>df.x.100<span class="o">$</span>class <span class="o">==</span> <span class="s">&#39;d65&#39;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;3. senior&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x.100&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.x.100<span class="o">$</span><span class="kp">cat</span><span class="p">[</span>df.x.100<span class="o">$</span>class <span class="o">==</span> <span class="s">&#39;d70&#39;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;3. senior&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x.100&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">df.x.100<span class="o">$</span><span class="kp">cat</span><span class="p">[</span>df.x.100<span class="o">$</span>class <span class="o">==</span> <span class="s">&#39;d75&#39;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&#39;3. senior&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x.100&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">ggplot<span class="p">(</span>gadm.df<span class="p">,</span> aes<span class="p">(</span>long<span class="p">,</span>lat<span class="p">,</span>group<span class="o">=</span>group<span class="p">))</span> <span class="o">+</span>
+  geom_polygon<span class="p">(</span>fill<span class="o">=</span><span class="s">&quot;Azure 1&quot;</span><span class="p">,</span> color <span class="o">=</span> <span class="s">&quot;Dark Gray&quot;</span><span class="p">)</span> <span class="o">+</span> 
+  coord_map<span class="p">(</span>project<span class="o">=</span><span class="s">&quot;orthographic&quot;</span><span class="p">)</span> <span class="o">+</span>
+  geom_point<span class="p">(</span>data<span class="o">=</span>df.x.100<span class="p">,</span> aes<span class="p">(</span>long<span class="p">,</span>lat<span class="p">,</span> group<span class="o">=</span>Club<span class="p">,</span> color<span class="o">=</span>Place<span class="p">),</span> size<span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="c1">#shape=1,</span>
+             position<span class="o">=</span>position_jitter<span class="p">(</span>width<span class="o">=</span><span class="m">.1</span><span class="p">,</span>height<span class="o">=</span><span class="m">.1</span><span class="p">))</span> <span class="o">+</span>
+  coord_map<span class="p">(</span>project<span class="o">=</span><span class="s">&quot;azequidistant&quot;</span><span class="p">)</span> <span class="o">+</span> facet_grid<span class="p">(</span><span class="kp">cat</span><span class="o">~</span>sex<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;df.x.100&#39; not found
+</code></pre></div>
+<h2>Conclusions</h2>
+
+<p>As concluding remarks one can say that this approach could proven rather fruitful when discussing the regional equality issues in organising major events. Further North you go the more expensive it becomes for the masses to show up. This can result non-participation  due to lack of financial or motivational resources.</p>
+
+</div>
+
+
+      <footer>
+
+        <div class="row">
+          <div class="col-lg-12">
+
+            <ul class="list-unstyled">
+              <li class="pull-right"><a href="#top">Back to top</a></li>     
+            </ul>
+
+<!--
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons -käyttölupa" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Tämä teos on lisensoitu <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Nimeä 4.0 Kansainvälinen -käyttöluvalla</a>.
+
+-->
+
+            
+
+            <p>Theme by <a href="http://thomaspark.me" rel="nofollow">Thomas Park</a>
+            <p>Code released under the <a href="https://github.com/thomaspark/bootswatch/blob/gh-pages/LICENSE">MIT License</a>.</p>
+            <p>Based on <a href="http://getbootstrap.com" rel="nofollow">Bootstrap</a>. Icons from <a href="http://fortawesome.github.io/Font-Awesome/" rel="nofollow">Font Awesome</a>. Web fonts from <a href="http://www.google.com/webfonts" rel="nofollow">Google</a>.</p>
+
+        </div>
+
+<!--
+<blockquote class="pull-left">
+  <p>Give a man a fish and you feed him for a day; teach a man to fish and you feed him for a lifetime</p>
+  <small>Anne Isabella Thackeray Ritchie <cite title="Source Title">Mrs. Dymond (1885)</cite></small>
+</blockquote>
+-->
+      </footer>
+
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://bootswatch.com/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="http://bootswatch.com/assets/js/bootswatch.js"></script>
+  </body>
+</html>
+
+

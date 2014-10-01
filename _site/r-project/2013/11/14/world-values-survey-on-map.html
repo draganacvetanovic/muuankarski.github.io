@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Visualising World Values Survey on a Map in R</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- change the folder below to switch themes -->
+    <link rel="stylesheet" href="/css/yeti/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="/css/assets/css/bootswatch.min.css"> 
+
+
+<!-- to quickly try out themes, activate this and tweak the url!
+    <link rel="stylesheet" href="./bootstrap.css" media="screen">
+-->
+
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="/css/syntax.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/footer.css">
+
+        <!-- Font avesome -->
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+  </head>
+  <body>
+    <script src="http://bootswatch.com/assets/js/bsa.js"></script>
+
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="" class="navbar-brand">Markus Kainu</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+         <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+          <li><a href="/blog.html" title="blog">blog</a></li>
+          <li><a href="/about.html" title="about">about</a></li>
+          <li><a href="/resources.html" title="resources">resources</a></li>
+         </ul>
+<!--        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+                <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">R<span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="R">
+                <li><a href="/R/lue.html">Datan lukeminen & kirjoittaminen</a></li>
+                <li><a href="/R/manipulointi.html">Manipuloiminen</a></li>
+                <li><a href="/R/funktiot.html">Funktiot</a></li>
+                <li><a href="/R/grafiikka.html">Grafiikka</a></li>
+                <li><a href="/R/survey.html">Survey</a></li>
+              </ul>         
+         </ul>
+          <ul class="nav navbar-nav">
+                <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Toistettava tutkimus<span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="toistettava">
+                <li><a href="/toistettava/knitr.html">knitr</a></li>
+                <li><a href="/toistettava/kirjoita.html">Kirjoittaminen</a></li>
+              </ul>         
+         </ul>
+         <ul class="nav navbar-nav">
+                <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Versiohallinta<span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="versio">
+                <li><a href="/versio/git.html">git</a></li>
+              </ul>         
+         </ul>
+         <ul class="nav navbar-nav">
+                <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Julkaiseminen<span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="julkaisu">
+                <li><a href="/julkaisu/latex.html">latex</a></li>
+                <li><a href="/julkaisu/jekyll.html">jekyll</a></li>
+                <li><a href="/julkaisu/pandoc.html">Pandoc</a></li>
+              </ul>         
+         </ul>
+-->
+
+
+         <ul class="nav navbar-nav navbar-right">
+            <li><a title="blog RSS" href="http://markuskainu.fi/feed.xml"><i class="fa fa-rss fa-2x"></i></a></li>li>
+            <li><a title="code" href="http://github.com/muuankarski"> <i class="fa fa-github fa-2x"></i></a></li>
+            <li><a title="tweets" href="https://twitter.com/muuankarski"> <i class="fa fa-twitter fa-2x"></i></a></li>
+            <li><a href="mailto:markuskainu@gmail.com?Subject=Email me!" title="Email!" target="_top"><i class="fa fa-envelope fa-2x"></i></a></li>                        
+            </li>
+
+                        
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container">
+
+          <h2>Visualising World Values Survey on a Map in R</h2>
+<p class="meta">14 Nov 2013</p>
+
+<div class="post">
+<p>I&#39;m attending the <em>3rd international annual research conference: &quot;Cultural and Economic changes under cross-national perspective&quot;</em> at the <a href="http://lcsr.hse.ru/">Laboratory for Comparative Social Reseach at the Moscow Higher School of Economics</a> currently that gathers together scholars around the world interested in comparative social research. <a href="https://rawgithub.com/muuankarski/attributions/master/attrib_slides.html">in my presentation</a> I used some spatial visualizations and therefore I received several questions on how to implement such illustrations. In this brief demonstration I will show how to visualize country level data from <a href="http://www.worldvaluessurvey.org/">World Values Survey</a>(WVS) that is a widely used dataset in this context.</p>
+
+<p>I used the data for the first time yesterday when I downloaded the A &amp; B datasets from year 2005. As I&#39;m not familiar with dataset I won&#39;t go into details of if, but just bluntly implement a simple workflow for these spatial illustrations.</p>
+
+<h2>Loading the WVS and extracting the summary statistics</h2>
+
+<p>Again due to my incompetence in using the data I&#39;m not using any weights in deriving the summary statistics but just rely on the data as it is. If you want to improve this aspect you can consult for example <a href="http://markuskainu.fi/r-tutorial/survey/">my tutorial on using survey-package in R</a>.</p>
+
+<p>The variable of interest here is <code>V75: BE WILLING TO FIGHT IN WAR FOR YOUR COUNTRY</code> as it was discussed in the presentation by professor Ronald Inglehart. I found it interesting in his presentation that all the Scandinavian countries had a relatively high rates for this willingness, and I felt that there may a spatial story behind this, ie. approximity to Russian Federation.</p>
+
+<p>The question behind the key variable is formulated as:</p>
+
+<blockquote>
+<p>V75. Of course, we all hope that there will not be another war, but if it were to come to that, would you be
+willing to fight for your country? (Code one answer):</p>
+</blockquote>
+
+<p>And it has values and labels as:</p>
+
+<table>
+<tr>
+<th>Value</th><th>Label</th>
+<tr>
+<tr>
+<td>-5</td><td>Missing; Unknown</td>
+<tr>
+<tr>
+<td>-4</td><td>Not asked</td>
+<tr>
+<tr>
+<td>-3</td><td>Not applicable</td>
+<tr>
+<tr>
+<td>-2</td><td>No answer</td>
+<tr>
+<tr>
+<td>-1</td><td>Don't know'</td>
+<tr>
+<tr>
+<td>1</td><td>yes</td>
+<tr>
+<tr>
+<td>0</td><td>no</td>
+<tr>
+</table>
+
+<p></br></p>
+
+<p>I&#39;m focusing only in the <code>yes</code> or <code>no</code> values, or in <code>yes</code> in particular.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;opts_chunk&#39; not found
+</code></pre></div>
+<p>The data is not provided in any generic for but only in proprietary SAS/SPSS/Stata format, but using <strong>foreign</strong>-package it is doable. (a .csv or .Rdata would perhaps be a good idea in these days!)</p>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>foreign<span class="p">)</span>
+<span class="c1"># Load the oridinal dataset into R</span>
+datB <span class="o">&lt;-</span> read.dta<span class="p">(</span><span class="s">&quot;DATA_LOCATION_HERE/wvs2005_v20090901b.dta&quot;</span><span class="p">)</span>
+datA <span class="o">&lt;-</span> read.dta<span class="p">(</span><span class="s">&quot;DATA_LOCATION_HERE/wvs2005_v20090901a.dta&quot;</span><span class="p">)</span>
+<span class="c1"># Create  proportional tables from both data by country</span>
+<span class="c1">## there are some issues with country labels so I convert</span>
+<span class="c1">## the variable into a string</span>
+datA<span class="o">$</span>v2 <span class="o">&lt;-</span> <span class="kp">as.character</span><span class="p">(</span>datA<span class="o">$</span>v2<span class="p">)</span>
+datB<span class="o">$</span>v2 <span class="o">&lt;-</span> <span class="kp">as.character</span><span class="p">(</span>datB<span class="o">$</span>v2<span class="p">)</span>
+<span class="c1"># Create unweighted proportional tables from both datas</span>
+tblA <span class="o">&lt;-</span> <span class="kp">as.data.frame</span><span class="p">(</span><span class="kp">prop.table</span><span class="p">(</span><span class="kp">table</span><span class="p">(</span>datA<span class="o">$</span>v2<span class="p">,</span>datA<span class="o">$</span>v75<span class="p">),</span><span class="m">1</span><span class="p">)</span><span class="o">*</span><span class="m">100</span><span class="p">)</span>
+tblB <span class="o">&lt;-</span> <span class="kp">as.data.frame</span><span class="p">(</span><span class="kp">prop.table</span><span class="p">(</span><span class="kp">table</span><span class="p">(</span>datB<span class="o">$</span>v2<span class="p">,</span>datB<span class="o">$</span>v75<span class="p">),</span><span class="m">1</span><span class="p">)</span><span class="o">*</span><span class="m">100</span><span class="p">)</span>
+<span class="c1"># Combine the tables</span>
+tbl <span class="o">&lt;-</span> <span class="kp">rbind</span><span class="p">(</span>tblA<span class="p">,</span>tblB<span class="p">)</span>
+<span class="c1"># subset the tables to include only ues or no options</span>
+tbl2 <span class="o">&lt;-</span> tbl<span class="p">[</span>tbl<span class="o">$</span>Var2 <span class="o">%in%</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;yes&quot;</span><span class="p">,</span><span class="s">&quot;no&quot;</span><span class="p">),]</span>
+tbl2<span class="o">$</span>Var2 <span class="o">&lt;-</span> <span class="kp">factor</span><span class="p">(</span>tbl2<span class="o">$</span>Var2<span class="p">,</span> levels<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;yes&quot;</span><span class="p">,</span><span class="s">&quot;no&quot;</span><span class="p">))</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: unable to open file: &#39;Tiedostoa tai hakemistoa ei ole&#39;
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: unable to open file: &#39;Tiedostoa tai hakemistoa ei ole&#39;
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;datA&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;datB&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;datA&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;datB&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;tblA&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;tbl&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;tbl2&#39; not found
+</code></pre></div>
+<h2>Distribution of answers by country as histogram</h2>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">## To nicely order the plot I will melt the data into wide format, reorder it </span>
+<span class="c1">## and convert it back to long format for plotting</span>
+<span class="kn">library</span><span class="p">(</span>reshape2<span class="p">)</span>
+orderDat <span class="o">&lt;-</span> dcast<span class="p">(</span>tbl2<span class="p">,</span> Var1 <span class="o">~</span>Var2<span class="p">,</span> value.var<span class="o">=</span><span class="s">&quot;Freq&quot;</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;tbl2&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">orderDat<span class="o">$</span>Var1 <span class="o">&lt;-</span> reorder<span class="p">(</span>orderDat<span class="o">$</span>Var1<span class="p">,</span> orderDat<span class="o">$</span>yes<span class="p">,</span> median<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;orderDat&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">tblPlot <span class="o">&lt;-</span> melt<span class="p">(</span>orderDat<span class="p">,</span> id.vars<span class="o">=</span><span class="s">&quot;Var1&quot;</span><span class="p">,</span> measure.vars<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;yes&quot;</span><span class="p">,</span><span class="s">&quot;no&quot;</span><span class="p">))</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;orderDat&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># And then the plot</span>
+<span class="c1">## relevelling the levels to match the daulft colors better</span>
+tblPlot<span class="o">$</span>variable <span class="o">&lt;-</span> <span class="kp">factor</span><span class="p">(</span>tblPlot<span class="o">$</span>variable<span class="p">,</span> 
+                           levels<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;no&quot;</span><span class="p">,</span><span class="s">&quot;yes&quot;</span><span class="p">))</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;tblPlot&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Loading required package: methods
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">ggplot<span class="p">(</span>tblPlot<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>Var1<span class="p">,</span>y<span class="o">=</span>value<span class="p">,</span>fill<span class="o">=</span>variable<span class="p">))</span> <span class="o">+</span>
+    geom_bar<span class="p">(</span>stat<span class="o">=</span><span class="s">&quot;identity&quot;</span><span class="p">)</span> <span class="o">+</span>
+      coord_flip<span class="p">()</span> <span class="o">+</span> 
+  theme<span class="p">(</span>legend.position<span class="o">=</span><span class="s">&quot;top&quot;</span><span class="p">)</span> <span class="o">+</span>
+  theme<span class="p">(</span>axis.text.x <span class="o">=</span> element_text<span class="p">(</span>size<span class="o">=</span><span class="m">14</span><span class="p">),</span>
+        axis.text.y <span class="o">=</span> element_text<span class="p">(</span>size<span class="o">=</span><span class="m">14</span><span class="p">),</span>
+        legend.text <span class="o">=</span> element_text<span class="p">(</span>size<span class="o">=</span><span class="m">14</span><span class="p">))</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;tblPlot&#39; not found
+</code></pre></div>
+<h2>Plotting the data on the map</h2>
+
+<h3>Downloading the geographical data</h3>
+
+<p>Here I&#39;m downloading the whole world shapefile from <a href="http://www-mappinghacks.com">www-mappinghacks.com</a>. Of course there are many more options if available, but I picked it as it small size file but it still has the details needed. (I&#39;m a novice in using world levels shapefiles fo please let me know of better resources).</p>
+
+<p>I greatly recommend you to familiarize yourself with theoretical literature of spatial reasoning in social sciences for example by reading <a href="http://books.google.ru/books/about/The_Sociology_of_Spatial_Inequality.html?id=67P6jXQ05LAC&amp;redir_esc=y"><em>Lobao, Linda M., Gregory Hooks, ja Ann R. Tickamyer. The Sociology of Spatial Inequality. State University of New York Press, 2007.</em></a> as well as with open source ecosystem for geographics information systems through <a href="http://www.asdar-book.org/">Bivand, Roger S., Edzer J. Pebesma, ja Virgilio Gómez-Rubio. Applied Spatial Data Analysis with R. 2. p. Springer, 2013.</a>. <a href="http://cran.r-project.org/web/views/Spatial.html">CRAN Task View: Analysis of Spatial Data</a> is a crucial resources if you want to push this approach further in your analysis. </p>
+<div class="highlight"><pre><code class="language-r" data-lang="r">download.file<span class="p">(</span><span class="s">&quot;http://www.mappinghacks.com/data/TM_WORLD_BORDERS-0.2.zip&quot;</span><span class="p">,</span> 
+              destfile <span class="o">=</span> <span class="s">&quot;worldborders.zip&quot;</span><span class="p">)</span>
+<span class="c1"># unzip to SpatialPolygonsDataFrame</span>
+unzip<span class="p">(</span><span class="s">&quot;worldborders.zip&quot;</span><span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>rgdal<span class="p">)</span>
+shape <span class="o">&lt;-</span> readOGR<span class="p">(</span>dsn <span class="o">=</span> <span class="s">&quot;YOUR WORKING DIRECTORY HERE/&quot;</span><span class="p">,</span> 
+                 layer <span class="o">=</span> <span class="s">&quot;TM_WORLD_BORDERS-0.2&quot;</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Loading required package: sp
+## rgdal: version: 0.8-16, (SVN revision 498)
+## Geospatial Data Abstraction Library extensions to R successfully loaded
+## Loaded GDAL runtime: GDAL 1.10.1, released 2013/08/26
+## Path to GDAL shared files: /usr/share/gdal/1.10
+## Loaded PROJ.4 runtime: Rel. 4.8.0, 6 March 2012, [PJ_VERSION: 480]
+## Path to PROJ.4 shared files: (autodetected)
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: Cannot open file
+</code></pre></div>
+<h3>Converting the shape into data.frame and merging the attribute data with it</h3>
+
+<p>I&#39;m taking a bit of a shortcut here as I&#39;m converting the <code>SpatialPolygonDataFrame</code> right away into regular <code>data.frame</code> using <code>fortify</code>-function from <strong>ggplot2</strong>.</p>
+
+<p>Thereafter I will merge the <code>yes</code> values from the WVS data summary. This merging is often problematic due to mismatch in the country names in different datasets. In this example I&#39;m only changing the first letters of countrynames from WVS into uppercase and hope that match will happen. Most probably you would need to create a key table for perfect match.</p>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># fortify the data</span>
+<span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
+shape<span class="o">$</span>id <span class="o">&lt;-</span> <span class="kp">rownames</span><span class="p">(</span>shape<span class="o">@</span>data<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;shape&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">map.points <span class="o">&lt;-</span> fortify<span class="p">(</span>shape<span class="p">,</span> region <span class="o">=</span> <span class="s">&quot;id&quot;</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;shape&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">map.df <span class="o">&lt;-</span> <span class="kp">merge</span><span class="p">(</span>map.points<span class="p">,</span> shape<span class="p">,</span> by <span class="o">=</span> <span class="s">&quot;id&quot;</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: error in evaluating the argument &#39;x&#39; in selecting a method for function &#39;merge&#39;: Error: object &#39;map.points&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># subset only the yeas options</span>
+yesDat <span class="o">&lt;-</span> tblPlot<span class="p">[</span>tblPlot<span class="o">$</span>variable <span class="o">==</span> <span class="s">&quot;yes&quot;</span><span class="p">,]</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;tblPlot&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># Function the uppercase the first characters</span>
+<span class="m">.</span>simpleCap <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>x<span class="p">)</span> <span class="p">{</span>
+    s <span class="o">&lt;-</span> <span class="kp">strsplit</span><span class="p">(</span>x<span class="p">,</span> <span class="s">&quot; &quot;</span><span class="p">)[[</span><span class="m">1</span><span class="p">]]</span>
+    <span class="kp">paste</span><span class="p">(</span><span class="kp">toupper</span><span class="p">(</span><span class="kp">substring</span><span class="p">(</span>s<span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">)),</span> <span class="kp">substring</span><span class="p">(</span>s<span class="p">,</span> <span class="m">2</span><span class="p">),</span>
+          sep <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span> collapse <span class="o">=</span> <span class="s">&quot; &quot;</span><span class="p">)</span>
+<span class="p">}</span>
+yesDat<span class="o">$</span>Var1 <span class="o">&lt;-</span> <span class="kp">as.character</span><span class="p">(</span>yesDat<span class="o">$</span>Var1<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;yesDat&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">yesDat<span class="o">$</span>Var1C <span class="o">&lt;-</span> <span class="kp">sapply</span><span class="p">(</span>yesDat<span class="o">$</span>Var1<span class="p">,</span> <span class="m">.</span>simpleCap<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;yesDat&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># merge the datas using country names</span>
+map.df <span class="o">&lt;-</span> <span class="kp">merge</span><span class="p">(</span>map.df<span class="p">,</span>yesDat<span class="p">,</span>
+                by.x<span class="o">=</span><span class="s">&quot;NAME&quot;</span><span class="p">,</span>
+                by.y<span class="o">=</span><span class="s">&quot;Var1C&quot;</span><span class="p">,</span> 
+                all.x<span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: error in evaluating the argument &#39;x&#39; in selecting a method for function &#39;merge&#39;: Error: object &#39;map.df&#39; not found
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># order the data for smooth plotting</span>
+map.df <span class="o">&lt;-</span> map.df<span class="p">[</span><span class="kp">order</span><span class="p">(</span>map.df<span class="o">$</span><span class="kp">order</span><span class="p">),</span> <span class="p">]</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;map.df&#39; not found
+</code></pre></div>
+<h3>A whole world using mercator projetion</h3>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
+ggplot<span class="p">(</span>map.df<span class="p">,</span> aes<span class="p">(</span>long<span class="p">,</span>lat<span class="p">,</span>group<span class="o">=</span>group<span class="p">))</span> <span class="o">+</span>
+  geom_polygon<span class="p">(</span>aes<span class="p">(</span>fill<span class="o">=</span>value<span class="p">))</span> <span class="o">+</span>
+  geom_polygon<span class="p">(</span>data <span class="o">=</span> map.df<span class="p">,</span> aes<span class="p">(</span>long<span class="p">,</span>lat<span class="p">),</span> 
+               fill<span class="o">=</span><span class="kc">NA</span><span class="p">,</span> 
+               color <span class="o">=</span> <span class="s">&quot;white&quot;</span><span class="p">,</span>
+               size<span class="o">=</span><span class="m">0.1</span><span class="p">)</span> <span class="o">+</span> <span class="c1"># white borders</span>
+  scale_fill_gradient2<span class="p">(</span>low<span class="o">=</span><span class="s">&quot;white&quot;</span><span class="p">,</span> high<span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">)</span><span class="o">+</span>
+    theme<span class="p">(</span>legend.position<span class="o">=</span><span class="s">&quot;top&quot;</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;map.df&#39; not found
+</code></pre></div>
+<h3>Using Orthographic projection centered at Moscow</h3>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
+ggplot<span class="p">(</span>map.df<span class="p">,</span> aes<span class="p">(</span>long<span class="p">,</span>lat<span class="p">,</span>group<span class="o">=</span>group<span class="p">))</span> <span class="o">+</span>
+  geom_polygon<span class="p">(</span>aes<span class="p">(</span>fill<span class="o">=</span>value<span class="p">))</span> <span class="o">+</span>
+  geom_polygon<span class="p">(</span>data <span class="o">=</span> map.df<span class="p">,</span> aes<span class="p">(</span>long<span class="p">,</span>lat<span class="p">),</span> 
+               fill<span class="o">=</span><span class="kc">NA</span><span class="p">,</span> 
+               color <span class="o">=</span> <span class="s">&quot;white&quot;</span><span class="p">,</span>
+               size<span class="o">=</span><span class="m">0.1</span><span class="p">)</span> <span class="o">+</span> <span class="c1"># white borders</span>
+  scale_fill_gradient2<span class="p">(</span>low<span class="o">=</span><span class="s">&quot;white&quot;</span><span class="p">,</span> high<span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">)</span><span class="o">+</span>
+    theme<span class="p">(</span>legend.position<span class="o">=</span><span class="s">&quot;top&quot;</span><span class="p">)</span> <span class="o">+</span>
+    coord_map<span class="p">(</span><span class="s">&quot;ortho&quot;</span><span class="p">,</span> orientation<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">55</span><span class="p">,</span> <span class="m">37</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: object &#39;map.df&#39; not found
+</code></pre></div>
+<p>The grey stands for missing data that covers most of the countries. That is due to both missing data in VWS 2005 and errors in merging the attribute data with the shape. Also, the issue of spatial story behind the scandinavians willingness to fight wars did not become much clearer as a results of this one hour exercise.</p>
+
+</div>
+
+
+      <footer>
+
+        <div class="row">
+          <div class="col-lg-12">
+
+            <ul class="list-unstyled">
+              <li class="pull-right"><a href="#top">Back to top</a></li>     
+            </ul>
+
+<!--
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons -käyttölupa" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Tämä teos on lisensoitu <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Nimeä 4.0 Kansainvälinen -käyttöluvalla</a>.
+
+-->
+
+            
+
+            <p>Theme by <a href="http://thomaspark.me" rel="nofollow">Thomas Park</a>
+            <p>Code released under the <a href="https://github.com/thomaspark/bootswatch/blob/gh-pages/LICENSE">MIT License</a>.</p>
+            <p>Based on <a href="http://getbootstrap.com" rel="nofollow">Bootstrap</a>. Icons from <a href="http://fortawesome.github.io/Font-Awesome/" rel="nofollow">Font Awesome</a>. Web fonts from <a href="http://www.google.com/webfonts" rel="nofollow">Google</a>.</p>
+
+        </div>
+
+<!--
+<blockquote class="pull-left">
+  <p>Give a man a fish and you feed him for a day; teach a man to fish and you feed him for a lifetime</p>
+  <small>Anne Isabella Thackeray Ritchie <cite title="Source Title">Mrs. Dymond (1885)</cite></small>
+</blockquote>
+-->
+      </footer>
+
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://bootswatch.com/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="http://bootswatch.com/assets/js/bootswatch.js"></script>
+  </body>
+</html>
+
+
