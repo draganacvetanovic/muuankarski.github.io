@@ -13,16 +13,11 @@ Tervetuloa kotisivuilleni
 
 Olen kvantitatiivisesti suuntautunut yhteiskuntatieteilijä, joka on erikoistunut **köyhyyteen** ja **taloudelliseen eriarvoisuuteen** **post-sosialistisissa maissa**, sekä **avoimen koodin tutkimusohjelmistojen nikkarointiin**. Blogissa käsittelen avoimen koodin ohjelmistojen käyttöä yhteiskuntatieteellisessä tutkimuksessa, painottaen erityisesti R-kieltä.
 
-Contact me
-------------------
-
-You can contact me via email at <a href="mailto:markuskainu@gmail.com">markuskainu@gmail.com</a> or on <a href="http://twitter.com/muuankarski">twitter</a>.
-
 Latest in the blog
 -------------------
 
 <div id="posts">
-    {% for post in site.posts offset: 0 limit: 3 %}
+    {% for post in site.posts offset: 0 limit: 5 %}
         <small style="color: #999;">{{ post.date | date: "%b %d, %Y" }}</small> 
         <a href="{{ post.url }}">{{ post.title }}</a>
         <br />
