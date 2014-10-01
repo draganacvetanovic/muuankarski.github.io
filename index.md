@@ -17,7 +17,7 @@ Latest in the blog
 -------------------
 
 <div id="posts">
-    {% for post in site.posts offset: 0 limit: 5 %}
+    {% for post in site.posts offset: 0 limit: 3 %}
         <small style="color: #999;">{{ post.date | date: "%b %d, %Y" }}</small> 
         <a href="{{ post.url }}">{{ post.title }}</a>
         <br />

@@ -1,12 +1,12 @@
 {
-    "contents" : "---\nlayout: default\ntitle: Markus Kainu home page\n---\n\nWelcome to my home page\n------------------\n\nI'm a **quantitatively orientated** social scientist specialized in **poverty** and **inequalities** in **post-socialist space**, and in **open source research software carpentry**. Based in Helsinki, Finland. Blog discusses mainly how R language can be applied in social science research. Mostly in English, sometimes in Finnish.\n\nTervetuloa kotisivuilleni\n------------------\n\nOlen kvantitatiivisesti suuntautunut yhteiskuntatieteilijä, joka on erikoistunut **köyhyyteen** ja **taloudelliseen eriarvoisuuteen** **post-sosialistisissa maissa**, sekä **avoimen koodin tutkimusohjelmistojen nikkarointiin**. Blogissa käsittelen avoimen koodin ohjelmistojen käyttöä yhteiskuntatieteellisessä tutkimuksessa, painottaen erityisesti R-kieltä.\n\nLatest in the blog\n-------------------\n\n<div id=\"posts\">\n    {% for post in site.posts offset: 0 limit: 5 %}\n        <small style=\"color: #999;\">{{ post.date | date: \"%b %d, %Y\" }}</small> \n        <a href=\"{{ post.url }}\">{{ post.title }}</a>\n        <br />\n        {% if post.summary %}\n            <small>{{ post.summary }}</small>\n        {% endif %}\n    {% endfor %}\n    </div>",
+    "contents" : "---\nlayout: default\ntitle: Markus Kainu home page\n---\n\nWelcome to my home page\n------------------\n\nI'm a **quantitatively orientated** social scientist specialized in **poverty** and **inequalities** in **post-socialist space**, and in **open source research software carpentry**. Based in Helsinki, Finland. Blog discusses mainly how R language can be applied in social science research. Mostly in English, sometimes in Finnish.\n\nTervetuloa kotisivuilleni\n------------------\n\nOlen kvantitatiivisesti suuntautunut yhteiskuntatieteilijä, joka on erikoistunut **köyhyyteen** ja **taloudelliseen eriarvoisuuteen** **post-sosialistisissa maissa**, sekä **avoimen koodin tutkimusohjelmistojen nikkarointiin**. Blogissa käsittelen avoimen koodin ohjelmistojen käyttöä yhteiskuntatieteellisessä tutkimuksessa, painottaen erityisesti R-kieltä.\n\nLatest in the blog\n-------------------\n\n<div id=\"posts\">\n    {% for post in site.posts offset: 0 limit: 3 %}\n        <small style=\"color: #999;\">{{ post.date | date: \"%b %d, %Y\" }}</small> \n        <a href=\"{{ post.url }}\">{{ post.title }}</a>\n        <br />\n        {% if post.summary %}\n            <small>{{ post.summary }}</small>\n        {% endif %}\n    {% endfor %}\n    </div>",
     "created" : 1412180458742.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "2274100673",
+    "hash" : "3900510485",
     "id" : "58AA49",
-    "lastKnownWriteTime" : 1412182548,
+    "lastKnownWriteTime" : 1412182596,
     "path" : "~/web/markuskainu/index.md",
     "project_path" : "index.md",
     "properties" : {
