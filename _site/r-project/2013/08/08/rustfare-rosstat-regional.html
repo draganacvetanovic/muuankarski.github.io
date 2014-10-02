@@ -125,9 +125,9 @@
 </ul>
 
 <h2>Installation</h2>
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>devtools<span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>devtools<span class="p">)</span>
 install_github<span class="p">(</span>repo <span class="o">=</span> <span class="s">&quot;rustfare&quot;</span><span class="p">,</span> username <span class="o">=</span> <span class="s">&quot;muuankarski&quot;</span><span class="p">)</span>
-<span class="kn">library</span><span class="p">(</span>rustfare<span class="p">)</span>
+library<span class="p">(</span>rustfare<span class="p">)</span>
 </code></pre></div>
 <h2>Examples: Rosstat regional statistics</h2>
 
@@ -147,30 +147,30 @@ install_github<span class="p">(</span>repo <span class="o">=</span> <span class=
 </ol>
 
 <p>The code below returns a dataset at <strong>federal district level</strong> on <strong>infant mortality</strong> and plots a line graph over time.</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>rustfare<span class="p">)</span> <span class="c1"># load rustfare for obtaining the data</span>
-<span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span> <span class="c1"># load ggplot2 for plotting</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>rustfare<span class="p">)</span> <span class="c1"># load rustfare for obtaining the data</span>
+library<span class="p">(</span>ggplot2<span class="p">)</span> <span class="c1"># load ggplot2 for plotting</span>
 dat <span class="o">&lt;-</span> GetRosstat<span class="p">(</span><span class="s">&quot;infant_mortality_rate&quot;</span><span class="p">,</span>
                    <span class="s">&quot;federal_district&quot;</span><span class="p">)</span>
-<span class="kp">head</span><span class="p">(</span>dat<span class="p">,</span> <span class="m">3</span><span class="p">)</span> <span class="c1"># print the first 6 rows of data.frame</span>
+head<span class="p">(</span>dat<span class="p">,</span> <span class="m">3</span><span class="p">)</span> <span class="c1"># print the first 6 rows of data.frame</span>
 ggplot<span class="p">(</span>dat<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>year<span class="p">,</span>y<span class="o">=</span>value<span class="p">,</span>color<span class="o">=</span>region_en<span class="p">))</span> <span class="o">+</span>
   geom_point<span class="p">()</span> <span class="o">+</span> 
   geom_line<span class="p">()</span> <span class="o">+</span>
-  geom_text<span class="p">(</span>data <span class="o">=</span> <span class="kp">subset</span><span class="p">(</span>dat<span class="p">,</span> year <span class="o">==</span> <span class="m">2010</span><span class="p">),</span> 
+  geom_text<span class="p">(</span>data <span class="o">=</span> subset<span class="p">(</span>dat<span class="p">,</span> year <span class="o">==</span> <span class="m">2010</span><span class="p">),</span> 
             aes<span class="p">(</span>x<span class="o">=</span>year<span class="p">,</span>y<span class="o">=</span>value<span class="p">,</span>
                 color<span class="o">=</span>region_en<span class="p">,</span>label<span class="o">=</span>region_en<span class="p">),</span>
             size<span class="o">=</span><span class="m">3</span><span class="p">,</span> hjust<span class="o">=</span><span class="m">1</span><span class="p">)</span> <span class="o">+</span>
   theme<span class="p">(</span>legend.position<span class="o">=</span><span class="s">&quot;none&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>Next chunk of code extracts the same indicators but at the regional level</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>rustfare<span class="p">)</span> <span class="c1"># load rustfare for obtaining the data</span>
-<span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span> <span class="c1"># load ggplot2 for plotting</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>rustfare<span class="p">)</span> <span class="c1"># load rustfare for obtaining the data</span>
+library<span class="p">(</span>ggplot2<span class="p">)</span> <span class="c1"># load ggplot2 for plotting</span>
 dat <span class="o">&lt;-</span> GetRosstat<span class="p">(</span><span class="s">&quot;infant_mortality_rate&quot;</span><span class="p">,</span>
                    <span class="s">&quot;region&quot;</span><span class="p">)</span>
-<span class="kp">head</span><span class="p">(</span>dat<span class="p">,</span> <span class="m">3</span><span class="p">)</span> <span class="c1"># print the first 6 rows of data.frame</span>
+head<span class="p">(</span>dat<span class="p">,</span> <span class="m">3</span><span class="p">)</span> <span class="c1"># print the first 6 rows of data.frame</span>
 ggplot<span class="p">(</span>dat<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>year<span class="p">,</span>y<span class="o">=</span>value<span class="p">,</span>color<span class="o">=</span>region_en<span class="p">))</span> <span class="o">+</span>
   geom_point<span class="p">()</span> <span class="o">+</span> 
   geom_line<span class="p">()</span> <span class="o">+</span>
-  geom_text<span class="p">(</span>data <span class="o">=</span> <span class="kp">subset</span><span class="p">(</span>dat<span class="p">,</span> year <span class="o">==</span> <span class="m">2010</span><span class="p">),</span> 
+  geom_text<span class="p">(</span>data <span class="o">=</span> subset<span class="p">(</span>dat<span class="p">,</span> year <span class="o">==</span> <span class="m">2010</span><span class="p">),</span> 
             aes<span class="p">(</span>x<span class="o">=</span>year<span class="p">,</span>y<span class="o">=</span>value<span class="p">,</span>
                 color<span class="o">=</span>region_en<span class="p">,</span>label<span class="o">=</span>region_en<span class="p">),</span>
             size<span class="o">=</span><span class="m">3</span><span class="p">,</span> hjust<span class="o">=</span><span class="m">1</span><span class="p">)</span> <span class="o">+</span>

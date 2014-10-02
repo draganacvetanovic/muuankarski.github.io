@@ -54,7 +54,9 @@ I'm focusing only in the `yes` or `no` values, or in `yes` in particular.
 
 
 ```{rwvsopt, echo=FALSE}
-opts_chunk$set(echo=TRUE,eval=TRUE, cache=TRUE,message=FALSE,warning=FALSE,fig.width=12,fig.height=10)
+library(knitr)
+opts_chunk$set(echo=TRUE,eval=TRUE, cache=FALSE,message=FALSE,warning=FALSE,fig.width=12,fig.height=10)
+
 ```
 
 
@@ -82,10 +84,11 @@ tbl2$Var2 <- factor(tbl2$Var2, levels=c("yes","no"))
 
 
 ```{rwvs2, echo=FALSE, eval=TRUE}
+
 library(foreign)
 # Load the oridinal dataset into R
-datB <- read.dta("~/workspace/data/wvs/wvs2005_v20090901b.dta")
-datA <- read.dta("~/workspace/data/wvs/wvs2005_v20090901a.dta")
+datB <- read.dta("~/data/wvs/wvs2005_v20090901b.dta")
+datA <- read.dta("~/data/wvs/wvs2005_v20090901a.dta")
 # Create  proportional tables from both data by country
 ## there are some issues with country labels so I convert
 ## the variable into a string
@@ -147,7 +150,7 @@ shape <- readOGR(dsn = "YOUR WORKING DIRECTORY HERE/",
 
 ```{rwvsLoadShape2, echo=FALSE}
 library(rgdal)
-shape <- readOGR(dsn = "/home/aurelius/workspace/data/shapefiles/world/TM_WORLD_BORDERS_SIMPL-0.3/", layer = "TM_WORLD_BORDERS_SIMPL-0.3")
+shape <- readOGR(dsn = "/home/aurelius/data/shapefiles/world/TM_WORLD_BORDERS_SIMPL-0.3/", layer = "TM_WORLD_BORDERS_SIMPL-0.3")
 ```
 
 ### Converting the shape into data.frame and merging the attribute data with it

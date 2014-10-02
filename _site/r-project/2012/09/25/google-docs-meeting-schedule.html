@@ -117,20 +117,20 @@
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#Download and clean the data</span>
 
 <span class="c1"># load the packages</span>
-<span class="kn">library</span><span class="p">(</span>RCurl<span class="p">)</span>
+library<span class="p">(</span>RCurl<span class="p">)</span>
 </code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Loading required package: methods
 ## Loading required package: bitops
-</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
-<span class="kn">library</span><span class="p">(</span>reshape2<span class="p">)</span>
-<span class="kn">library</span><span class="p">(</span>car<span class="p">)</span>
-<span class="kn">library</span><span class="p">(</span>plyr<span class="p">)</span>
-<span class="kn">library</span><span class="p">(</span>stringr<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>ggplot2<span class="p">)</span>
+library<span class="p">(</span>reshape2<span class="p">)</span>
+library<span class="p">(</span>car<span class="p">)</span>
+library<span class="p">(</span>plyr<span class="p">)</span>
+library<span class="p">(</span>stringr<span class="p">)</span>
 <span class="c1"># copy the url of the csv-file from google docs</span>
 myCsv <span class="o">&lt;-</span> getURL<span class="p">(</span><span class="s">&quot;https://docs.google.com/spreadsheet/pub?key=0AqQZEZLGjzKAdHAtUmdPcGVNMDlkUzh4SFhWMDBqT3c&amp;single=true&amp;gid=0&amp;output=csv&quot;</span><span class="p">)</span>
 <span class="c1"># read as data frame</span>
-df <span class="o">&lt;-</span> read.csv<span class="p">(</span><span class="kp">textConnection</span><span class="p">(</span>myCsv<span class="p">),</span> na.strings <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+df <span class="o">&lt;-</span> read.csv<span class="p">(</span>textConnection<span class="p">(</span>myCsv<span class="p">),</span> na.strings <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
 <span class="c1"># choose all but the first colunm (time stamp)</span>
-df2 <span class="o">&lt;-</span> df<span class="p">[</span><span class="kt">c</span><span class="p">(</span><span class="m">2</span><span class="o">:</span><span class="m">12</span><span class="p">)]</span>
+df2 <span class="o">&lt;-</span> df<span class="p">[</span>c<span class="p">(</span><span class="m">2</span><span class="o">:</span><span class="m">12</span><span class="p">)]</span>
 
 <span class="c1"># melt it into long format for ggplot2</span>
 df.l <span class="o">&lt;-</span> melt<span class="p">(</span>data<span class="o">=</span>df2<span class="p">,</span>
@@ -138,7 +138,7 @@ id.vars<span class="o">=</span><span class="s">&quot;Name&quot;</span><span clas
 </code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Warning: attributes are not identical across measure variables; they will
 ## be dropped
 </code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># remove missing values</span>
-df.l <span class="o">&lt;-</span> df.l<span class="p">[</span><span class="o">!</span><span class="kp">is.na</span><span class="p">(</span>df.l<span class="o">$</span>value<span class="p">),]</span>
+df.l <span class="o">&lt;-</span> df.l<span class="p">[</span><span class="o">!</span>is.na<span class="p">(</span>df.l<span class="o">$</span>value<span class="p">),]</span>
 <span class="c1"># replace queues of dots from variable names</span>
 df.l<span class="o">$</span>variable <span class="o">&lt;-</span> str_replace_all<span class="p">(</span>df.l<span class="o">$</span>variable<span class="p">,</span>
 pattern<span class="o">=</span><span class="s">&quot;[..]&quot;</span><span class="p">,</span> replacement<span class="o">=</span><span class="s">&quot;_&quot;</span><span class="p">)</span>
@@ -154,7 +154,7 @@ stackdir<span class="o">=</span><span class="s">&quot;center&quot;</span><span c
 theme<span class="p">(</span>axis.text.x<span class="o">=</span>element_text<span class="p">(</span>angle<span class="o">=</span><span class="m">90</span><span class="p">))</span> <span class="o">+</span>
 theme<span class="p">(</span>legend.position<span class="o">=</span><span class="s">&quot;top&quot;</span><span class="p">)</span> <span class="o">+</span>
 guides<span class="p">(</span>fill <span class="o">=</span> guide_legend<span class="p">(</span>keywidth<span class="o">=</span><span class="m">3</span><span class="p">))</span> <span class="o">+</span>
-scale_fill_manual<span class="p">(</span>values<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;yellow&quot;</span><span class="p">,</span><span class="s">&quot;red&quot;</span><span class="p">,</span><span class="s">&quot;green&quot;</span><span class="p">))</span>
+scale_fill_manual<span class="p">(</span>values<span class="o">=</span>c<span class="p">(</span><span class="s">&quot;yellow&quot;</span><span class="p">,</span><span class="s">&quot;red&quot;</span><span class="p">,</span><span class="s">&quot;green&quot;</span><span class="p">))</span>
 </code></pre></div>
 <p><img src="/figure/source/2012-09-25-google-docs-meeting-schedule/unnamed-chunk-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
 

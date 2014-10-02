@@ -54,9 +54,6 @@ I'm focusing only in the `yes` or `no` values, or in `yes` in particular.
 
 
 
-```
-## Error: object 'opts_chunk' not found
-```
 
 
 The data is not provided in any generic for but only in proprietary SAS/SPSS/Stata format, but using **foreign**-package it is doable. (a .csv or .Rdata would perhaps be a good idea in these days!)
@@ -84,41 +81,6 @@ tbl2$Var2 <- factor(tbl2$Var2, levels=c("yes","no"))
 
 
 
-```
-## Error: unable to open file: 'Tiedostoa tai hakemistoa ei ole'
-```
-
-```
-## Error: unable to open file: 'Tiedostoa tai hakemistoa ei ole'
-```
-
-```
-## Error: object 'datA' not found
-```
-
-```
-## Error: object 'datB' not found
-```
-
-```
-## Error: object 'datA' not found
-```
-
-```
-## Error: object 'datB' not found
-```
-
-```
-## Error: object 'tblA' not found
-```
-
-```
-## Error: object 'tbl' not found
-```
-
-```
-## Error: object 'tbl2' not found
-```
 
 ## Distribution of answers by country as histogram
 
@@ -128,48 +90,13 @@ tbl2$Var2 <- factor(tbl2$Var2, levels=c("yes","no"))
 ## and convert it back to long format for plotting
 library(reshape2)
 orderDat <- dcast(tbl2, Var1 ~Var2, value.var="Freq")
-```
-
-```
-## Error: object 'tbl2' not found
-```
-
-```r
 orderDat$Var1 <- reorder(orderDat$Var1, orderDat$yes, median)
-```
-
-```
-## Error: object 'orderDat' not found
-```
-
-```r
 tblPlot <- melt(orderDat, id.vars="Var1", measure.vars=c("yes","no"))
-```
-
-```
-## Error: object 'orderDat' not found
-```
-
-```r
 # And then the plot
 ## relevelling the levels to match the daulft colors better
 tblPlot$variable <- factor(tblPlot$variable, 
                            levels=c("no","yes"))
-```
-
-```
-## Error: object 'tblPlot' not found
-```
-
-```r
 library(ggplot2)
-```
-
-```
-## Loading required package: methods
-```
-
-```r
 ggplot(tblPlot, aes(x=Var1,y=value,fill=variable)) +
     geom_bar(stat="identity") +
       coord_flip() + 
@@ -179,9 +106,7 @@ ggplot(tblPlot, aes(x=Var1,y=value,fill=variable)) +
         legend.text = element_text(size=14))
 ```
 
-```
-## Error: object 'tblPlot' not found
-```
+![plot of chunk wvsBarplot](/figure/source/2013-11-14-world-values-survey-on-map/wvsBarplot.png) 
 
 ## Plotting the data on the map
 
@@ -206,17 +131,10 @@ shape <- readOGR(dsn = "YOUR WORKING DIRECTORY HERE/",
 
 
 ```
-## Loading required package: sp
-## rgdal: version: 0.8-16, (SVN revision 498)
-## Geospatial Data Abstraction Library extensions to R successfully loaded
-## Loaded GDAL runtime: GDAL 1.10.1, released 2013/08/26
-## Path to GDAL shared files: /usr/share/gdal/1.10
-## Loaded PROJ.4 runtime: Rel. 4.8.0, 6 March 2012, [PJ_VERSION: 480]
-## Path to PROJ.4 shared files: (autodetected)
-```
-
-```
-## Error: Cannot open file
+## OGR data source with driver: ESRI Shapefile 
+## Source: "/home/aurelius/data/shapefiles/world/TM_WORLD_BORDERS_SIMPL-0.3/", layer: "TM_WORLD_BORDERS_SIMPL-0.3"
+## with 246 features and 11 fields
+## Feature type: wkbPolygon with 2 dimensions
 ```
 
 ### Converting the shape into data.frame and merging the attribute data with it
@@ -231,38 +149,10 @@ Thereafter I will merge the `yes` values from the WVS data summary. This merging
 # fortify the data
 library(ggplot2)
 shape$id <- rownames(shape@data)
-```
-
-```
-## Error: object 'shape' not found
-```
-
-```r
 map.points <- fortify(shape, region = "id")
-```
-
-```
-## Error: object 'shape' not found
-```
-
-```r
 map.df <- merge(map.points, shape, by = "id")
-```
-
-```
-## Error: error in evaluating the argument 'x' in selecting a method for function 'merge': Error: object 'map.points' not found
-```
-
-```r
 # subset only the yeas options
 yesDat <- tblPlot[tblPlot$variable == "yes",]
-```
-
-```
-## Error: object 'tblPlot' not found
-```
-
-```r
 # Function the uppercase the first characters
 .simpleCap <- function(x) {
     s <- strsplit(x, " ")[[1]]
@@ -270,39 +160,14 @@ yesDat <- tblPlot[tblPlot$variable == "yes",]
           sep = "", collapse = " ")
 }
 yesDat$Var1 <- as.character(yesDat$Var1)
-```
-
-```
-## Error: object 'yesDat' not found
-```
-
-```r
 yesDat$Var1C <- sapply(yesDat$Var1, .simpleCap)
-```
-
-```
-## Error: object 'yesDat' not found
-```
-
-```r
 # merge the datas using country names
 map.df <- merge(map.df,yesDat,
                 by.x="NAME",
                 by.y="Var1C", 
                 all.x=TRUE)
-```
-
-```
-## Error: error in evaluating the argument 'x' in selecting a method for function 'merge': Error: object 'map.df' not found
-```
-
-```r
 # order the data for smooth plotting
 map.df <- map.df[order(map.df$order), ]
-```
-
-```
-## Error: object 'map.df' not found
 ```
 
 ### A whole world using mercator projetion
@@ -320,9 +185,7 @@ ggplot(map.df, aes(long,lat,group=group)) +
     theme(legend.position="top")
 ```
 
-```
-## Error: object 'map.df' not found
-```
+![plot of chunk wvsMercator](/figure/source/2013-11-14-world-values-survey-on-map/wvsMercator.png) 
 
 ### Using Orthographic projection centered at Moscow
 
@@ -341,9 +204,7 @@ ggplot(map.df, aes(long,lat,group=group)) +
     coord_map("ortho", orientation=c(55, 37, 0))
 ```
 
-```
-## Error: object 'map.df' not found
-```
+![plot of chunk wvsOrtho](/figure/source/2013-11-14-world-values-survey-on-map/wvsOrtho.png) 
 
 The grey stands for missing data that covers most of the countries. That is due to both missing data in VWS 2005 and errors in merging the attribute data with the shape. Also, the issue of spatial story behind the scandinavians willingness to fight wars did not become much clearer as a results of this one hour exercise.
 

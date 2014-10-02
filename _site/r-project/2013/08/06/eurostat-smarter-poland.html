@@ -115,17 +115,17 @@ Tools for accessing and processing datasets presented on the blog SmarterPoland.
 <p>But in real terms it has functionality only towards Eurostat. Here is a brief demo how you can search for <em>material deprivation</em> and then create a line plot at NUTS2 level.</p>
 
 <h2>Search</h2>
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>SmarterPoland<span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>SmarterPoland<span class="p">)</span>
 searchresults <span class="o">&lt;-</span> grepEurostatTOC<span class="p">(</span><span class="s">&quot;material deprivation&quot;</span><span class="p">)</span>
 df <span class="o">&lt;-</span> getEurostatRCV<span class="p">(</span>kod <span class="o">=</span> <span class="s">&quot;ilc_mddd21&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h2>Plot at nuts2-level</h2>
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># time variable into numerical</span>
-df<span class="o">$</span>time <span class="o">&lt;-</span> <span class="kp">as.numeric</span><span class="p">(</span><span class="kp">levels</span><span class="p">(</span>df<span class="o">$</span>time<span class="p">))[</span>df<span class="o">$</span>time<span class="p">]</span>
-cname <span class="o">&lt;-</span> <span class="kp">subset</span><span class="p">(</span>df<span class="p">,</span> time <span class="o">==</span> <span class="m">2011</span><span class="p">)</span>
+df<span class="o">$</span>time <span class="o">&lt;-</span> as.numeric<span class="p">(</span>levels<span class="p">(</span>df<span class="o">$</span>time<span class="p">))[</span>df<span class="o">$</span>time<span class="p">]</span>
+cname <span class="o">&lt;-</span> subset<span class="p">(</span>df<span class="p">,</span> time <span class="o">==</span> <span class="m">2011</span><span class="p">)</span>
 
 <span class="c1"># plot</span>
-<span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
+library<span class="p">(</span>ggplot2<span class="p">)</span>
 ggplot<span class="p">(</span>df<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>time<span class="p">,</span>y<span class="o">=</span>value<span class="p">,</span> color<span class="o">=</span>geo<span class="p">,</span>group<span class="o">=</span>geo<span class="p">))</span> <span class="o">+</span> 
   geom_point<span class="p">()</span> <span class="o">+</span> geom_line<span class="p">()</span> <span class="o">+</span>
   geom_text<span class="p">(</span>data<span class="o">=</span>cname<span class="p">,</span> 
@@ -133,19 +133,19 @@ ggplot<span class="p">(</span>df<span class="p">,</span> aes<span class="p">(</s
   theme<span class="p">(</span>legend.position<span class="o">=</span><span class="s">&quot;none&quot;</span><span class="p">)</span> <span class="o">+</span>
   labs<span class="p">(</span>title<span class="o">=</span><span class="s">&quot;material deprivation in EU at NUTS2-level&quot;</span><span class="p">,</span>
        y<span class="o">=</span><span class="s">&quot;population share (%)&quot;</span><span class="p">)</span> <span class="o">+</span>
-  coord_cartesian<span class="p">(</span>xlim<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">2003</span><span class="p">,</span><span class="m">2012</span><span class="p">))</span> <span class="o">+</span>
+  coord_cartesian<span class="p">(</span>xlim<span class="o">=</span>c<span class="p">(</span><span class="m">2003</span><span class="p">,</span><span class="m">2012</span><span class="p">))</span> <span class="o">+</span>
   scale_x_continuous<span class="p">(</span>breaks <span class="o">=</span> <span class="m">2003</span><span class="o">:</span><span class="m">2011</span><span class="p">)</span>
 </code></pre></div>
 <h2>Plot at nuts1-level</h2>
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># subset geo-names only lenght of 2 characters</span>
-df<span class="o">$</span>geo <span class="o">&lt;-</span> <span class="kp">as.character</span><span class="p">(</span>df<span class="o">$</span>geo<span class="p">)</span>
-df<span class="o">$</span>geo.n <span class="o">&lt;-</span> <span class="kp">nchar</span><span class="p">(</span>df<span class="o">$</span>geo<span class="p">)</span>
-df <span class="o">&lt;-</span> <span class="kp">subset</span><span class="p">(</span>df<span class="p">,</span> geo.n <span class="o">&lt;</span> <span class="m">3</span><span class="p">)</span>
+df<span class="o">$</span>geo <span class="o">&lt;-</span> as.character<span class="p">(</span>df<span class="o">$</span>geo<span class="p">)</span>
+df<span class="o">$</span>geo.n <span class="o">&lt;-</span> nchar<span class="p">(</span>df<span class="o">$</span>geo<span class="p">)</span>
+df <span class="o">&lt;-</span> subset<span class="p">(</span>df<span class="p">,</span> geo.n <span class="o">&lt;</span> <span class="m">3</span><span class="p">)</span>
 
-cname <span class="o">&lt;-</span> <span class="kp">subset</span><span class="p">(</span>df<span class="p">,</span> time <span class="o">==</span> <span class="m">2011</span><span class="p">)</span>
+cname <span class="o">&lt;-</span> subset<span class="p">(</span>df<span class="p">,</span> time <span class="o">==</span> <span class="m">2011</span><span class="p">)</span>
 
 <span class="c1"># plot</span>
-<span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
+library<span class="p">(</span>ggplot2<span class="p">)</span>
 ggplot<span class="p">(</span>df<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>time<span class="p">,</span>y<span class="o">=</span>value<span class="p">,</span> color<span class="o">=</span>geo<span class="p">,</span>group<span class="o">=</span>geo<span class="p">))</span> <span class="o">+</span> 
   geom_point<span class="p">()</span> <span class="o">+</span> geom_line<span class="p">()</span> <span class="o">+</span>
   geom_text<span class="p">(</span>data<span class="o">=</span>cname<span class="p">,</span> 
@@ -153,7 +153,7 @@ ggplot<span class="p">(</span>df<span class="p">,</span> aes<span class="p">(</s
   theme<span class="p">(</span>legend.position<span class="o">=</span><span class="s">&quot;none&quot;</span><span class="p">)</span> <span class="o">+</span>
   labs<span class="p">(</span>title<span class="o">=</span><span class="s">&quot;material deprivation in EU at NUTS2-level&quot;</span><span class="p">,</span>
        y<span class="o">=</span><span class="s">&quot;population share (%)&quot;</span><span class="p">)</span> <span class="o">+</span>
-  coord_cartesian<span class="p">(</span>xlim<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">2003</span><span class="p">,</span><span class="m">2012</span><span class="p">))</span> <span class="o">+</span>
+  coord_cartesian<span class="p">(</span>xlim<span class="o">=</span>c<span class="p">(</span><span class="m">2003</span><span class="p">,</span><span class="m">2012</span><span class="p">))</span> <span class="o">+</span>
   scale_x_continuous<span class="p">(</span>breaks <span class="o">=</span> <span class="m">2003</span><span class="o">:</span><span class="m">2011</span><span class="p">)</span>
 </code></pre></div>
 </div>
