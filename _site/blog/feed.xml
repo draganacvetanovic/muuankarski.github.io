@@ -7,6 +7,21 @@
 		<atom:link href="/blog/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Videota ja tekstiä avoimista menetelmistä avointiede.fi -sivustolla</title>
+				<description>&lt;p&gt;Opetus- ja kultturiministeriö käynnisti keväällä &lt;a href=&quot;http://www.minedu.fi/OPM/Verkkouutiset/2014/03/tieteen_ja_tutkimuksen_avoimuus.html&quot;&gt;Avoimen tieteen ja tutkimuksen hankkeen&lt;/a&gt;. Hankkeen puitteissa on luotu sivusto &lt;a href=&quot;http://avointiede.fi/&quot;&gt;avointiede.fi&lt;/a&gt;, jonne kootaan tietoa sekä hankkeen toiminnasta että konkreettista apua tutkijoille.&lt;/p&gt;
+
+&lt;p&gt;Alkusyksystä kirjoitin sivuston &lt;a href=&quot;http://portti.avointiede.fi/tutkimusmenetelmat&quot;&gt;menetelmä-osioon&lt;/a&gt; tekstin &lt;a href=&quot;http://portti.avointiede.fi/tutkimusmenetelmat/avoimet-menetelmat-ja-tutkimuksellinen-yhteistyo&quot;&gt;Avoimet menetelmät ja tutkimuksellinen yhteistyö&lt;/a&gt;, jossa kävin läpi mitä avoimilla menetelmillä käsitetään tutkimuksessa, mitä hyötyä avoimista menetelmistä olisi ja miten niiden käyttöönottamiseksi kannattaisi tehdä.&lt;/p&gt;
+
+&lt;p&gt;Tekstin ohella tiivistin tärkeimmän viestin myös alla olevaan videoon:&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;//www.youtube.com/embed/xMAPN3ljwWA&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+</description>
+				<pubDate>Wed, 17 Sep 2014 11:23:45 +0300</pubDate>
+				<link>/avoin/tiede/2014/09/17/avoin-tiede-avoimet%20-menetelmat.html</link>
+				<guid isPermaLink="true">/avoin/tiede/2014/09/17/avoin-tiede-avoimet%20-menetelmat.html</guid>
+			</item>
+		
+			<item>
 				<title>Avointa dataa tutkimukseen Avoin Suomi 2014 -messuilla</title>
 				<description>&lt;p&gt;Olen tänään ja huomenna (15.-16.9) pitämässä &lt;a href=&quot;http://fi.okfn.org/&quot;&gt;Open Knowledge Suomen&lt;/a&gt; &lt;a href=&quot;http://fi.okfn.org/wg/openscience/&quot;&gt;&lt;em&gt;avoimen tieteen työryhmän&lt;/em&gt;&lt;/a&gt; ständilla &lt;a href=&quot;http://avoinsuomi2014.fi/&quot;&gt;Avoin Suomi 2014&lt;/a&gt; -messuilla demoamassa sitä kuinka tehokkaita avoimet analyysimenetelmät ovat yhdessä avoimen (tutkimus)datan kanssa ja millainen potentiaali niillä on tieteen, tutkimuksen ja opetuksen suhteen. &lt;/p&gt;
 
@@ -497,15 +512,6 @@ pandoc teksti.md &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;o teksti.epub &lt
 				<pubDate>Tue, 15 Oct 2013 13:53:45 +0300</pubDate>
 				<link>/tools/2013/10/15/markdown-pandoc-tieteellinen-teksti.html</link>
 				<guid isPermaLink="true">/tools/2013/10/15/markdown-pandoc-tieteellinen-teksti.html</guid>
-			</item>
-		
-			<item>
-				<title>Open Science in the Digital Era - data, research and open access publishing</title>
-				<description>&lt;p&gt;I gave presentation with title: &lt;a href=&quot;http://markuskainu.fi/workshop/openscience2013/openscience2013_slides.html#/&quot;&gt;Open Science in the Digital Era - data, research and open access publishing&lt;/a&gt;&lt;/p&gt;
-</description>
-				<pubDate>Fri, 20 Sep 2013 16:15:45 +0300</pubDate>
-				<link>/presentation/2013/09/20/workshop-open-science.html</link>
-				<guid isPermaLink="true">/presentation/2013/09/20/workshop-open-science.html</guid>
 			</item>
 		
 	</channel>

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Markus Kainu home page
+title: Markus Kainu
 ---
 
 Welcome to my home page
