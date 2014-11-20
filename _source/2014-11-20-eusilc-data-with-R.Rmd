@@ -12,12 +12,13 @@ I have worked a lot with [EU-silc data](http://epp.eurostat.ec.europa.eu/portal/
 - Package in github: <https://github.com/muuankarski/r.eusilc>
 - Package vignette: <http://muuankarski.github.io/r.eusilc/vignettes/r.eusilc_tutorial.html>
 
+**Package is very experimental, so please let me know of any bugs/improvements you come up with!**
+
 ## Basic idea
 
 With a single function you can 1. merge together *any* raw file (household or individual, cross-sectional or longitudinal) and 2. subset the *variables* and *countries* you are interested in. 
 
-### Combine the individual level cross-sectional data with household variables
-
+### Install and load the package
 
 ```{r, eval=FALSE}
 library(devtools)
@@ -25,7 +26,7 @@ install_github("r.eusilc","muuankarski")
 library(r.eusilc)
 ```
 
-
+### Combine the individual level cross-sectional data with household variables
 
 ```{r, eval=FALSE}
 

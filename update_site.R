@@ -17,7 +17,8 @@ lftp -u np16003 -e "mirror -R;quit" ftp://np16003@www.muuankarski.org/domains/ma
 
 cd ~/web/markuskainu/
 rm -r cache
-  
+
+git status
 git add .
 git commit -am "webbi paivitetty"
 git push
