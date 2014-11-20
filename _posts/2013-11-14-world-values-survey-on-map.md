@@ -106,7 +106,7 @@ ggplot(tblPlot, aes(x=Var1,y=value,fill=variable)) +
         legend.text = element_text(size=14))
 ```
 
-![plot of chunk wvsBarplot](/figure/source/2013-11-14-world-values-survey-on-map/wvsBarplot.png) 
+![plot of chunk wvsBarplot](/figure/source/2013-11-14-world-values-survey-on-map/wvsBarplot-1.png) 
 
 ## Plotting the data on the map
 
@@ -185,7 +185,7 @@ ggplot(map.df, aes(long,lat,group=group)) +
     theme(legend.position="top")
 ```
 
-![plot of chunk wvsMercator](/figure/source/2013-11-14-world-values-survey-on-map/wvsMercator.png) 
+![plot of chunk wvsMercator](/figure/source/2013-11-14-world-values-survey-on-map/wvsMercator-1.png) 
 
 ### Using Orthographic projection centered at Moscow
 
@@ -204,7 +204,7 @@ ggplot(map.df, aes(long,lat,group=group)) +
     coord_map("ortho", orientation=c(55, 37, 0))
 ```
 
-![plot of chunk wvsOrtho](/figure/source/2013-11-14-world-values-survey-on-map/wvsOrtho.png) 
+![plot of chunk wvsOrtho](/figure/source/2013-11-14-world-values-survey-on-map/wvsOrtho-1.png) 
 
 The grey stands for missing data that covers most of the countries. That is due to both missing data in VWS 2005 and errors in merging the attribute data with the shape. Also, the issue of spatial story behind the scandinavians willingness to fight wars did not become much clearer as a results of this one hour exercise.
 

@@ -33,7 +33,7 @@
     <div class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <a href="/index.html" class="navbar-brand">Markus Kainu</a>
+          <a href="/" class="navbar-brand">Markus Kainu</a>
           <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -126,25 +126,25 @@
 <p>Once you have downloaded the <code>SpatialPolygonDataFrame</code> you can plot the  the boundaries at different level with following code chunks.</p>
 
 <h3>At federal level</h3>
-<div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>rustfare<span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>rustfare<span class="p">)</span>
 shapefile <span class="o">&lt;-</span> GetRusGADM<span class="p">(</span><span class="s">&quot;federal&quot;</span><span class="p">)</span>
 plot<span class="p">(</span>shapefile<span class="p">)</span>
 </code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: cannot coerce type &#39;S4&#39; to vector of type &#39;double&#39;
 </code></pre></div>
 <h3>At federal district level</h3>
-<div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>rustfare<span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>rustfare<span class="p">)</span>
 shapefile <span class="o">&lt;-</span> GetRusGADM<span class="p">(</span><span class="s">&quot;federal_district&quot;</span><span class="p">)</span>
 plot<span class="p">(</span>shapefile<span class="p">)</span>
 </code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: cannot coerce type &#39;S4&#39; to vector of type &#39;double&#39;
 </code></pre></div>
 <h3>At regional level</h3>
-<div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>rustfare<span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>rustfare<span class="p">)</span>
 shapefile <span class="o">&lt;-</span> GetRusGADM<span class="p">(</span><span class="s">&quot;region&quot;</span><span class="p">)</span>
 plot<span class="p">(</span>shapefile<span class="p">)</span>
 </code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: cannot coerce type &#39;S4&#39; to vector of type &#39;double&#39;
 </code></pre></div>
 <h3>At rayon level</h3>
-<div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>rustfare<span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>rustfare<span class="p">)</span>
 shapefile <span class="o">&lt;-</span> GetRusGADM<span class="p">(</span><span class="s">&quot;rayon&quot;</span><span class="p">)</span>
 plot<span class="p">(</span>shapefile<span class="p">)</span>
 </code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: cannot coerce type &#39;S4&#39; to vector of type &#39;double&#39;
@@ -156,37 +156,37 @@ plot<span class="p">(</span>shapefile<span class="p">)</span>
 <h3>Using maptools and sp</h3>
 
 <p>I&#39;m downloading data on life expectancy of men at regional level from Rosstat.</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>rustfare<span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>rustfare<span class="p">)</span>
 dat <span class="o">&lt;-</span> GetRosstat<span class="p">(</span><span class="s">&quot;life_expectancy_men&quot;</span><span class="p">,</span>
                    <span class="s">&quot;region&quot;</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Warning: attributes are not identical across measure variables; they will
 ## be dropped
-</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">dat09 <span class="o">&lt;-</span> subset<span class="p">(</span>dat<span class="p">,</span> year <span class="o">==</span> <span class="m">2009</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">dat09 <span class="o">&lt;-</span> <span class="kp">subset</span><span class="p">(</span>dat<span class="p">,</span> year <span class="o">==</span> <span class="m">2009</span><span class="p">)</span>
 </code></pre></div>
 <p>Then I&#39;m downloading the shapefile at federal districh level, naming the rows as required for <code>spCbind</code>-function, ordering the datas and then combining them</p>
 
 <p>To be able to join the data they both must have a) equal number of rows and b) the rownames must match. Lets first give both data rownames that can be used in combining the data. Then let&#39;s order the both datas according to rownames. At last, lets see if there are same number of rows in both datas.</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r">shape <span class="o">&lt;-</span> GetRusGADM<span class="p">(</span><span class="s">&quot;region&quot;</span><span class="p">)</span>
-library<span class="p">(</span>maptools<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>maptools<span class="p">)</span>
 <span class="c1"># Remove case with NA id_shape (moscow)</span>
-dat09 <span class="o">&lt;-</span> dat09<span class="p">[</span><span class="o">!</span>is.na<span class="p">(</span>dat09<span class="o">$</span>id_shape<span class="p">),</span> <span class="p">]</span> 
-row.names<span class="p">(</span>dat09<span class="p">)</span> <span class="o">&lt;-</span> dat09<span class="o">$</span>id_shape
-row.names<span class="p">(</span>shape<span class="p">)</span> <span class="o">&lt;-</span> as.character<span class="p">(</span>shape<span class="o">$</span>ID_1<span class="p">)</span>
-dat09 <span class="o">&lt;-</span> dat09<span class="p">[</span>order<span class="p">(</span>row.names<span class="p">(</span>dat09<span class="p">)),]</span>
-shape <span class="o">&lt;-</span> shape<span class="p">[</span>order<span class="p">(</span>row.names<span class="p">(</span>shape<span class="p">)),]</span>
-dim<span class="p">(</span>dat09<span class="p">)</span>
+dat09 <span class="o">&lt;-</span> dat09<span class="p">[</span><span class="o">!</span><span class="kp">is.na</span><span class="p">(</span>dat09<span class="o">$</span>id_shape<span class="p">),</span> <span class="p">]</span> 
+<span class="kp">row.names</span><span class="p">(</span>dat09<span class="p">)</span> <span class="o">&lt;-</span> dat09<span class="o">$</span>id_shape
+<span class="kp">row.names</span><span class="p">(</span>shape<span class="p">)</span> <span class="o">&lt;-</span> <span class="kp">as.character</span><span class="p">(</span>shape<span class="o">$</span>ID_1<span class="p">)</span>
+dat09 <span class="o">&lt;-</span> dat09<span class="p">[</span><span class="kp">order</span><span class="p">(</span><span class="kp">row.names</span><span class="p">(</span>dat09<span class="p">)),]</span>
+shape <span class="o">&lt;-</span> shape<span class="p">[</span><span class="kp">order</span><span class="p">(</span><span class="kp">row.names</span><span class="p">(</span>shape<span class="p">)),]</span>
+<span class="kp">dim</span><span class="p">(</span>dat09<span class="p">)</span>
 </code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## [1] 80  7
-</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">dim<span class="p">(</span>shape<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kp">dim</span><span class="p">(</span>shape<span class="p">)</span>
 </code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## [1] 82 16
 </code></pre></div>
 <p>As we deleted some cases from Rosstat data it now has two cases less than <code>SpatialPolygonDataFrame</code> before, we have to remove those rows from <code>SpatialPolygonDataFrame</code>. To find out what they are we use `setdiff()-function and we can see they are 2521 and 2530. We remove them and combine the datas.</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">setdiff<span class="p">(</span>row.names<span class="p">(</span>shape<span class="p">),</span> row.names<span class="p">(</span>dat09<span class="p">))</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kp">setdiff</span><span class="p">(</span><span class="kp">row.names</span><span class="p">(</span>shape<span class="p">),</span> <span class="kp">row.names</span><span class="p">(</span>dat09<span class="p">))</span>
 </code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## [1] &quot;2521&quot; &quot;2530&quot;
-</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">shape <span class="o">&lt;-</span> shape<span class="p">[</span><span class="o">!</span>row.names<span class="p">(</span>shape<span class="p">)</span> <span class="o">%in%</span> c<span class="p">(</span><span class="s">&quot;2521&quot;</span><span class="p">,</span><span class="s">&quot;2530&quot;</span><span class="p">),</span> <span class="p">]</span>
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">shape <span class="o">&lt;-</span> shape<span class="p">[</span><span class="o">!</span><span class="kp">row.names</span><span class="p">(</span>shape<span class="p">)</span> <span class="o">%in%</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;2521&quot;</span><span class="p">,</span><span class="s">&quot;2530&quot;</span><span class="p">),</span> <span class="p">]</span>
 df <span class="o">&lt;-</span> spCbind<span class="p">(</span>shape<span class="p">,</span> dat09<span class="p">)</span>
 </code></pre></div>
 <p>Simple grey scale plot can be done as follow</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>sp<span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>sp<span class="p">)</span>
 spplot<span class="p">(</span>df<span class="p">,</span> <span class="s">&quot;value&quot;</span><span class="p">,</span> col.regions<span class="o">=</span>grey.colors<span class="p">(</span><span class="m">20</span><span class="p">,</span> <span class="m">0.9</span><span class="p">,</span> <span class="m">0.3</span><span class="p">))</span>
 </code></pre></div>
 <p><img src="/figure/source/2013-08-12-rustfare-spatial-visualization-gadm/mapcombine3.png" alt="plot of chunk mapcombine3"> </p>
@@ -196,38 +196,38 @@ spplot<span class="p">(</span>df<span class="p">,</span> <span class="s">&quot;v
 <p><strong>ggplot2</strong> is not perhaps the ideal choice for plotting spatial data as <code>SpatialPolygonDataFrame</code> has to be converted into regular data.frame using <code>fortify</code> and this procedure cannot be reversed very easy. However, once you have fortified the data you can take advantage of all the neat functionalities of ggplot2-package.</p>
 
 <p>We will use the code above for the great part. As we want to plot all the years available as facets of the same plot we have to alter the code in two ways. First, not to subset the data and, second, to convert it into <strong>wide</strong> format from the default <strong>long</strong> format that <strong>rustfare</strong> provides you with. Data will be <strong>casted</strong> into wide format using <code>dcast</code>-function in <strong>reshape2</strong>-package.</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>rustfare<span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>rustfare<span class="p">)</span>
 dat <span class="o">&lt;-</span> GetRosstat<span class="p">(</span><span class="s">&quot;life_expectancy_men&quot;</span><span class="p">,</span>
                    <span class="s">&quot;region&quot;</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Warning: attributes are not identical across measure variables; they will
 ## be dropped
 </code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># cast the data into wide format</span>
-library<span class="p">(</span>reshape2<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>reshape2<span class="p">)</span>
 dat.w <span class="o">&lt;-</span> dcast<span class="p">(</span>dat<span class="p">,</span> region_en <span class="o">+</span> id_shape <span class="o">~</span> year<span class="p">,</span> value.var<span class="o">=</span><span class="s">&quot;value&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>Then the data in wide format will be joined with shapefile from GADM.</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r">shape <span class="o">&lt;-</span> GetRusGADM<span class="p">(</span><span class="s">&quot;region&quot;</span><span class="p">)</span>
-library<span class="p">(</span>maptools<span class="p">)</span>
-dat.w <span class="o">&lt;-</span> dat.w<span class="p">[</span><span class="o">!</span>is.na<span class="p">(</span>dat.w<span class="o">$</span>id_shape<span class="p">),</span> <span class="p">]</span> 
-row.names<span class="p">(</span>dat.w<span class="p">)</span> <span class="o">&lt;-</span> dat.w<span class="o">$</span>id_shape
-row.names<span class="p">(</span>shape<span class="p">)</span> <span class="o">&lt;-</span> as.character<span class="p">(</span>shape<span class="o">$</span>ID_1<span class="p">)</span>
-dat.w <span class="o">&lt;-</span> dat.w<span class="p">[</span>order<span class="p">(</span>row.names<span class="p">(</span>dat.w<span class="p">)),]</span>
-shape <span class="o">&lt;-</span> shape<span class="p">[</span>order<span class="p">(</span>row.names<span class="p">(</span>shape<span class="p">)),]</span>
+<span class="kn">library</span><span class="p">(</span>maptools<span class="p">)</span>
+dat.w <span class="o">&lt;-</span> dat.w<span class="p">[</span><span class="o">!</span><span class="kp">is.na</span><span class="p">(</span>dat.w<span class="o">$</span>id_shape<span class="p">),</span> <span class="p">]</span> 
+<span class="kp">row.names</span><span class="p">(</span>dat.w<span class="p">)</span> <span class="o">&lt;-</span> dat.w<span class="o">$</span>id_shape
+<span class="kp">row.names</span><span class="p">(</span>shape<span class="p">)</span> <span class="o">&lt;-</span> <span class="kp">as.character</span><span class="p">(</span>shape<span class="o">$</span>ID_1<span class="p">)</span>
+dat.w <span class="o">&lt;-</span> dat.w<span class="p">[</span><span class="kp">order</span><span class="p">(</span><span class="kp">row.names</span><span class="p">(</span>dat.w<span class="p">)),]</span>
+shape <span class="o">&lt;-</span> shape<span class="p">[</span><span class="kp">order</span><span class="p">(</span><span class="kp">row.names</span><span class="p">(</span>shape<span class="p">)),]</span>
 <span class="c1"># from above</span>
-difference <span class="o">&lt;-</span> setdiff<span class="p">(</span>row.names<span class="p">(</span>shape<span class="p">),</span> row.names<span class="p">(</span>dat.w<span class="p">))</span>
-shape <span class="o">&lt;-</span> shape<span class="p">[</span><span class="o">!</span>row.names<span class="p">(</span>shape<span class="p">)</span> <span class="o">%in%</span> difference<span class="p">,</span> <span class="p">]</span>
+difference <span class="o">&lt;-</span> <span class="kp">setdiff</span><span class="p">(</span><span class="kp">row.names</span><span class="p">(</span>shape<span class="p">),</span> <span class="kp">row.names</span><span class="p">(</span>dat.w<span class="p">))</span>
+shape <span class="o">&lt;-</span> shape<span class="p">[</span><span class="o">!</span><span class="kp">row.names</span><span class="p">(</span>shape<span class="p">)</span> <span class="o">%in%</span> difference<span class="p">,</span> <span class="p">]</span>
 <span class="c1">#</span>
 df <span class="o">&lt;-</span> spCbind<span class="p">(</span>shape<span class="p">,</span> dat.w<span class="p">)</span>
 </code></pre></div>
 <p>Then the <code>SpatialPolygonDataFrame</code> must be converted into regular <code>data.frame</code>, and I&#39;m using the <code>fortify</code>-function from <strong>ggplot2</strong>-package for it. We also need *<em>rgeos</em>-package for this conversion.</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>ggplot2<span class="p">)</span>
-library<span class="p">(</span>rgeos<span class="p">)</span>
-df<span class="o">$</span>id <span class="o">&lt;-</span> rownames<span class="p">(</span>df<span class="o">@</span>data<span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>rgeos<span class="p">)</span>
+df<span class="o">$</span>id <span class="o">&lt;-</span> <span class="kp">rownames</span><span class="p">(</span>df<span class="o">@</span>data<span class="p">)</span>
 map.points <span class="o">&lt;-</span> fortify<span class="p">(</span>df<span class="p">,</span> region <span class="o">=</span> <span class="s">&quot;id&quot;</span><span class="p">)</span>
-map.df <span class="o">&lt;-</span> merge<span class="p">(</span>map.points<span class="p">,</span> df<span class="p">,</span> by <span class="o">=</span> <span class="s">&quot;id&quot;</span><span class="p">)</span>
-dim<span class="p">(</span>map.df<span class="p">)</span>
+map.df <span class="o">&lt;-</span> <span class="kp">merge</span><span class="p">(</span>map.points<span class="p">,</span> df<span class="p">,</span> by <span class="o">=</span> <span class="s">&quot;id&quot;</span><span class="p">)</span>
+<span class="kp">dim</span><span class="p">(</span>map.df<span class="p">)</span>
 </code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## [1] 541696     28
-</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">head<span class="p">(</span>map.df<span class="p">,</span> <span class="m">2</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kp">head</span><span class="p">(</span>map.df<span class="p">,</span> <span class="m">2</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">##     id     long      lat order  hole piece  group ID_0 ISO NAME_0 ID_1
 ## 1 2511 39.64795 45.16420     1 FALSE     1 2511.1  190 RUS Russia 2511
 ## 2 2511 39.68002 45.15558     2 FALSE     1 2511.1  190 RUS Russia 2511
@@ -247,16 +247,16 @@ dim<span class="p">(</span>map.df<span class="p">)</span>
 <p>Now data we want to visualize is as a regular <code>data.frame</code> and ready for plotting. But one more thing is need: <strong>ggplot2</strong> eats data in long format, so we have to melt the data into long format using <code>melt</code>-function from <strong>reshape2</strong>-package.</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># As we want to plot map faceted by years 2000, 2005 and 2009 we have to</span>
 <span class="c1"># melt it into long format</span>
-library<span class="p">(</span>reshape2<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>reshape2<span class="p">)</span>
 map.df.l <span class="o">&lt;-</span> melt<span class="p">(</span>data <span class="o">=</span> map.df<span class="p">,</span> 
-                 id.vars <span class="o">=</span> c<span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">,</span> <span class="s">&quot;long&quot;</span><span class="p">,</span> 
+                 id.vars <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">,</span> <span class="s">&quot;long&quot;</span><span class="p">,</span> 
                              <span class="s">&quot;lat&quot;</span><span class="p">,</span> <span class="s">&quot;group&quot;</span><span class="p">),</span> 
-                 measure.vars <span class="o">=</span> c<span class="p">(</span><span class="s">&quot;X2000&quot;</span><span class="p">,</span><span class="s">&quot;X2005&quot;</span><span class="p">,</span><span class="s">&quot;X2009&quot;</span><span class="p">))</span>
+                 measure.vars <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;X2000&quot;</span><span class="p">,</span><span class="s">&quot;X2005&quot;</span><span class="p">,</span><span class="s">&quot;X2009&quot;</span><span class="p">))</span>
 <span class="c1"># lets tweak a bit and remove X&#39;s from year values and make it into numerical</span>
 map.df.l<span class="o">$</span>variable <span class="o">&lt;-</span> str_replace_all<span class="p">(</span>map.df.l<span class="o">$</span>variable<span class="p">,</span> <span class="s">&quot;X&quot;</span><span class="p">,</span><span class="s">&quot;&quot;</span><span class="p">)</span>
-map.df.l<span class="o">$</span>variable <span class="o">&lt;-</span> factor<span class="p">(</span>map.df.l<span class="o">$</span>variable<span class="p">)</span>
-map.df.l<span class="o">$</span>variable <span class="o">&lt;-</span> as.numeric<span class="p">(</span>levels<span class="p">(</span>map.df.l<span class="o">$</span>variable<span class="p">))[</span>map.df.l<span class="o">$</span>variable<span class="p">]</span>
-dim<span class="p">(</span>map.df.l<span class="p">)</span>
+map.df.l<span class="o">$</span>variable <span class="o">&lt;-</span> <span class="kp">factor</span><span class="p">(</span>map.df.l<span class="o">$</span>variable<span class="p">)</span>
+map.df.l<span class="o">$</span>variable <span class="o">&lt;-</span> <span class="kp">as.numeric</span><span class="p">(</span><span class="kp">levels</span><span class="p">(</span>map.df.l<span class="o">$</span>variable<span class="p">))[</span>map.df.l<span class="o">$</span>variable<span class="p">]</span>
+<span class="kp">dim</span><span class="p">(</span>map.df.l<span class="p">)</span>
 </code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## [1] 1625088       6
 </code></pre></div>
 <p>As a result we get rather massive data with 1625088 rows and 6 columns. We can then plot this using the following command.</p>
@@ -268,8 +268,8 @@ ggplot<span class="p">(</span>map.df.l<span class="p">,</span> aes<span class="p
                color <span class="o">=</span> <span class="s">&quot;white&quot;</span><span class="p">,</span>
                size<span class="o">=</span><span class="m">0.1</span><span class="p">)</span> <span class="o">+</span> <span class="c1"># white borders</span>
   coord_map<span class="p">(</span>project<span class="o">=</span><span class="s">&quot;orthographic&quot;</span><span class="p">,</span>
-            xlim<span class="o">=</span>c<span class="p">(</span><span class="m">25</span><span class="p">,</span><span class="m">170</span><span class="p">),</span>
-              ylim<span class="o">=</span>c<span class="p">(</span><span class="m">45</span><span class="p">,</span><span class="m">70</span><span class="p">))</span> <span class="o">+</span>
+            xlim<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">25</span><span class="p">,</span><span class="m">170</span><span class="p">),</span>
+              ylim<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">45</span><span class="p">,</span><span class="m">70</span><span class="p">))</span> <span class="o">+</span>
   facet_wrap<span class="p">(</span><span class="o">~</span>variable<span class="p">,</span> ncol<span class="o">=</span><span class="m">1</span><span class="p">)</span> <span class="o">+</span>
   theme_minimal<span class="p">()</span>
 </code></pre></div>
@@ -283,14 +283,14 @@ df<span class="o">$</span>X2000 <span class="o">&lt;-</span> <span class="kc">NU
 df<span class="o">$</span>X2005 <span class="o">&lt;-</span> <span class="kc">NULL</span>
 df<span class="o">$</span>X2009 <span class="o">&lt;-</span> <span class="kc">NULL</span>
 <span class="c1">#</span>
-library<span class="p">(</span>ggplot2<span class="p">)</span>
-library<span class="p">(</span>rgeos<span class="p">)</span>
-df<span class="o">$</span>id <span class="o">&lt;-</span> rownames<span class="p">(</span>df<span class="o">@</span>data<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>rgeos<span class="p">)</span>
+df<span class="o">$</span>id <span class="o">&lt;-</span> <span class="kp">rownames</span><span class="p">(</span>df<span class="o">@</span>data<span class="p">)</span>
 map.points <span class="o">&lt;-</span> fortify<span class="p">(</span>df<span class="p">,</span> region <span class="o">=</span> <span class="s">&quot;id&quot;</span><span class="p">)</span>
-map.df <span class="o">&lt;-</span> merge<span class="p">(</span>map.points<span class="p">,</span> df<span class="p">,</span> by <span class="o">=</span> <span class="s">&quot;id&quot;</span><span class="p">)</span>
-library<span class="p">(</span>reshape2<span class="p">)</span>
+map.df <span class="o">&lt;-</span> <span class="kp">merge</span><span class="p">(</span>map.points<span class="p">,</span> df<span class="p">,</span> by <span class="o">=</span> <span class="s">&quot;id&quot;</span><span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>reshape2<span class="p">)</span>
 map.df.l <span class="o">&lt;-</span> melt<span class="p">(</span>data <span class="o">=</span> map.df<span class="p">,</span> 
-                 id.vars <span class="o">=</span> c<span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">,</span> <span class="s">&quot;long&quot;</span><span class="p">,</span> 
+                 id.vars <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">,</span> <span class="s">&quot;long&quot;</span><span class="p">,</span> 
                              <span class="s">&quot;lat&quot;</span><span class="p">,</span> <span class="s">&quot;group&quot;</span><span class="p">),</span> 
                  measure.vars <span class="o">=</span> <span class="s">&quot;change&quot;</span><span class="p">)</span>
 ggplot<span class="p">(</span>map.df.l<span class="p">,</span> aes<span class="p">(</span>long<span class="p">,</span>lat<span class="p">,</span>group<span class="o">=</span>group<span class="p">))</span> <span class="o">+</span>
@@ -301,8 +301,8 @@ ggplot<span class="p">(</span>map.df.l<span class="p">,</span> aes<span class="p
                color <span class="o">=</span> <span class="s">&quot;white&quot;</span><span class="p">,</span>
                size<span class="o">=</span><span class="m">0.1</span><span class="p">)</span> <span class="o">+</span> <span class="c1"># white borders</span>
   coord_map<span class="p">(</span>project<span class="o">=</span><span class="s">&quot;orthographic&quot;</span><span class="p">,</span>
-            xlim<span class="o">=</span>c<span class="p">(</span><span class="m">25</span><span class="p">,</span><span class="m">170</span><span class="p">),</span>
-              ylim<span class="o">=</span>c<span class="p">(</span><span class="m">45</span><span class="p">,</span><span class="m">70</span><span class="p">))</span> <span class="o">+</span>
+            xlim<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">25</span><span class="p">,</span><span class="m">170</span><span class="p">),</span>
+              ylim<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">45</span><span class="p">,</span><span class="m">70</span><span class="p">))</span> <span class="o">+</span>
   theme_minimal<span class="p">()</span>
 </code></pre></div>
 <p><img src="/figure/source/2013-08-12-rustfare-spatial-visualization-gadm/rmapcombineggplot6.png" alt="plot of chunk rmapcombineggplot6"> </p>
@@ -312,13 +312,13 @@ ggplot<span class="p">(</span>map.df.l<span class="p">,</span> aes<span class="p
 <p>There is a <code>RosstatMapPlot</code>-function in rustfare that takes <code>measure</code>, <code>year</code> and <code>level</code> as arguments and plots maps using the somewhat similar procedure as above. Have a look at examples below.</p>
 
 <h3>Infant mortality rate at regional level</h3>
-<div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>rustfare<span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>rustfare<span class="p">)</span>
 RosstatMapPlot<span class="p">(</span><span class="s">&quot;infant_mortality_rate&quot;</span><span class="p">,</span><span class="m">2010</span><span class="p">,</span><span class="s">&quot;region&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p><img src="/figure/source/2013-08-12-rustfare-spatial-visualization-gadm/rosstatmap1.png" alt="plot of chunk rosstatmap1"> </p>
 
 <h3>Average pension size at federal district level</h3>
-<div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>rustfare<span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>rustfare<span class="p">)</span>
 RosstatMapPlot<span class="p">(</span><span class="s">&quot;average_size_of_pensions&quot;</span><span class="p">,</span><span class="m">2010</span><span class="p">,</span><span class="s">&quot;federal_district&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p><img src="/figure/source/2013-08-12-rustfare-spatial-visualization-gadm/rosstatmap2.png" alt="plot of chunk rosstatmap2"> </p>

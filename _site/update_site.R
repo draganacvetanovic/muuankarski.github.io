@@ -15,7 +15,7 @@ lftp -u np16003 -e "mirror -R;quit" ftp://np16003@www.muuankarski.org/domains/ma
 
 # Uppaa github:iin
 
-cd ~/workspace/web/markuskainu/
+cd ~/web/markuskainu/
 rm -r cache
   
 git add .

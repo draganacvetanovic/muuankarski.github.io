@@ -33,7 +33,7 @@
     <div class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <a href="/index.html" class="navbar-brand">Markus Kainu</a>
+          <a href="/" class="navbar-brand">Markus Kainu</a>
           <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -106,12 +106,12 @@
 
 <div class="post">
 <h1>Tässä esimerkki</h1>
-<div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>WDI<span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>WDI<span class="p">)</span>
 </code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: there is no package called &#39;WDI&#39;
-</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">dat <span class="o">&lt;-</span> WDI<span class="p">(</span>indicator <span class="o">=</span> c<span class="p">(</span><span class="s">&quot;NY.GDP.PCAP.KD&quot;</span><span class="p">),</span> country <span class="o">=</span> c<span class="p">(</span><span class="s">&quot;CN&quot;</span><span class="p">,</span> <span class="s">&quot;RU&quot;</span><span class="p">,</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span> <span class="s">&quot;BR&quot;</span><span class="p">),</span> 
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">dat <span class="o">&lt;-</span> WDI<span class="p">(</span>indicator <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;NY.GDP.PCAP.KD&quot;</span><span class="p">),</span> country <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;CN&quot;</span><span class="p">,</span> <span class="s">&quot;RU&quot;</span><span class="p">,</span> <span class="s">&quot;IN&quot;</span><span class="p">,</span> <span class="s">&quot;BR&quot;</span><span class="p">),</span> 
            start <span class="o">=</span> <span class="m">1980</span><span class="p">,</span> end <span class="o">=</span> <span class="m">2012</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: could not find function &quot;WDI&quot;
-</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>ggplot2<span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
 </code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Loading required package: methods
 </code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">ggplot<span class="p">(</span>dat<span class="p">,</span> aes<span class="p">(</span>year<span class="p">,</span> NY.GDP.PCAP.KD<span class="p">,</span> color <span class="o">=</span> country<span class="p">))</span> <span class="o">+</span> geom_line<span class="p">()</span> <span class="o">+</span> geom_point<span class="p">()</span> <span class="o">+</span> 
   labs<span class="p">(</span>x <span class="o">=</span> <span class="s">&quot;year&quot;</span><span class="p">,</span> y <span class="o">=</span> <span class="s">&quot;GDP per capita&quot;</span><span class="p">)</span>

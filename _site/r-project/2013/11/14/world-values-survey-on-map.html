@@ -33,7 +33,7 @@
     <div class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <a href="/index.html" class="navbar-brand">Markus Kainu</a>
+          <a href="/" class="navbar-brand">Markus Kainu</a>
           <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -156,36 +156,36 @@ willing to fight for your country? (Code one answer):</p>
 <p>I&#39;m focusing only in the <code>yes</code> or <code>no</code> values, or in <code>yes</code> in particular.</p>
 
 <p>The data is not provided in any generic for but only in proprietary SAS/SPSS/Stata format, but using <strong>foreign</strong>-package it is doable. (a .csv or .Rdata would perhaps be a good idea in these days!)</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>foreign<span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>foreign<span class="p">)</span>
 <span class="c1"># Load the oridinal dataset into R</span>
 datB <span class="o">&lt;-</span> read.dta<span class="p">(</span><span class="s">&quot;DATA_LOCATION_HERE/wvs2005_v20090901b.dta&quot;</span><span class="p">)</span>
 datA <span class="o">&lt;-</span> read.dta<span class="p">(</span><span class="s">&quot;DATA_LOCATION_HERE/wvs2005_v20090901a.dta&quot;</span><span class="p">)</span>
 <span class="c1"># Create  proportional tables from both data by country</span>
 <span class="c1">## there are some issues with country labels so I convert</span>
 <span class="c1">## the variable into a string</span>
-datA<span class="o">$</span>v2 <span class="o">&lt;-</span> as.character<span class="p">(</span>datA<span class="o">$</span>v2<span class="p">)</span>
-datB<span class="o">$</span>v2 <span class="o">&lt;-</span> as.character<span class="p">(</span>datB<span class="o">$</span>v2<span class="p">)</span>
+datA<span class="o">$</span>v2 <span class="o">&lt;-</span> <span class="kp">as.character</span><span class="p">(</span>datA<span class="o">$</span>v2<span class="p">)</span>
+datB<span class="o">$</span>v2 <span class="o">&lt;-</span> <span class="kp">as.character</span><span class="p">(</span>datB<span class="o">$</span>v2<span class="p">)</span>
 <span class="c1"># Create unweighted proportional tables from both datas</span>
-tblA <span class="o">&lt;-</span> as.data.frame<span class="p">(</span>prop.table<span class="p">(</span>table<span class="p">(</span>datA<span class="o">$</span>v2<span class="p">,</span>datA<span class="o">$</span>v75<span class="p">),</span><span class="m">1</span><span class="p">)</span><span class="o">*</span><span class="m">100</span><span class="p">)</span>
-tblB <span class="o">&lt;-</span> as.data.frame<span class="p">(</span>prop.table<span class="p">(</span>table<span class="p">(</span>datB<span class="o">$</span>v2<span class="p">,</span>datB<span class="o">$</span>v75<span class="p">),</span><span class="m">1</span><span class="p">)</span><span class="o">*</span><span class="m">100</span><span class="p">)</span>
+tblA <span class="o">&lt;-</span> <span class="kp">as.data.frame</span><span class="p">(</span><span class="kp">prop.table</span><span class="p">(</span><span class="kp">table</span><span class="p">(</span>datA<span class="o">$</span>v2<span class="p">,</span>datA<span class="o">$</span>v75<span class="p">),</span><span class="m">1</span><span class="p">)</span><span class="o">*</span><span class="m">100</span><span class="p">)</span>
+tblB <span class="o">&lt;-</span> <span class="kp">as.data.frame</span><span class="p">(</span><span class="kp">prop.table</span><span class="p">(</span><span class="kp">table</span><span class="p">(</span>datB<span class="o">$</span>v2<span class="p">,</span>datB<span class="o">$</span>v75<span class="p">),</span><span class="m">1</span><span class="p">)</span><span class="o">*</span><span class="m">100</span><span class="p">)</span>
 <span class="c1"># Combine the tables</span>
-tbl <span class="o">&lt;-</span> rbind<span class="p">(</span>tblA<span class="p">,</span>tblB<span class="p">)</span>
+tbl <span class="o">&lt;-</span> <span class="kp">rbind</span><span class="p">(</span>tblA<span class="p">,</span>tblB<span class="p">)</span>
 <span class="c1"># subset the tables to include only ues or no options</span>
-tbl2 <span class="o">&lt;-</span> tbl<span class="p">[</span>tbl<span class="o">$</span>Var2 <span class="o">%in%</span> c<span class="p">(</span><span class="s">&quot;yes&quot;</span><span class="p">,</span><span class="s">&quot;no&quot;</span><span class="p">),]</span>
-tbl2<span class="o">$</span>Var2 <span class="o">&lt;-</span> factor<span class="p">(</span>tbl2<span class="o">$</span>Var2<span class="p">,</span> levels<span class="o">=</span>c<span class="p">(</span><span class="s">&quot;yes&quot;</span><span class="p">,</span><span class="s">&quot;no&quot;</span><span class="p">))</span>
+tbl2 <span class="o">&lt;-</span> tbl<span class="p">[</span>tbl<span class="o">$</span>Var2 <span class="o">%in%</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;yes&quot;</span><span class="p">,</span><span class="s">&quot;no&quot;</span><span class="p">),]</span>
+tbl2<span class="o">$</span>Var2 <span class="o">&lt;-</span> <span class="kp">factor</span><span class="p">(</span>tbl2<span class="o">$</span>Var2<span class="p">,</span> levels<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;yes&quot;</span><span class="p">,</span><span class="s">&quot;no&quot;</span><span class="p">))</span>
 </code></pre></div>
 <h2>Distribution of answers by country as histogram</h2>
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">## To nicely order the plot I will melt the data into wide format, reorder it </span>
 <span class="c1">## and convert it back to long format for plotting</span>
-library<span class="p">(</span>reshape2<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>reshape2<span class="p">)</span>
 orderDat <span class="o">&lt;-</span> dcast<span class="p">(</span>tbl2<span class="p">,</span> Var1 <span class="o">~</span>Var2<span class="p">,</span> value.var<span class="o">=</span><span class="s">&quot;Freq&quot;</span><span class="p">)</span>
 orderDat<span class="o">$</span>Var1 <span class="o">&lt;-</span> reorder<span class="p">(</span>orderDat<span class="o">$</span>Var1<span class="p">,</span> orderDat<span class="o">$</span>yes<span class="p">,</span> median<span class="p">)</span>
-tblPlot <span class="o">&lt;-</span> melt<span class="p">(</span>orderDat<span class="p">,</span> id.vars<span class="o">=</span><span class="s">&quot;Var1&quot;</span><span class="p">,</span> measure.vars<span class="o">=</span>c<span class="p">(</span><span class="s">&quot;yes&quot;</span><span class="p">,</span><span class="s">&quot;no&quot;</span><span class="p">))</span>
+tblPlot <span class="o">&lt;-</span> melt<span class="p">(</span>orderDat<span class="p">,</span> id.vars<span class="o">=</span><span class="s">&quot;Var1&quot;</span><span class="p">,</span> measure.vars<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;yes&quot;</span><span class="p">,</span><span class="s">&quot;no&quot;</span><span class="p">))</span>
 <span class="c1"># And then the plot</span>
 <span class="c1">## relevelling the levels to match the daulft colors better</span>
-tblPlot<span class="o">$</span>variable <span class="o">&lt;-</span> factor<span class="p">(</span>tblPlot<span class="o">$</span>variable<span class="p">,</span> 
-                           levels<span class="o">=</span>c<span class="p">(</span><span class="s">&quot;no&quot;</span><span class="p">,</span><span class="s">&quot;yes&quot;</span><span class="p">))</span>
-library<span class="p">(</span>ggplot2<span class="p">)</span>
+tblPlot<span class="o">$</span>variable <span class="o">&lt;-</span> <span class="kp">factor</span><span class="p">(</span>tblPlot<span class="o">$</span>variable<span class="p">,</span> 
+                           levels<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;no&quot;</span><span class="p">,</span><span class="s">&quot;yes&quot;</span><span class="p">))</span>
+<span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
 ggplot<span class="p">(</span>tblPlot<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>Var1<span class="p">,</span>y<span class="o">=</span>value<span class="p">,</span>fill<span class="o">=</span>variable<span class="p">))</span> <span class="o">+</span>
     geom_bar<span class="p">(</span>stat<span class="o">=</span><span class="s">&quot;identity&quot;</span><span class="p">)</span> <span class="o">+</span>
       coord_flip<span class="p">()</span> <span class="o">+</span> 
@@ -194,7 +194,7 @@ ggplot<span class="p">(</span>tblPlot<span class="p">,</span> aes<span class="p"
         axis.text.y <span class="o">=</span> element_text<span class="p">(</span>size<span class="o">=</span><span class="m">14</span><span class="p">),</span>
         legend.text <span class="o">=</span> element_text<span class="p">(</span>size<span class="o">=</span><span class="m">14</span><span class="p">))</span>
 </code></pre></div>
-<p><img src="/figure/source/2013-11-14-world-values-survey-on-map/wvsBarplot.png" alt="plot of chunk wvsBarplot"> </p>
+<p><img src="/figure/source/2013-11-14-world-values-survey-on-map/wvsBarplot-1.png" alt="plot of chunk wvsBarplot"> </p>
 
 <h2>Plotting the data on the map</h2>
 
@@ -207,7 +207,7 @@ ggplot<span class="p">(</span>tblPlot<span class="p">,</span> aes<span class="p"
               destfile <span class="o">=</span> <span class="s">&quot;worldborders.zip&quot;</span><span class="p">)</span>
 <span class="c1"># unzip to SpatialPolygonsDataFrame</span>
 unzip<span class="p">(</span><span class="s">&quot;worldborders.zip&quot;</span><span class="p">)</span>
-library<span class="p">(</span>rgdal<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>rgdal<span class="p">)</span>
 shape <span class="o">&lt;-</span> readOGR<span class="p">(</span>dsn <span class="o">=</span> <span class="s">&quot;YOUR WORKING DIRECTORY HERE/&quot;</span><span class="p">,</span> 
                  layer <span class="o">=</span> <span class="s">&quot;TM_WORLD_BORDERS-0.2&quot;</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## OGR data source with driver: ESRI Shapefile 
@@ -221,30 +221,30 @@ shape <span class="o">&lt;-</span> readOGR<span class="p">(</span>dsn <span clas
 
 <p>Thereafter I will merge the <code>yes</code> values from the WVS data summary. This merging is often problematic due to mismatch in the country names in different datasets. In this example I&#39;m only changing the first letters of countrynames from WVS into uppercase and hope that match will happen. Most probably you would need to create a key table for perfect match.</p>
 <div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># fortify the data</span>
-library<span class="p">(</span>ggplot2<span class="p">)</span>
-shape<span class="o">$</span>id <span class="o">&lt;-</span> rownames<span class="p">(</span>shape<span class="o">@</span>data<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
+shape<span class="o">$</span>id <span class="o">&lt;-</span> <span class="kp">rownames</span><span class="p">(</span>shape<span class="o">@</span>data<span class="p">)</span>
 map.points <span class="o">&lt;-</span> fortify<span class="p">(</span>shape<span class="p">,</span> region <span class="o">=</span> <span class="s">&quot;id&quot;</span><span class="p">)</span>
-map.df <span class="o">&lt;-</span> merge<span class="p">(</span>map.points<span class="p">,</span> shape<span class="p">,</span> by <span class="o">=</span> <span class="s">&quot;id&quot;</span><span class="p">)</span>
+map.df <span class="o">&lt;-</span> <span class="kp">merge</span><span class="p">(</span>map.points<span class="p">,</span> shape<span class="p">,</span> by <span class="o">=</span> <span class="s">&quot;id&quot;</span><span class="p">)</span>
 <span class="c1"># subset only the yeas options</span>
 yesDat <span class="o">&lt;-</span> tblPlot<span class="p">[</span>tblPlot<span class="o">$</span>variable <span class="o">==</span> <span class="s">&quot;yes&quot;</span><span class="p">,]</span>
 <span class="c1"># Function the uppercase the first characters</span>
-.simpleCap <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>x<span class="p">)</span> <span class="p">{</span>
-    s <span class="o">&lt;-</span> strsplit<span class="p">(</span>x<span class="p">,</span> <span class="s">&quot; &quot;</span><span class="p">)[[</span><span class="m">1</span><span class="p">]]</span>
-    paste<span class="p">(</span>toupper<span class="p">(</span>substring<span class="p">(</span>s<span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">)),</span> substring<span class="p">(</span>s<span class="p">,</span> <span class="m">2</span><span class="p">),</span>
+<span class="m">.</span>simpleCap <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>x<span class="p">)</span> <span class="p">{</span>
+    s <span class="o">&lt;-</span> <span class="kp">strsplit</span><span class="p">(</span>x<span class="p">,</span> <span class="s">&quot; &quot;</span><span class="p">)[[</span><span class="m">1</span><span class="p">]]</span>
+    <span class="kp">paste</span><span class="p">(</span><span class="kp">toupper</span><span class="p">(</span><span class="kp">substring</span><span class="p">(</span>s<span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">)),</span> <span class="kp">substring</span><span class="p">(</span>s<span class="p">,</span> <span class="m">2</span><span class="p">),</span>
           sep <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span> collapse <span class="o">=</span> <span class="s">&quot; &quot;</span><span class="p">)</span>
 <span class="p">}</span>
-yesDat<span class="o">$</span>Var1 <span class="o">&lt;-</span> as.character<span class="p">(</span>yesDat<span class="o">$</span>Var1<span class="p">)</span>
-yesDat<span class="o">$</span>Var1C <span class="o">&lt;-</span> sapply<span class="p">(</span>yesDat<span class="o">$</span>Var1<span class="p">,</span> .simpleCap<span class="p">)</span>
+yesDat<span class="o">$</span>Var1 <span class="o">&lt;-</span> <span class="kp">as.character</span><span class="p">(</span>yesDat<span class="o">$</span>Var1<span class="p">)</span>
+yesDat<span class="o">$</span>Var1C <span class="o">&lt;-</span> <span class="kp">sapply</span><span class="p">(</span>yesDat<span class="o">$</span>Var1<span class="p">,</span> <span class="m">.</span>simpleCap<span class="p">)</span>
 <span class="c1"># merge the datas using country names</span>
-map.df <span class="o">&lt;-</span> merge<span class="p">(</span>map.df<span class="p">,</span>yesDat<span class="p">,</span>
+map.df <span class="o">&lt;-</span> <span class="kp">merge</span><span class="p">(</span>map.df<span class="p">,</span>yesDat<span class="p">,</span>
                 by.x<span class="o">=</span><span class="s">&quot;NAME&quot;</span><span class="p">,</span>
                 by.y<span class="o">=</span><span class="s">&quot;Var1C&quot;</span><span class="p">,</span> 
                 all.x<span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
 <span class="c1"># order the data for smooth plotting</span>
-map.df <span class="o">&lt;-</span> map.df<span class="p">[</span>order<span class="p">(</span>map.df<span class="o">$</span>order<span class="p">),</span> <span class="p">]</span>
+map.df <span class="o">&lt;-</span> map.df<span class="p">[</span><span class="kp">order</span><span class="p">(</span>map.df<span class="o">$</span><span class="kp">order</span><span class="p">),</span> <span class="p">]</span>
 </code></pre></div>
 <h3>A whole world using mercator projetion</h3>
-<div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>ggplot2<span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
 ggplot<span class="p">(</span>map.df<span class="p">,</span> aes<span class="p">(</span>long<span class="p">,</span>lat<span class="p">,</span>group<span class="o">=</span>group<span class="p">))</span> <span class="o">+</span>
   geom_polygon<span class="p">(</span>aes<span class="p">(</span>fill<span class="o">=</span>value<span class="p">))</span> <span class="o">+</span>
   geom_polygon<span class="p">(</span>data <span class="o">=</span> map.df<span class="p">,</span> aes<span class="p">(</span>long<span class="p">,</span>lat<span class="p">),</span> 
@@ -254,10 +254,10 @@ ggplot<span class="p">(</span>map.df<span class="p">,</span> aes<span class="p">
   scale_fill_gradient2<span class="p">(</span>low<span class="o">=</span><span class="s">&quot;white&quot;</span><span class="p">,</span> high<span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">)</span><span class="o">+</span>
     theme<span class="p">(</span>legend.position<span class="o">=</span><span class="s">&quot;top&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p><img src="/figure/source/2013-11-14-world-values-survey-on-map/wvsMercator.png" alt="plot of chunk wvsMercator"> </p>
+<p><img src="/figure/source/2013-11-14-world-values-survey-on-map/wvsMercator-1.png" alt="plot of chunk wvsMercator"> </p>
 
 <h3>Using Orthographic projection centered at Moscow</h3>
-<div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>ggplot2<span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
 ggplot<span class="p">(</span>map.df<span class="p">,</span> aes<span class="p">(</span>long<span class="p">,</span>lat<span class="p">,</span>group<span class="o">=</span>group<span class="p">))</span> <span class="o">+</span>
   geom_polygon<span class="p">(</span>aes<span class="p">(</span>fill<span class="o">=</span>value<span class="p">))</span> <span class="o">+</span>
   geom_polygon<span class="p">(</span>data <span class="o">=</span> map.df<span class="p">,</span> aes<span class="p">(</span>long<span class="p">,</span>lat<span class="p">),</span> 
@@ -266,9 +266,9 @@ ggplot<span class="p">(</span>map.df<span class="p">,</span> aes<span class="p">
                size<span class="o">=</span><span class="m">0.1</span><span class="p">)</span> <span class="o">+</span> <span class="c1"># white borders</span>
   scale_fill_gradient2<span class="p">(</span>low<span class="o">=</span><span class="s">&quot;white&quot;</span><span class="p">,</span> high<span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">)</span><span class="o">+</span>
     theme<span class="p">(</span>legend.position<span class="o">=</span><span class="s">&quot;top&quot;</span><span class="p">)</span> <span class="o">+</span>
-    coord_map<span class="p">(</span><span class="s">&quot;ortho&quot;</span><span class="p">,</span> orientation<span class="o">=</span>c<span class="p">(</span><span class="m">55</span><span class="p">,</span> <span class="m">37</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
+    coord_map<span class="p">(</span><span class="s">&quot;ortho&quot;</span><span class="p">,</span> orientation<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">55</span><span class="p">,</span> <span class="m">37</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
 </code></pre></div>
-<p><img src="/figure/source/2013-11-14-world-values-survey-on-map/wvsOrtho.png" alt="plot of chunk wvsOrtho"> </p>
+<p><img src="/figure/source/2013-11-14-world-values-survey-on-map/wvsOrtho-1.png" alt="plot of chunk wvsOrtho"> </p>
 
 <p>The grey stands for missing data that covers most of the countries. That is due to both missing data in VWS 2005 and errors in merging the attribute data with the shape. Also, the issue of spatial story behind the scandinavians willingness to fight wars did not become much clearer as a results of this one hour exercise.</p>
 
