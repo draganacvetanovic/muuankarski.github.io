@@ -7,6 +7,115 @@
 		<atom:link href="/blog/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>My comment on the Open Science and Research Roadmap 2014-2017 at the Open Science and Research Forum</title>
+				<description>&lt;p&gt;My name is Markus Kainu. I&amp;#39;m a PhD Candidate in Social Policy and I do research at the &lt;a href=&quot;http://www.helsinki.fi/aleksanteri/english/&quot;&gt;Aleksanteri Institute&lt;/a&gt;, which is the Center for Russian and Eastern European studies in university of Helsinki.&lt;/p&gt;
+
+&lt;p&gt;I study poverty, inequality and welfare state development in the ex-Soviet bloc, namely Russia and Eastern Europe. Our research groups latest article was called &lt;a href=&quot;http://www.metapress.com/content/p7517v2929mw5871/&quot;&gt;Paradoxes of Agency: Democracy and Welfare in Russia&lt;/a&gt; that was published in &lt;em&gt;Demokratizatsiya: The Journal of Post-Soviet Democratization&lt;/em&gt;. (that is behind a paywall..)&lt;/p&gt;
+
+&lt;p&gt;In addition to substantive research, I write software for accessing and analysing the dataset I use, for example &lt;a href=&quot;https://github.com/rOpenGov/eurostat&quot;&gt;Eurostat-database&lt;/a&gt;, &lt;a href=&quot;https://github.com/muuankarski/r.eusilc&quot;&gt;EU-silc -survey data&lt;/a&gt; or &lt;a href=&quot;https://github.com/rOpenGov/rqog&quot;&gt;Quality of Government data&lt;/a&gt; and so forth. I primarily use &lt;a href=&quot;http://www.r-project.org/&quot;&gt;R-language&lt;/a&gt; for statistical computing.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;My field is a late adopter or a laggard when it comes to each three aspects of this roadmap.&lt;/p&gt;
+
+&lt;p&gt;As for &lt;em&gt;publications&lt;/em&gt;, hard cover books are still &lt;em&gt;the hard currency&lt;/em&gt;, and open access publishing is often mixed with predatory publishing and so forth.&lt;/p&gt;
+
+&lt;p&gt;As for &lt;em&gt;research data&lt;/em&gt;, it is still unclear for many fields in social sciences and humanities &lt;a href=&quot;http://blogs.lse.ac.uk/impactofsocialsciences/2014/10/29/open-science-disciplinary-culture-clash/&quot;&gt;what actually consist of research data&lt;/a&gt;. On the other hand, a lot of research uses &lt;em&gt;open government data&lt;/em&gt; which is the primary fuel for the wider &lt;em&gt;open data&lt;/em&gt; movement. So one could say, that in some cases researchers dont know whether they have any data, and in some case the data is open according to &lt;em&gt;open definition&lt;/em&gt;. Most cases are somewhere in between.&lt;/p&gt;
+
+&lt;p&gt;The data I use is primarily collected by someone else. We collect social surveys in Russia every few years, but still, most of my dataset are produces by statistical agencies as Eurostat or Rosstat, or research projects such as European Social Survey. In most cases it is survey data that has information about individuals and households, and therefore access to the data is often restricted. At the same time, I do use country and region level indicators of economic and social development that come close to &lt;em&gt;open data&lt;/em&gt;. &lt;/p&gt;
+
+&lt;p&gt;Using data collected by others is very typical for my kind of analysis, where you have big survey datasets from many countries across several years with hundreds or thousands of users. This type of analysis would, in my opinion, greatly benefit from &lt;em&gt;open research methods&lt;/em&gt;: from crafting and sharing code and software, though there is virtually none of it. As many of you know the SPSS-software stands for &lt;em&gt;Statistical Package for the Social Sciences&lt;/em&gt;, but unfortunately, very little has changed since the introduction of the software in late 60&amp;#39;s, in terms of openness of the software or research methods, at least.&lt;/p&gt;
+
+&lt;!--When talking about the absence of *open research methods*, it is important to be aware of great divide of the field into qualitative and quantitative camps. The qualitative camp hasn't relied on computer software much until recently, whereas quantitative social research has a long history. As many of you know the SPSS-software stands for *Statistical Package for the Social Sciences*. Unfortunately, not much has changed since the introduction of the software in late 60's, in terms of openness of the software or research methods, at least.--&gt;
+
+&lt;p&gt;In addition to my academic affiliations, I do represent here also the &lt;a href=&quot;http://fi.okfn.org/wg/openscience/&quot;&gt;&lt;em&gt;open science working group&lt;/em&gt;&lt;/a&gt; of &lt;a href=&quot;http://fi.okfn.org/&quot;&gt;Open Knowledge Finland&lt;/a&gt;, where we try to keep up with discussions abroad, collaborate in research software and try to find out the costs of academic publishing within Finnish universies, for instance. (You perhaps visited our stand during the lunch break)&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;In general I must say that this document captures rather well all the nuances and variable focus within the young and evolving &lt;em&gt;open science discourse&lt;/em&gt;. General objective is ambitious, but it is clearly stated and split into more concrete sub-objectives, and therefore it is easy to give comments on that.&lt;/p&gt;
+
+&lt;p&gt;But, as the time is limited, I decided to asses the roadmap from my researchers experience and to comment it in order to make it more appealing for a fellow researchers and therefore, hopefully, to contribute to the viability of the roadmap.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;!--Commentators before my adressed both the *open access to publications* and *the openness of the research data* in such a compherensive manner, that I feel that I should look upon the &quot;openness of research methods&quot; in more details. --&gt;
+
+&lt;p&gt;From my grassroot point of view I feel that openness of the research methods could have the greatest impact on the daily practises researchers, and for same reason, may be the toughest to implement.&lt;/p&gt;
+
+&lt;p&gt;My interest in open source research software started from very practical issues. Once I realized how much I had to learn to do master the analysis, I thought I don&amp;#39;t want to be dependent on institutions paying my licence costs nor restricted by software lisences for what kind analysis I&amp;#39;m allowed to do. Also, when I realized the practise of my teachers I thought there must be more coherent ways for doing this stuff that I found from computer sciences.&lt;/p&gt;
+
+&lt;p&gt;I took a bit of gut, to transfer your skills in proprietary software into open source world, while you had to &lt;em&gt;get things done&lt;/em&gt; at the same time. While being a phd student is a good time for that. However, it also required a lot of extra work as open source software is not supported by university IT departments. So, in practise, I had to buy the hardware with my own money and learn to maintain my software from operating systems to research software, from data management to version control of my texts. I was very lucky, that during the same period, the open source community in scientific software really took of, and there were better and better resources for learning things. Taking this path delayed my graduation a fair bit, but I was comforted by &lt;a href=&quot;http://marketing.dice.com/pdf/Dice_TechSalarySurvey_2014.pdf&quot;&gt;2014 Dice Tech Salary Survey &lt;/a&gt; that ranked &lt;em&gt;R&lt;/em&gt; skills attracting the highest salaries in US.&lt;/p&gt;
+
+&lt;h2&gt;Liberate and empower the researcher&lt;/h2&gt;
+
+&lt;p&gt;Gary King, the professor of political science and Director of the Institute for Quantitative Social Science in Harvard University stated&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Leaving computer technology to the university IT department does not work, no matter how qualified they are because they are first to satisfy the 95% with vanilla services, whereas cutting-edge methods researchers are usually in the remaining 5%. &lt;a href=&quot;http://gking.harvard.edu/ations/restructuring-social-science&quot;&gt;(King, Gary. “Restructuring the Social Sciences: Reflections from Harvard’s Institute for Quantitative Social Science.” PS: Political Science and Politics 47.1 (2014): p. 171&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So what follows from my experience, and from what I have learned for colleagues abroad, is that researchers have to have full control over their computers and software. They have to be able to learn and apply new software the same way they can learn and apply new theories from books in library. There cannot be anyone deciding on what books and software you can learn if researcher wants to be on the cutting edge of his or her discipline. This is a challenge for university IT as they have moved to opposite direction in recent years. One size may fit all the bureaucrats, but not cutting egde research.&lt;/p&gt;
+
+&lt;h2&gt;What we need is network effect&lt;/h2&gt;
+
+&lt;p&gt;What could follow from unchaining the software environment the great majority of researcher use, is the &lt;a href=&quot;http://en.wikipedia.org/wiki/Network_effect&quot;&gt;network effect&lt;/a&gt;. &lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;In economics and business, a network effect (also called network externality or demand-side economies of scale) is the effect that one user of a good or service has on the value of that product to other people. When a network effect is present, the value of a product or service is dependent on the number of others using it.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Again using myself as an example, my scientific output would greatly be improved if my reserarch group could fully utilize the potential of open source research software, my expertise and software. If I&amp;#39;m just learning new things and the gap between myself and colleagues is widening, it does not make much difference. At the national level, this is true as well. We could improve a lot if the majority of researcher would adopt some skills in sustainable information management, in choosing sustainable software and so forth. &lt;/p&gt;
+
+&lt;p&gt;Science fiction novellist William Gibsonin has once stated that &amp;quot;&lt;em&gt;The future is already here. It’s just not evenly distributed yet&lt;/em&gt;&amp;quot;. in this vein, I think that ATT should focus on &lt;em&gt;redistributing this future&lt;/em&gt;, the good and top practises in research, to the masses, rather than building new infrastructures.&lt;/p&gt;
+
+&lt;p&gt;ok, loppuun tuli paatosta. sitten vielä pari vinkkiä motivointiin..&lt;/p&gt;
+
+&lt;h2&gt;Motivation&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;What I&amp;#39;m curious about are the mechanism that are believed to bring all this into daily practises of researcher. How can you make such fundamental changes into extremely busy and uncertain life of a academic reseacher?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2&gt;Sustainable software &amp;amp; practises&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;We believe that the full benefits of software in research will only be realised when software is accepted as a valid research output.
+
+We call for all researchers to have access to basic software training to help them harness the power of software for their research.
+
+We say that there must be reward and recognition for Research Software Engineers: the people who contribute to research by developing software.
+
+Finally, we argue that good software practices create better software, and that better software improves the reproducibility and reusability of research.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;A basic introduction to software development should be a core part of any researcher&amp;#39;s training,&lt;/p&gt;
+
+&lt;p&gt;The value of Open Source research software does not come from the savings in licence costs, but from the potential of research community to together develope tools for analysis of very spesific research problems&lt;/p&gt;
+
+&lt;h2&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;What I want to empsize here is that I&amp;#39;m an outlier when it comes to distributions of open science ideas or software skills in the academia. No national policy should be designed based on my needs or people alike, if we want to &lt;/p&gt;
+
+&lt;p&gt;I often ask from fellow researchers when I run workshop or tutorials in the issues, that in the past five years, how many analytical applications have you learned and how many bureaucratic applications have you adopted.&lt;/p&gt;
+
+&lt;p&gt;There is a constant flow of good researchers from university. Often there are more &amp;quot;push factors&amp;quot;, than &amp;quot;pull factors&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;Russian longitudinal survey, package(zoo)&lt;/p&gt;
+
+&lt;p&gt;mefa: Multivariate Data Handling in Ecology and Biogeography
+zoo: S3 Infrastructure for Regular and Irregular Time Series (Z&amp;#39;s ordered observations)&lt;/p&gt;
+
+&lt;p&gt;Currently &lt;/p&gt;
+
+&lt;p&gt;Improving the quality of science is not enough&lt;/p&gt;
+
+&lt;p&gt;Improving their (academic) labour market potential&lt;/p&gt;
+
+&lt;p&gt;working on social change in Russia &amp;amp; Eastern Europe, specifically studying the development of living conditions and capacity of social policies in the region.&lt;/p&gt;
+
+&lt;p&gt;Russian &lt;/p&gt;
+</description>
+				<pubDate>Tue, 25 Nov 2014 10:23:45 +0200</pubDate>
+				<link>/avoin/tiede/2014/11/25/comment-open-science-reseach-forum.html</link>
+				<guid isPermaLink="true">/avoin/tiede/2014/11/25/comment-open-science-reseach-forum.html</guid>
+			</item>
+		
+			<item>
 				<title>Combine and subset EU-SILC data with r.eusilc-package in R</title>
 				<description>&lt;p&gt;I have worked a lot with &lt;a href=&quot;http://epp.eurostat.ec.europa.eu/portal/page/portal/microdata/eu_silc&quot;&gt;EU-silc data&lt;/a&gt; over the years and consulted other researchers on various analytical and data manipulation tasks related to data. Data has a fame of being in the nasty end of survey datas and I thought some other users might have use for solid free software solutions for combining and subsetting the data. &lt;/p&gt;
 
@@ -206,180 +315,6 @@ ggplot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;both_cross_2010&lt;span clas
 				<pubDate>Wed, 22 Jan 2014 10:23:45 +0200</pubDate>
 				<link>/git/2014/01/22/git-version-control.html</link>
 				<guid isPermaLink="true">/git/2014/01/22/git-version-control.html</guid>
-			</item>
-		
-			<item>
-				<title>Visualising World Values Survey on a Map in R</title>
-				<description>&lt;p&gt;I&amp;#39;m attending the &lt;em&gt;3rd international annual research conference: &amp;quot;Cultural and Economic changes under cross-national perspective&amp;quot;&lt;/em&gt; at the &lt;a href=&quot;http://lcsr.hse.ru/&quot;&gt;Laboratory for Comparative Social Reseach at the Moscow Higher School of Economics&lt;/a&gt; currently that gathers together scholars around the world interested in comparative social research. &lt;a href=&quot;https://rawgithub.com/muuankarski/attributions/master/attrib_slides.html&quot;&gt;in my presentation&lt;/a&gt; I used some spatial visualizations and therefore I received several questions on how to implement such illustrations. In this brief demonstration I will show how to visualize country level data from &lt;a href=&quot;http://www.worldvaluessurvey.org/&quot;&gt;World Values Survey&lt;/a&gt;(WVS) that is a widely used dataset in this context.&lt;/p&gt;
-
-&lt;p&gt;I used the data for the first time yesterday when I downloaded the A &amp;amp; B datasets from year 2005. As I&amp;#39;m not familiar with dataset I won&amp;#39;t go into details of if, but just bluntly implement a simple workflow for these spatial illustrations.&lt;/p&gt;
-
-&lt;h2&gt;Loading the WVS and extracting the summary statistics&lt;/h2&gt;
-
-&lt;p&gt;Again due to my incompetence in using the data I&amp;#39;m not using any weights in deriving the summary statistics but just rely on the data as it is. If you want to improve this aspect you can consult for example &lt;a href=&quot;http://markuskainu.fi/r-tutorial/survey/&quot;&gt;my tutorial on using survey-package in R&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The variable of interest here is &lt;code&gt;V75: BE WILLING TO FIGHT IN WAR FOR YOUR COUNTRY&lt;/code&gt; as it was discussed in the presentation by professor Ronald Inglehart. I found it interesting in his presentation that all the Scandinavian countries had a relatively high rates for this willingness, and I felt that there may a spatial story behind this, ie. approximity to Russian Federation.&lt;/p&gt;
-
-&lt;p&gt;The question behind the key variable is formulated as:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;V75. Of course, we all hope that there will not be another war, but if it were to come to that, would you be
-willing to fight for your country? (Code one answer):&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;And it has values and labels as:&lt;/p&gt;
-
-&lt;table&gt;
-&lt;tr&gt;
-&lt;th&gt;Value&lt;/th&gt;&lt;th&gt;Label&lt;/th&gt;
-&lt;tr&gt;
-&lt;tr&gt;
-&lt;td&gt;-5&lt;/td&gt;&lt;td&gt;Missing; Unknown&lt;/td&gt;
-&lt;tr&gt;
-&lt;tr&gt;
-&lt;td&gt;-4&lt;/td&gt;&lt;td&gt;Not asked&lt;/td&gt;
-&lt;tr&gt;
-&lt;tr&gt;
-&lt;td&gt;-3&lt;/td&gt;&lt;td&gt;Not applicable&lt;/td&gt;
-&lt;tr&gt;
-&lt;tr&gt;
-&lt;td&gt;-2&lt;/td&gt;&lt;td&gt;No answer&lt;/td&gt;
-&lt;tr&gt;
-&lt;tr&gt;
-&lt;td&gt;-1&lt;/td&gt;&lt;td&gt;Don't know'&lt;/td&gt;
-&lt;tr&gt;
-&lt;tr&gt;
-&lt;td&gt;1&lt;/td&gt;&lt;td&gt;yes&lt;/td&gt;
-&lt;tr&gt;
-&lt;tr&gt;
-&lt;td&gt;0&lt;/td&gt;&lt;td&gt;no&lt;/td&gt;
-&lt;tr&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
-
-&lt;p&gt;I&amp;#39;m focusing only in the &lt;code&gt;yes&lt;/code&gt; or &lt;code&gt;no&lt;/code&gt; values, or in &lt;code&gt;yes&lt;/code&gt; in particular.&lt;/p&gt;
-
-&lt;p&gt;The data is not provided in any generic for but only in proprietary SAS/SPSS/Stata format, but using &lt;strong&gt;foreign&lt;/strong&gt;-package it is doable. (a .csv or .Rdata would perhaps be a good idea in these days!)&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;library&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;foreign&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Load the oridinal dataset into R&lt;/span&gt;
-datB &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; read.dta&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;DATA_LOCATION_HERE/wvs2005_v20090901b.dta&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-datA &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; read.dta&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;DATA_LOCATION_HERE/wvs2005_v20090901a.dta&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Create  proportional tables from both data by country&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;## there are some issues with country labels so I convert&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;## the variable into a string&lt;/span&gt;
-datA&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;v2 &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; as.character&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;datA&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;v2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-datB&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;v2 &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; as.character&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;datB&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;v2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Create unweighted proportional tables from both datas&lt;/span&gt;
-tblA &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; as.data.frame&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;prop.table&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;table&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;datA&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;v2&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;datA&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;v75&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-tblB &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; as.data.frame&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;prop.table&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;table&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;datB&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;v2&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;datB&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;v75&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Combine the tables&lt;/span&gt;
-tbl &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; rbind&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;tblA&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;tblB&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# subset the tables to include only ues or no options&lt;/span&gt;
-tbl2 &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; tbl&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;tbl&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;Var2 &lt;span class=&quot;o&quot;&gt;%in%&lt;/span&gt; c&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;yes&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;no&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),]&lt;/span&gt;
-tbl2&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;Var2 &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; factor&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;tbl2&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;Var2&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; levels&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;c&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;yes&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;no&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;Distribution of answers by country as histogram&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;## To nicely order the plot I will melt the data into wide format, reorder it &lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;## and convert it back to long format for plotting&lt;/span&gt;
-library&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;reshape2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-orderDat &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; dcast&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;tbl2&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; Var1 &lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;Var2&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; value.var&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Freq&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-orderDat&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;Var1 &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; reorder&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;orderDat&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;Var1&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; orderDat&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;yes&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; median&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-tblPlot &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; melt&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;orderDat&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; id.vars&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Var1&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; measure.vars&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;c&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;yes&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;no&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# And then the plot&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;## relevelling the levels to match the daulft colors better&lt;/span&gt;
-tblPlot&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;variable &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; factor&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;tblPlot&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;variable&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
-                           levels&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;c&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;no&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;yes&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-library&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;ggplot2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-ggplot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;tblPlot&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; aes&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;x&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;Var1&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;y&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;value&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;fill&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;variable&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
-    geom_bar&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;stat&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;identity&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
-      coord_flip&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; 
-  theme&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;legend.position&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;top&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
-  theme&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;axis.text.x &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; element_text&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;size&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;14&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-        axis.text.y &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; element_text&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;size&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;14&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-        legend.text &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; element_text&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;size&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;14&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/figure/source/2013-11-14-world-values-survey-on-map/wvsBarplot-1.png&quot; alt=&quot;plot of chunk wvsBarplot&quot;&gt; &lt;/p&gt;
-
-&lt;h2&gt;Plotting the data on the map&lt;/h2&gt;
-
-&lt;h3&gt;Downloading the geographical data&lt;/h3&gt;
-
-&lt;p&gt;Here I&amp;#39;m downloading the whole world shapefile from &lt;a href=&quot;http://www-mappinghacks.com&quot;&gt;www-mappinghacks.com&lt;/a&gt;. Of course there are many more options if available, but I picked it as it small size file but it still has the details needed. (I&amp;#39;m a novice in using world levels shapefiles fo please let me know of better resources).&lt;/p&gt;
-
-&lt;p&gt;I greatly recommend you to familiarize yourself with theoretical literature of spatial reasoning in social sciences for example by reading &lt;a href=&quot;http://books.google.ru/books/about/The_Sociology_of_Spatial_Inequality.html?id=67P6jXQ05LAC&amp;amp;redir_esc=y&quot;&gt;&lt;em&gt;Lobao, Linda M., Gregory Hooks, ja Ann R. Tickamyer. The Sociology of Spatial Inequality. State University of New York Press, 2007.&lt;/em&gt;&lt;/a&gt; as well as with open source ecosystem for geographics information systems through &lt;a href=&quot;http://www.asdar-book.org/&quot;&gt;Bivand, Roger S., Edzer J. Pebesma, ja Virgilio Gómez-Rubio. Applied Spatial Data Analysis with R. 2. p. Springer, 2013.&lt;/a&gt;. &lt;a href=&quot;http://cran.r-project.org/web/views/Spatial.html&quot;&gt;CRAN Task View: Analysis of Spatial Data&lt;/a&gt; is a crucial resources if you want to push this approach further in your analysis. &lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;download.file&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://www.mappinghacks.com/data/TM_WORLD_BORDERS-0.2.zip&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
-              destfile &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;worldborders.zip&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# unzip to SpatialPolygonsDataFrame&lt;/span&gt;
-unzip&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;worldborders.zip&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-library&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;rgdal&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-shape &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; readOGR&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dsn &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;YOUR WORKING DIRECTORY HERE/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
-                 layer &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;TM_WORLD_BORDERS-0.2&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## OGR data source with driver: ESRI Shapefile 
-## Source: &amp;quot;/home/aurelius/data/shapefiles/world/TM_WORLD_BORDERS_SIMPL-0.3/&amp;quot;, layer: &amp;quot;TM_WORLD_BORDERS_SIMPL-0.3&amp;quot;
-## with 246 features and 11 fields
-## Feature type: wkbPolygon with 2 dimensions
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;Converting the shape into data.frame and merging the attribute data with it&lt;/h3&gt;
-
-&lt;p&gt;I&amp;#39;m taking a bit of a shortcut here as I&amp;#39;m converting the &lt;code&gt;SpatialPolygonDataFrame&lt;/code&gt; right away into regular &lt;code&gt;data.frame&lt;/code&gt; using &lt;code&gt;fortify&lt;/code&gt;-function from &lt;strong&gt;ggplot2&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Thereafter I will merge the &lt;code&gt;yes&lt;/code&gt; values from the WVS data summary. This merging is often problematic due to mismatch in the country names in different datasets. In this example I&amp;#39;m only changing the first letters of countrynames from WVS into uppercase and hope that match will happen. Most probably you would need to create a key table for perfect match.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# fortify the data&lt;/span&gt;
-library&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;ggplot2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-shape&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;id &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; rownames&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;shape&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;data&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-map.points &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; fortify&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;shape&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; region &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;id&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-map.df &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; merge&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;map.points&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; shape&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; by &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;id&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# subset only the yeas options&lt;/span&gt;
-yesDat &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; tblPlot&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;tblPlot&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;variable &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;yes&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,]&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Function the uppercase the first characters&lt;/span&gt;
-.simpleCap &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;x&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    s &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; strsplit&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;x&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot; &amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
-    paste&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;toupper&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;substring&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;s&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)),&lt;/span&gt; substring&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;s&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-          sep &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; collapse &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot; &amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-yesDat&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;Var1 &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; as.character&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;yesDat&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;Var1&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-yesDat&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;Var1C &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; sapply&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;yesDat&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;Var1&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; .simpleCap&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# merge the datas using country names&lt;/span&gt;
-map.df &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; merge&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;map.df&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;yesDat&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                by.x&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;NAME&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                by.y&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Var1C&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
-                all.x&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# order the data for smooth plotting&lt;/span&gt;
-map.df &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; map.df&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;order&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;map.df&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;order&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;A whole world using mercator projetion&lt;/h3&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;library&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;ggplot2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-ggplot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;map.df&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; aes&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;long&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;lat&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;group&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;group&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
-  geom_polygon&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;aes&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;fill&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;value&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
-  geom_polygon&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;data &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; map.df&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; aes&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;long&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;lat&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; 
-               fill&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;NA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
-               color &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;white&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-               size&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# white borders&lt;/span&gt;
-  scale_fill_gradient2&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;low&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;white&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; high&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;blue&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
-    theme&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;legend.position&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;top&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/figure/source/2013-11-14-world-values-survey-on-map/wvsMercator-1.png&quot; alt=&quot;plot of chunk wvsMercator&quot;&gt; &lt;/p&gt;
-
-&lt;h3&gt;Using Orthographic projection centered at Moscow&lt;/h3&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;library&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;ggplot2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-ggplot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;map.df&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; aes&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;long&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;lat&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;group&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;group&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
-  geom_polygon&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;aes&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;fill&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;value&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
-  geom_polygon&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;data &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; map.df&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; aes&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;long&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;lat&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; 
-               fill&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;NA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
-               color &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;white&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-               size&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# white borders&lt;/span&gt;
-  scale_fill_gradient2&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;low&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;white&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; high&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;blue&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
-    theme&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;legend.position&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;top&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
-    coord_map&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;ortho&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; orientation&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;c&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;55&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;37&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/figure/source/2013-11-14-world-values-survey-on-map/wvsOrtho-1.png&quot; alt=&quot;plot of chunk wvsOrtho&quot;&gt; &lt;/p&gt;
-
-&lt;p&gt;The grey stands for missing data that covers most of the countries. That is due to both missing data in VWS 2005 and errors in merging the attribute data with the shape. Also, the issue of spatial story behind the scandinavians willingness to fight wars did not become much clearer as a results of this one hour exercise.&lt;/p&gt;
-</description>
-				<pubDate>Thu, 14 Nov 2013 13:23:45 +0200</pubDate>
-				<link>/r-project/2013/11/14/world-values-survey-on-map.html</link>
-				<guid isPermaLink="true">/r-project/2013/11/14/world-values-survey-on-map.html</guid>
 			</item>
 		
 	</channel>
