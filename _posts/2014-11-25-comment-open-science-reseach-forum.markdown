@@ -11,6 +11,8 @@ I study poverty, inequality and welfare state development in the ex-Soviet bloc,
 
 In addition to substantive research, I write software for accessing and analysing the dataset I use, for example [Eurostat-database](https://github.com/rOpenGov/eurostat), [EU-silc -survey data](https://github.com/muuankarski/r.eusilc) or [Quality of Government data](https://github.com/rOpenGov/rqog) and so forth. I primarily use [R-language](http://www.r-project.org/) for statistical computing.
 
+In addition to my academic affiliations, I do represent here also the [*open science working group*](http://fi.okfn.org/wg/openscience/) of [Open Knowledge Finland](http://fi.okfn.org/), where we try to keep up with discussions abroad, collaborate in research software and try to find out the costs of academic publishing within Finnish universies, for instance. (You perhaps visited our stand during the lunch break)
+
 ----
 
 My field is a late adopter or a laggard when it comes to each three aspects of this roadmap.
@@ -24,8 +26,6 @@ The data I use is primarily collected by someone else. We collect social surveys
 Using data collected by others is very typical for my kind of analysis, where you have big survey datasets from many countries across several years with hundreds or thousands of users. This type of analysis would, in my opinion, greatly benefit from *open research methods*: from crafting and sharing code and software, though there is virtually none of it. As many of you know the SPSS-software stands for *Statistical Package for the Social Sciences*, but unfortunately, very little has changed since the introduction of the software in late 60's, in terms of openness of the software or research methods, at least.
 
 <!--When talking about the absence of *open research methods*, it is important to be aware of great divide of the field into qualitative and quantitative camps. The qualitative camp hasn't relied on computer software much until recently, whereas quantitative social research has a long history. As many of you know the SPSS-software stands for *Statistical Package for the Social Sciences*. Unfortunately, not much has changed since the introduction of the software in late 60's, in terms of openness of the software or research methods, at least.-->
-
-In addition to my academic affiliations, I do represent here also the [*open science working group*](http://fi.okfn.org/wg/openscience/) of [Open Knowledge Finland](http://fi.okfn.org/), where we try to keep up with discussions abroad, collaborate in research software and try to find out the costs of academic publishing within Finnish universies, for instance. (You perhaps visited our stand during the lunch break)
 
 ----
 
