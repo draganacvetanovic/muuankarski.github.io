@@ -5,3 +5,9 @@ redcarpet:
   extensions: ["tables"]
 higlighter: rouge
 baseurl: http://muuankarski.github.io
+analytics :
+  provider : google
+  google :
+    tracking_id : 'UA-46324386-1'
+  getclicky :
+  site_id :

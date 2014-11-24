@@ -5,11 +5,25 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Markdown ja pandoc - tekstipohjaisen tieteellisen kirjoittamisen työvirta</title>
 
+<!-- Google analytics -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46324386-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- change the folder below to switch themes -->
-    <link rel="stylesheet" href="http://muuankarski.github.io/css/yeti/bootstrap.css" media="screen">
-    <link rel="stylesheet" href="http://muuankarski.github.io/css/assets/css/bootswatch.min.css"> 
+    <link rel="stylesheet" href="/css/yeti/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="/css/assets/css/bootswatch.min.css"> 
 
 
 <!-- to quickly try out themes, activate this and tweak the url!
@@ -17,10 +31,10 @@
 -->
 
         <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="http://muuankarski.github.io/css/syntax.css">
+        <link rel="stylesheet" href="/css/syntax.css">
 
         <!-- Custom CSS -->
-        <link rel="stylesheet" href="http://muuankarski.github.io/css/footer.css">
+        <link rel="stylesheet" href="/css/footer.css">
 
         <!-- Font avesome -->
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -33,7 +47,7 @@
     <div class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <a href="http://muuankarski.github.io/" class="navbar-brand">Markus Kainu</a>
+          <a href="/" class="navbar-brand">Markus Kainu</a>
           <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -42,51 +56,51 @@
         </div>
          <div class="navbar-collapse collapse" id="navbar-main">
           <ul class="nav navbar-nav">
-          <li><a href="http://muuankarski.github.io/blog.html" title="blog">blog</a></li>
-          <li><a href="http://muuankarski.github.io/about.html" title="about">about</a></li>
-          <li><a href="http://muuankarski.github.io/resources.html" title="resources">resources</a></li>
+          <li><a href="/blog.html" title="blog">blog</a></li>
+          <li><a href="/about.html" title="about">about</a></li>
+          <li><a href="/resources.html" title="resources">resources</a></li>
          </ul>
 <!--        <div class="navbar-collapse collapse" id="navbar-main">
           <ul class="nav navbar-nav">
                 <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">R<span class="caret"></span></a>
               <ul class="dropdown-menu" aria-labelledby="R">
-                <li><a href="http://muuankarski.github.io/R/lue.html">Datan lukeminen & kirjoittaminen</a></li>
-                <li><a href="http://muuankarski.github.io/R/manipulointi.html">Manipuloiminen</a></li>
-                <li><a href="http://muuankarski.github.io/R/funktiot.html">Funktiot</a></li>
-                <li><a href="http://muuankarski.github.io/R/grafiikka.html">Grafiikka</a></li>
-                <li><a href="http://muuankarski.github.io/R/survey.html">Survey</a></li>
+                <li><a href="/R/lue.html">Datan lukeminen & kirjoittaminen</a></li>
+                <li><a href="/R/manipulointi.html">Manipuloiminen</a></li>
+                <li><a href="/R/funktiot.html">Funktiot</a></li>
+                <li><a href="/R/grafiikka.html">Grafiikka</a></li>
+                <li><a href="/R/survey.html">Survey</a></li>
               </ul>         
          </ul>
           <ul class="nav navbar-nav">
                 <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Toistettava tutkimus<span class="caret"></span></a>
               <ul class="dropdown-menu" aria-labelledby="toistettava">
-                <li><a href="http://muuankarski.github.io/toistettava/knitr.html">knitr</a></li>
-                <li><a href="http://muuankarski.github.io/toistettava/kirjoita.html">Kirjoittaminen</a></li>
+                <li><a href="/toistettava/knitr.html">knitr</a></li>
+                <li><a href="/toistettava/kirjoita.html">Kirjoittaminen</a></li>
               </ul>         
          </ul>
          <ul class="nav navbar-nav">
                 <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Versiohallinta<span class="caret"></span></a>
               <ul class="dropdown-menu" aria-labelledby="versio">
-                <li><a href="http://muuankarski.github.io/versio/git.html">git</a></li>
+                <li><a href="/versio/git.html">git</a></li>
               </ul>         
          </ul>
          <ul class="nav navbar-nav">
                 <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Julkaiseminen<span class="caret"></span></a>
               <ul class="dropdown-menu" aria-labelledby="julkaisu">
-                <li><a href="http://muuankarski.github.io/julkaisu/latex.html">latex</a></li>
-                <li><a href="http://muuankarski.github.io/julkaisu/jekyll.html">jekyll</a></li>
-                <li><a href="http://muuankarski.github.io/julkaisu/pandoc.html">Pandoc</a></li>
+                <li><a href="/julkaisu/latex.html">latex</a></li>
+                <li><a href="/julkaisu/jekyll.html">jekyll</a></li>
+                <li><a href="/julkaisu/pandoc.html">Pandoc</a></li>
               </ul>         
          </ul>
 -->
 
 
          <ul class="nav navbar-nav navbar-right">
-            <li><a title="blog RSS" href="http://muuankarski.github.io/feed.xml"><i class="fa fa-rss fa-2x"></i></a></li>li>
+            <li><a title="blog RSS" href="/feed.xml"><i class="fa fa-rss fa-2x"></i></a></li>li>
             <li><a title="code" href="http://github.com/muuankarski"> <i class="fa fa-github fa-2x"></i></a></li>
             <li><a title="tweets" href="https://twitter.com/muuankarski"> <i class="fa fa-twitter fa-2x"></i></a></li>
             <li><a href="mailto:markuskainu@gmail.com?Subject=Email me!" title="Comment from the website!" target="_top"><i class="fa fa-envelope fa-2x"></i></a></li>                        
@@ -187,7 +201,7 @@ markup</a>, Emacs
 title<span class="o">:</span>  <span class="s">&#39;Esimerkkiteksti kirjoitettuna markdown-merkintäkielellä&#39;</span>
 author<span class="o">:</span> Markus Kainu
 affiliation<span class="o">:</span> Turun yliopisto
-<span class="kp">date</span><span class="o">:</span> Lokakuu <span class="m">2013</span>
+date<span class="o">:</span> Lokakuu <span class="m">2013</span>
 bibliography<span class="o">:</span> bibtex.bib
 lang<span class="o">:</span> finnish
 tags<span class="o">:</span> <span class="p">[</span>markdown<span class="p">,</span> pandoc<span class="p">]</span>
@@ -197,7 +211,7 @@ tags<span class="o">:</span> <span class="p">[</span>markdown<span class="p">,</
 
 <span class="c1">## Suhteellisuusteoriasta</span>
 
-Lorem ipsum<span class="p">[</span><span class="o">^</span><span class="m">1</span><span class="p">]</span> <span class="o">@</span>einstein1935can dolor sit amet<span class="p">,</span> consectetur adipiscing elit. Etiam at augue et quam placerat tristique <span class="p">[</span>s. <span class="m">12-15</span><span class="p">,</span> <span class="o">@</span>einstein1935can<span class="p">]</span><span class="m">.</span> 
+Lorem ipsum<span class="p">[</span><span class="o">^</span><span class="m">1</span><span class="p">]</span> <span class="o">@</span>einstein1935can dolor sit amet<span class="p">,</span> consectetur adipiscing elit. Etiam at augue et quam placerat tristique <span class="p">[</span>s. <span class="m">12-15</span><span class="p">,</span> <span class="o">@</span>einstein1935can<span class="p">]</span>. 
 
 <span class="o">$</span>e <span class="o">=</span> mc<span class="o">^</span><span class="m">2</span><span class="o">$</span>
 
@@ -205,7 +219,7 @@ Vestibulum ante ipsum <span class="p">[</span><span class="o">-@</span>einstein1
 
 <span class="o">!</span><span class="p">[</span>Massa aiheuttaa poikkeaman avaruuden geometriassa<span class="p">](</span>http<span class="o">://</span>upload.wikimedia.org<span class="o">/</span>wikipedia<span class="o">/</span>commons<span class="o">/</span><span class="m">2</span><span class="o">/</span><span class="m">22</span><span class="o">/</span>Spacetime_curvature.png<span class="p">)</span>
 
-<span class="p">[</span><span class="o">^</span><span class="m">1</span><span class="p">]</span><span class="o">:</span> Alaviitteen teksti on <span class="kp">t</span>ässä<span class="m">.</span>
+<span class="p">[</span><span class="o">^</span><span class="m">1</span><span class="p">]</span><span class="o">:</span> Alaviitteen teksti on tässä.
 
 <span class="c1">## Higgsin bosonista</span>
 
@@ -215,7 +229,7 @@ Donec tortor justo<span class="p">,</span> venenatis sodales fermentum ut<span c
 
 Lorem ipsum dolor <span class="o">@</span>lee1977weak <span class="p">[</span>s. <span class="m">35</span><span class="p">]</span> sit amet<span class="p">,</span> consectetur adipiscing elit. Etiam at augue et quam placerat tristique. 
 
-<span class="o">$</span>M_Z<span class="o">=</span>\frac<span class="p">{</span>v\<span class="kp">sqrt</span><span class="p">{</span>g<span class="o">^</span><span class="m">2</span><span class="o">+</span><span class="p">{</span>g<span class="s">&#39;</span><span class="err">}^2}}2$</span>
+<span class="o">$</span>M_Z<span class="o">=</span>\frac<span class="p">{</span>v\sqrt<span class="p">{</span>g<span class="o">^</span><span class="m">2</span><span class="o">+</span><span class="p">{</span>g<span class="s">&#39;</span><span class="err">}^2}}2$</span>
 
 Vestibulum ante ipsum primis <span class="kr">in</span> faucibus orci luctus et ultrices posuere cubilia Curae<span class="p">;</span> Mauris imperdiet sem odio<span class="p">,</span> at pharetra mauris congue dignissim. Donec tortor justo<span class="p">,</span> venenatis sodales fermentum ut<span class="p">,</span> eleifend sit amet lorem. Curabitur rutrum faucibus leo<span class="p">,</span> nec porttitor est consequat sit amet.
 

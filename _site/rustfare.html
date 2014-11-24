@@ -5,11 +5,25 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Rustfare</title>
 
+<!-- Google analytics -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46324386-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- change the folder below to switch themes -->
-    <link rel="stylesheet" href="http://muuankarski.github.io/css/yeti/bootstrap.css" media="screen">
-    <link rel="stylesheet" href="http://muuankarski.github.io/css/assets/css/bootswatch.min.css"> 
+    <link rel="stylesheet" href="/css/yeti/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="/css/assets/css/bootswatch.min.css"> 
 
 
 <!-- to quickly try out themes, activate this and tweak the url!
@@ -17,10 +31,10 @@
 -->
 
         <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="http://muuankarski.github.io/css/syntax.css">
+        <link rel="stylesheet" href="/css/syntax.css">
 
         <!-- Custom CSS -->
-        <link rel="stylesheet" href="http://muuankarski.github.io/css/footer.css">
+        <link rel="stylesheet" href="/css/footer.css">
 
         <!-- Font avesome -->
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -33,7 +47,7 @@
     <div class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <a href="http://muuankarski.github.io/" class="navbar-brand">Markus Kainu</a>
+          <a href="/" class="navbar-brand">Markus Kainu</a>
           <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -42,51 +56,51 @@
         </div>
          <div class="navbar-collapse collapse" id="navbar-main">
           <ul class="nav navbar-nav">
-          <li><a href="http://muuankarski.github.io/blog.html" title="blog">blog</a></li>
-          <li><a href="http://muuankarski.github.io/about.html" title="about">about</a></li>
-          <li><a href="http://muuankarski.github.io/resources.html" title="resources">resources</a></li>
+          <li><a href="/blog.html" title="blog">blog</a></li>
+          <li><a href="/about.html" title="about">about</a></li>
+          <li><a href="/resources.html" title="resources">resources</a></li>
          </ul>
 <!--        <div class="navbar-collapse collapse" id="navbar-main">
           <ul class="nav navbar-nav">
                 <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">R<span class="caret"></span></a>
               <ul class="dropdown-menu" aria-labelledby="R">
-                <li><a href="http://muuankarski.github.io/R/lue.html">Datan lukeminen & kirjoittaminen</a></li>
-                <li><a href="http://muuankarski.github.io/R/manipulointi.html">Manipuloiminen</a></li>
-                <li><a href="http://muuankarski.github.io/R/funktiot.html">Funktiot</a></li>
-                <li><a href="http://muuankarski.github.io/R/grafiikka.html">Grafiikka</a></li>
-                <li><a href="http://muuankarski.github.io/R/survey.html">Survey</a></li>
+                <li><a href="/R/lue.html">Datan lukeminen & kirjoittaminen</a></li>
+                <li><a href="/R/manipulointi.html">Manipuloiminen</a></li>
+                <li><a href="/R/funktiot.html">Funktiot</a></li>
+                <li><a href="/R/grafiikka.html">Grafiikka</a></li>
+                <li><a href="/R/survey.html">Survey</a></li>
               </ul>         
          </ul>
           <ul class="nav navbar-nav">
                 <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Toistettava tutkimus<span class="caret"></span></a>
               <ul class="dropdown-menu" aria-labelledby="toistettava">
-                <li><a href="http://muuankarski.github.io/toistettava/knitr.html">knitr</a></li>
-                <li><a href="http://muuankarski.github.io/toistettava/kirjoita.html">Kirjoittaminen</a></li>
+                <li><a href="/toistettava/knitr.html">knitr</a></li>
+                <li><a href="/toistettava/kirjoita.html">Kirjoittaminen</a></li>
               </ul>         
          </ul>
          <ul class="nav navbar-nav">
                 <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Versiohallinta<span class="caret"></span></a>
               <ul class="dropdown-menu" aria-labelledby="versio">
-                <li><a href="http://muuankarski.github.io/versio/git.html">git</a></li>
+                <li><a href="/versio/git.html">git</a></li>
               </ul>         
          </ul>
          <ul class="nav navbar-nav">
                 <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Julkaiseminen<span class="caret"></span></a>
               <ul class="dropdown-menu" aria-labelledby="julkaisu">
-                <li><a href="http://muuankarski.github.io/julkaisu/latex.html">latex</a></li>
-                <li><a href="http://muuankarski.github.io/julkaisu/jekyll.html">jekyll</a></li>
-                <li><a href="http://muuankarski.github.io/julkaisu/pandoc.html">Pandoc</a></li>
+                <li><a href="/julkaisu/latex.html">latex</a></li>
+                <li><a href="/julkaisu/jekyll.html">jekyll</a></li>
+                <li><a href="/julkaisu/pandoc.html">Pandoc</a></li>
               </ul>         
          </ul>
 -->
 
 
          <ul class="nav navbar-nav navbar-right">
-            <li><a title="blog RSS" href="http://muuankarski.github.io/feed.xml"><i class="fa fa-rss fa-2x"></i></a></li>li>
+            <li><a title="blog RSS" href="/feed.xml"><i class="fa fa-rss fa-2x"></i></a></li>li>
             <li><a title="code" href="http://github.com/muuankarski"> <i class="fa fa-github fa-2x"></i></a></li>
             <li><a title="tweets" href="https://twitter.com/muuankarski"> <i class="fa fa-twitter fa-2x"></i></a></li>
             <li><a href="mailto:markuskainu@gmail.com?Subject=Email me!" title="Comment from the website!" target="_top"><i class="fa fa-envelope fa-2x"></i></a></li>                        
@@ -131,9 +145,9 @@
 </ul>
 
 <h2>Installation</h2>
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>devtools<span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>devtools<span class="p">)</span>
 install_github<span class="p">(</span>repo <span class="o">=</span> <span class="s">&quot;rustfare&quot;</span><span class="p">,</span> username <span class="o">=</span> <span class="s">&quot;rOpenGov&quot;</span><span class="p">)</span>
-<span class="kn">library</span><span class="p">(</span>rustfare<span class="p">)</span>
+library<span class="p">(</span>rustfare<span class="p">)</span>
 </code></pre></div>
 <h2>Examples by data source (below on this page)</h2>
 
@@ -185,13 +199,13 @@ ind<span class="p">[</span><span class="m">1</span><span class="o">:</span><span
 </ol>
 
 <p>The code below returns a dataset at <strong>federal district level</strong> on <strong>infant mortality</strong> and plots a line graph over time.</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>rustfare<span class="p">)</span> <span class="c1"># load rustfare for obtaining the data</span>
-<span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span> <span class="c1"># load ggplot2 for plotting</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>rustfare<span class="p">)</span> <span class="c1"># load rustfare for obtaining the data</span>
+library<span class="p">(</span>ggplot2<span class="p">)</span> <span class="c1"># load ggplot2 for plotting</span>
 dat <span class="o">&lt;-</span> GetRosstat<span class="p">(</span><span class="s">&quot;infant_mortality_rate&quot;</span><span class="p">,</span>
                    <span class="s">&quot;federal_district&quot;</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Warning: attributes are not identical across measure variables; they will
 ## be dropped
-</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kp">head</span><span class="p">(</span>dat<span class="p">,</span> <span class="m">3</span><span class="p">)</span> <span class="c1"># print the first 6 rows of data.frame</span>
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">head<span class="p">(</span>dat<span class="p">,</span> <span class="m">3</span><span class="p">)</span> <span class="c1"># print the first 6 rows of data.frame</span>
 </code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">##        id_name                               region year value
 ## 1 дальневокруг Дальневосточный\r\nфедеральный округ 1995  20.5
 ## 2 дальневокруг Дальневосточный\r\nфедеральный округ 2001  18.1
@@ -207,7 +221,7 @@ dat <span class="o">&lt;-</span> GetRosstat<span class="p">(</span><span class="
 </code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">ggplot<span class="p">(</span>dat<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>year<span class="p">,</span>y<span class="o">=</span>value<span class="p">,</span>color<span class="o">=</span>region_en<span class="p">))</span> <span class="o">+</span>
   geom_point<span class="p">()</span> <span class="o">+</span> 
   geom_line<span class="p">()</span> <span class="o">+</span>
-  geom_text<span class="p">(</span>data <span class="o">=</span> <span class="kp">subset</span><span class="p">(</span>dat<span class="p">,</span> year <span class="o">==</span> <span class="m">2010</span><span class="p">),</span> 
+  geom_text<span class="p">(</span>data <span class="o">=</span> subset<span class="p">(</span>dat<span class="p">,</span> year <span class="o">==</span> <span class="m">2010</span><span class="p">),</span> 
             aes<span class="p">(</span>x<span class="o">=</span>year<span class="p">,</span>y<span class="o">=</span>value<span class="p">,</span>
                 color<span class="o">=</span>region_en<span class="p">,</span>label<span class="o">=</span>region_en<span class="p">),</span>
             size<span class="o">=</span><span class="m">3</span><span class="p">,</span> hjust<span class="o">=</span><span class="m">1</span><span class="p">)</span> <span class="o">+</span>
@@ -234,27 +248,27 @@ dat <span class="o">&lt;-</span> GetRosstat<span class="p">(</span><span class="
 <h2>Plot shapefiles</h2>
 
 <h3>At federal level</h3>
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>rustfare<span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>rustfare<span class="p">)</span>
 shapefile <span class="o">&lt;-</span> GetRusGADM<span class="p">(</span><span class="s">&quot;federal&quot;</span><span class="p">)</span>
 plot<span class="p">(</span>shapefile<span class="p">)</span>
 </code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Error: cannot coerce type &#39;S4&#39; to vector of type &#39;double&#39;
 </code></pre></div>
 <h3>At federal district level</h3>
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>rustfare<span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>rustfare<span class="p">)</span>
 shapefile <span class="o">&lt;-</span> GetRusGADM<span class="p">(</span><span class="s">&quot;federal_district&quot;</span><span class="p">)</span>
 plot<span class="p">(</span>shapefile<span class="p">)</span>
 </code></pre></div>
 <p><img src="figure/map2.png" alt="plot of chunk map2"> </p>
 
 <h3>At regional level</h3>
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>rustfare<span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>rustfare<span class="p">)</span>
 shapefile <span class="o">&lt;-</span> GetRusGADM<span class="p">(</span><span class="s">&quot;region&quot;</span><span class="p">)</span>
 plot<span class="p">(</span>shapefile<span class="p">)</span>
 </code></pre></div>
 <p><img src="figure/map3.png" alt="plot of chunk map3"> </p>
 
 <h3>At rayon level</h3>
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>rustfare<span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>rustfare<span class="p">)</span>
 shapefile <span class="o">&lt;-</span> GetRusGADM<span class="p">(</span><span class="s">&quot;rayon&quot;</span><span class="p">)</span>
 plot<span class="p">(</span>shapefile<span class="p">)</span>
 </code></pre></div>
@@ -263,20 +277,20 @@ plot<span class="p">(</span>shapefile<span class="p">)</span>
 <h2>Combining data from Rosstat Regional Data with GADM shapefile and visualizing it</h2>
 
 <h3>Using maptools and sp</h3>
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>rustfare<span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>rustfare<span class="p">)</span>
 dat <span class="o">&lt;-</span> GetRosstat<span class="p">(</span><span class="s">&quot;average_size_of_pensions&quot;</span><span class="p">,</span>
                    <span class="s">&quot;federal_district&quot;</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">## Warning: attributes are not identical across measure variables; they will
 ## be dropped
-</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">dat10 <span class="o">&lt;-</span> <span class="kp">subset</span><span class="p">(</span>dat<span class="p">,</span> year <span class="o">==</span> <span class="m">2010</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre><code class="language-r" data-lang="r">dat10 <span class="o">&lt;-</span> subset<span class="p">(</span>dat<span class="p">,</span> year <span class="o">==</span> <span class="m">2010</span><span class="p">)</span>
 shape <span class="o">&lt;-</span> GetRusGADM<span class="p">(</span><span class="s">&quot;federal_district&quot;</span><span class="p">)</span>
-<span class="kn">library</span><span class="p">(</span>maptools<span class="p">)</span>
-<span class="kp">row.names</span><span class="p">(</span>dat10<span class="p">)</span> <span class="o">&lt;-</span> dat10<span class="o">$</span>id_shape
-<span class="kp">row.names</span><span class="p">(</span>shape<span class="p">)</span> <span class="o">&lt;-</span> <span class="kp">as.character</span><span class="p">(</span>shape<span class="o">$</span>ID_1<span class="p">)</span>
-dat10 <span class="o">&lt;-</span> dat10<span class="p">[</span><span class="kp">order</span><span class="p">(</span><span class="kp">row.names</span><span class="p">(</span>dat10<span class="p">)),]</span>
-shape <span class="o">&lt;-</span> shape<span class="p">[</span><span class="kp">order</span><span class="p">(</span><span class="kp">row.names</span><span class="p">(</span>shape<span class="p">)),]</span>
+library<span class="p">(</span>maptools<span class="p">)</span>
+row.names<span class="p">(</span>dat10<span class="p">)</span> <span class="o">&lt;-</span> dat10<span class="o">$</span>id_shape
+row.names<span class="p">(</span>shape<span class="p">)</span> <span class="o">&lt;-</span> as.character<span class="p">(</span>shape<span class="o">$</span>ID_1<span class="p">)</span>
+dat10 <span class="o">&lt;-</span> dat10<span class="p">[</span>order<span class="p">(</span>row.names<span class="p">(</span>dat10<span class="p">)),]</span>
+shape <span class="o">&lt;-</span> shape<span class="p">[</span>order<span class="p">(</span>row.names<span class="p">(</span>shape<span class="p">)),]</span>
 df <span class="o">&lt;-</span> spCbind<span class="p">(</span>shape<span class="p">,</span> dat10<span class="p">)</span>
-<span class="kn">library</span><span class="p">(</span>sp<span class="p">)</span>
+library<span class="p">(</span>sp<span class="p">)</span>
 spplot<span class="p">(</span>df<span class="p">,</span> <span class="s">&quot;value&quot;</span><span class="p">,</span> col.regions<span class="o">=</span>grey.colors<span class="p">(</span><span class="m">20</span><span class="p">,</span> <span class="m">0.9</span><span class="p">,</span> <span class="m">0.3</span><span class="p">))</span>
 </code></pre></div>
 <p><img src="figure/mapcombine.png" alt="plot of chunk mapcombine"> </p>
@@ -286,13 +300,13 @@ spplot<span class="p">(</span>df<span class="p">,</span> <span class="s">&quot;v
 <p>There is a <code>RosstatMapPlot</code>-function in rustfare that takes <code>measure</code>, <code>year</code> and <code>level</code> as arguments.</p>
 
 <h4>Infant mortality rate at regional level</h4>
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>rustfare<span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>rustfare<span class="p">)</span>
 RosstatMapPlot<span class="p">(</span><span class="s">&quot;infant_mortality_rate&quot;</span><span class="p">,</span><span class="m">2010</span><span class="p">,</span><span class="s">&quot;region&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p><img src="figure/rosstatmap1.png" alt="plot of chunk rosstatmap1"> </p>
 
 <h4>Average pension size at federal district level</h4>
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>rustfare<span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>rustfare<span class="p">)</span>
 RosstatMapPlot<span class="p">(</span><span class="s">&quot;average_size_of_pensions&quot;</span><span class="p">,</span><span class="m">2010</span><span class="p">,</span><span class="s">&quot;federal_district&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p><img src="figure/rosstatmap2.png" alt="plot of chunk rosstatmap2"> </p>
@@ -302,22 +316,22 @@ RosstatMapPlot<span class="p">(</span><span class="s">&quot;average_size_of_pens
 <p>As Russia is not a member of OECD there is only limited data available in here: <a href="http://www.oecd-ilibrary.org/economics/country-statistical-profile-russian-federation-2013_csp-rus-table-2013-1-en">Country statistical profile: Russian Federation</a>. rustfaRe has function to download indicators from that dataset.</p>
 
 <p>Function <code>IndicatorOecd()</code> returns a data.frame with all the indicators listed.</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>rustfaRe<span class="p">)</span>
-<span class="kp">head</span><span class="p">(</span>IndicatorOecd<span class="p">())</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>rustfaRe<span class="p">)</span>
+head<span class="p">(</span>IndicatorOecd<span class="p">())</span>
 </code></pre></div>
 <p>for plotting employment rates of different age classes you can try the following example:</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>rustfaRe<span class="p">)</span>
-<span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>rustfaRe<span class="p">)</span>
+library<span class="p">(</span>ggplot2<span class="p">)</span>
 dat14_24 <span class="o">&lt;-</span> GetOecd<span class="p">(</span><span class="s">&quot;employment_rate_in_population_aged_15-24&quot;</span><span class="p">)</span>
 dat25_54 <span class="o">&lt;-</span> GetOecd<span class="p">(</span><span class="s">&quot;employment_rate_in_population_aged_25-54&quot;</span><span class="p">)</span>
 dat55_64 <span class="o">&lt;-</span> GetOecd<span class="p">(</span><span class="s">&quot;employment_rate_in_population_aged_55-64&quot;</span><span class="p">)</span>
-dat <span class="o">&lt;-</span> <span class="kp">rbind</span><span class="p">(</span>dat14_24<span class="p">,</span>dat25_54<span class="p">,</span>dat55_64<span class="p">)</span>
+dat <span class="o">&lt;-</span> rbind<span class="p">(</span>dat14_24<span class="p">,</span>dat25_54<span class="p">,</span>dat55_64<span class="p">)</span>
 
 ggplot<span class="p">(</span>dat<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>year<span class="p">,</span>y<span class="o">=</span>value<span class="p">,</span>
                 color<span class="o">=</span>indicator<span class="p">,</span>group<span class="o">=</span>indicator<span class="p">))</span> <span class="o">+</span>
   geom_point<span class="p">()</span> <span class="o">+</span> 
   geom_line<span class="p">()</span> <span class="o">+</span>
-  geom_text<span class="p">(</span>data <span class="o">=</span> <span class="kp">subset</span><span class="p">(</span>dat<span class="p">,</span> year <span class="o">==</span> <span class="m">2009</span><span class="p">),</span> 
+  geom_text<span class="p">(</span>data <span class="o">=</span> subset<span class="p">(</span>dat<span class="p">,</span> year <span class="o">==</span> <span class="m">2009</span><span class="p">),</span> 
             aes<span class="p">(</span>x<span class="o">=</span>year<span class="p">,</span>y<span class="o">=</span>value<span class="p">,</span>
                 color<span class="o">=</span>indicator<span class="p">,</span>label<span class="o">=</span>indicator<span class="p">),</span>
             size<span class="o">=</span><span class="m">3</span><span class="p">)</span> <span class="o">+</span>
@@ -328,10 +342,10 @@ ggplot<span class="p">(</span>dat<span class="p">,</span> aes<span class="p">(</
 <p>As for <a href="http://data.worldbank.org/data-catalog/world-development-indicators">World Bank Development Indicators</a> rustfare relies on <a href="http://cran.r-project.org/web/packages/WDI/index.html">WDI-package</a> for which you can find examples here <a href="https://github.com/vincentarelbundock/WDI">github.com/vincentarelbundock/WDI</a>.</p>
 
 <p>With the following code you can plot GDP per capita (current US$) using log-scale from 1990 to 2011.</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>WDI<span class="p">)</span>
-<span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>WDI<span class="p">)</span>
+library<span class="p">(</span>ggplot2<span class="p">)</span>
 <span class="c1"># Search for GDP</span>
-<span class="kp">head</span><span class="p">(</span>WDIsearch<span class="p">(</span><span class="s">&#39;gdp&#39;</span><span class="p">))</span>
+head<span class="p">(</span>WDIsearch<span class="p">(</span><span class="s">&#39;gdp&#39;</span><span class="p">))</span>
 </code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">##      indicator          
 ## [1,] &quot;BG.GSR.NFSV.GD.ZS&quot;
 ## [2,] &quot;BM.KLT.DINV.GD.ZS&quot;
@@ -351,7 +365,7 @@ ggplot<span class="p">(</span>dat<span class="p">,</span> aes<span class="p">(</
 dat <span class="o">&lt;-</span> WDI<span class="p">(</span>indicator<span class="o">=</span><span class="s">&#39;NY.GDP.PCAP.CD&#39;</span><span class="p">,</span> <span class="c1"># indicator</span>
            country<span class="o">=</span><span class="s">&#39;RU&#39;</span><span class="p">,</span> <span class="c1"># country/countries</span>
            start<span class="o">=</span><span class="m">1990</span><span class="p">,</span> end<span class="o">=</span><span class="m">2011</span><span class="p">)</span> <span class="c1"># time frame</span>
-dat<span class="o">$</span>NY.GDP.PCAP.CD <span class="o">&lt;-</span> <span class="kp">round</span><span class="p">(</span>dat<span class="o">$</span>NY.GDP.PCAP.CD<span class="p">,</span> <span class="m">1</span><span class="p">)</span> <span class="c1"># round the value to single decimal</span>
+dat<span class="o">$</span>NY.GDP.PCAP.CD <span class="o">&lt;-</span> round<span class="p">(</span>dat<span class="o">$</span>NY.GDP.PCAP.CD<span class="p">,</span> <span class="m">1</span><span class="p">)</span> <span class="c1"># round the value to single decimal</span>
 ggplot<span class="p">(</span>dat<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>year<span class="p">,</span>y<span class="o">=</span>NY.GDP.PCAP.CD<span class="p">,</span>
                 group<span class="o">=</span>country<span class="p">,</span>label<span class="o">=</span>NY.GDP.PCAP.CD<span class="p">))</span> <span class="o">+</span>
   geom_point<span class="p">()</span> <span class="o">+</span> geom_line<span class="p">()</span> <span class="o">+</span> 
@@ -376,13 +390,13 @@ ggplot<span class="p">(</span>dat<span class="p">,</span> aes<span class="p">(</
 
 <p>Below is an example on how to extract data on human development index and Democracy (Freedom
 House/Polity) index.</p>
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>rustfare<span class="p">)</span>
-dat <span class="o">&lt;-</span> GetQog<span class="p">(</span>country <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;Russia&quot;</span><span class="p">,</span><span class="s">&quot;China&quot;</span><span class="p">),</span> <span class="c1"># country,countries</span>
-              indicator<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;undp_hdi&quot;</span><span class="p">,</span><span class="s">&quot;fh_polity2&quot;</span><span class="p">))</span> <span class="c1"># indicator(s)</span>
-<span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
+<div class="highlight"><pre><code class="language-r" data-lang="r">library<span class="p">(</span>rustfare<span class="p">)</span>
+dat <span class="o">&lt;-</span> GetQog<span class="p">(</span>country <span class="o">=</span> c<span class="p">(</span><span class="s">&quot;Russia&quot;</span><span class="p">,</span><span class="s">&quot;China&quot;</span><span class="p">),</span> <span class="c1"># country,countries</span>
+              indicator<span class="o">=</span>c<span class="p">(</span><span class="s">&quot;undp_hdi&quot;</span><span class="p">,</span><span class="s">&quot;fh_polity2&quot;</span><span class="p">))</span> <span class="c1"># indicator(s)</span>
+library<span class="p">(</span>ggplot2<span class="p">)</span>
 ggplot<span class="p">(</span>dat<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>year<span class="p">,</span>y<span class="o">=</span>value<span class="p">,</span>color<span class="o">=</span>cname<span class="p">))</span> <span class="o">+</span> 
   geom_point<span class="p">()</span> <span class="o">+</span> geom_line<span class="p">()</span> <span class="o">+</span>
-  geom_text<span class="p">(</span>data <span class="o">=</span> <span class="kp">subset</span><span class="p">(</span>dat<span class="p">,</span> year <span class="o">==</span> <span class="m">2003</span><span class="p">),</span> 
+  geom_text<span class="p">(</span>data <span class="o">=</span> subset<span class="p">(</span>dat<span class="p">,</span> year <span class="o">==</span> <span class="m">2003</span><span class="p">),</span> 
             aes<span class="p">(</span>x<span class="o">=</span>year<span class="p">,</span>y<span class="o">=</span>value<span class="p">,</span>color<span class="o">=</span>cname<span class="p">,</span>label<span class="o">=</span>cname<span class="p">))</span> <span class="o">+</span>
   facet_wrap<span class="p">(</span><span class="o">~</span>indicator<span class="p">,</span> scales<span class="o">=</span><span class="s">&quot;free&quot;</span><span class="p">)</span> <span class="o">+</span>
   theme<span class="p">(</span>legend.position<span class="o">=</span><span class="s">&quot;none&quot;</span><span class="p">)</span>
