@@ -7,6 +7,7 @@ categories: avoin tiede
 
 I restructured the text a bit on Tuesday afternoon. See the changes at [github](https://github.com/muuankarski/muuankarski.github.io/commit/1c0683068319a40c81a5267cc91b2c895d41f58a?short_path=9acc33c#diff-9acc33cb73626d35bde656417b294a5d)
 
+
 - [event website](http://web.csc.fi/csc/kurssit/arkisto/openscienceforum)
 - [twitter search with hashtag #ATTforum](https://twitter.com/search?q=%23ATTforum&src=typd)
 
