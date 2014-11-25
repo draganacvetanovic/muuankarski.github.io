@@ -5,27 +5,31 @@ date:   2014-11-25 08:23:45
 categories: avoin tiede
 ---
 
-My name is Markus Kainu. I'm a PhD Candidate in Social Policy and I do research at the [Aleksanteri Institute](http://www.helsinki.fi/aleksanteri/english/), which is the Center for Russian and Eastern European studies in university of Helsinki.
+- [event website](http://web.csc.fi/csc/kurssit/arkisto/openscienceforum)
+- [twitter search with hashtag #ATTforum](https://twitter.com/search?q=%23ATTforum&src=typd)
+
+First, few words about myseld and my work. My name is Markus Kainu. I'm a PhD Candidate in Social Policy and I do research at the [Aleksanteri Institute](http://www.helsinki.fi/aleksanteri/english/), which is the Center for Russian and Eastern European studies in university of Helsinki.
 
 I study poverty, inequality and welfare state development in the ex-Soviet bloc, namely Russia and Eastern Europe. Our research groups latest article was called [Paradoxes of Agency: Democracy and Welfare in Russia](http://www.metapress.com/content/p7517v2929mw5871/) that was published in *Demokratizatsiya: The Journal of Post-Soviet Democratization*. (that is behind a paywall..)
 
-In addition to substantive research, I write software for accessing and analysing the dataset I use, for example [Eurostat-database](https://github.com/rOpenGov/eurostat), [EU-silc -survey data](https://github.com/muuankarski/r.eusilc) or [Quality of Government data](https://github.com/rOpenGov/rqog) and so forth. I primarily use [R-language](http://www.r-project.org/) for statistical computing.
+In addition to substantive research, I write software for accessing and analysing the dataset I use, for example [Eurostat-database](https://github.com/rOpenGov/eurostat), [EU-silc -survey data](https://github.com/muuankarski/r.eusilc) or [Quality of Government data](https://github.com/rOpenGov/rqog) and within [rOpenGov](http://ropengov.github.io/) initiative. I primarily use [R-language](http://www.r-project.org/) for statistical computing.
 
 In addition to my academic affiliations, I do represent here also the [*open science working group*](http://fi.okfn.org/wg/openscience/) of [Open Knowledge Finland](http://fi.okfn.org/), where we try to keep up with discussions abroad, collaborate in research software and try to find out the costs of academic publishing within Finnish universies, for instance. (You perhaps visited our stand during the lunch break)
 
-----
+## My own experience
 
-My field is a late adopter or a laggard when it comes to each three aspects of this roadmap.
+My field is a late adopter when it comes to each three aspects of this roadmap. Many speakers have emphasized the differences and I also want to underline that. 
 	
 As for *publications*, hard cover books are still *the hard currency*, and open access publishing is often mixed with predatory publishing and so forth.
 
-As for *research data*, it is still unclear for many fields in social sciences and humanities [what actually consist of research data](http://blogs.lse.ac.uk/impactofsocialsciences/2014/10/29/open-science-disciplinary-culture-clash/). On the other hand, a lot of research uses *open government data* which is the primary fuel for the wider *open data* movement. So one could say, that in some cases researchers dont know whether they have any data, and in some case the data is open according to *open definition*. Most cases are somewhere in between.
+As for *research data*, it is still unclear for many fields in social sciences and humanities [what actually consist of research data](http://blogs.lse.ac.uk/impactofsocialsciences/2014/10/29/open-science-disciplinary-culture-clash/). On the other hand, a lot of research uses *open government data* which is the primary fuel for the wider *open data* movement. So one could say, that in some cases researchers dont know whether they have any data, and in some case the data is open according to [*open definition*](http://opendefinition.org/). Most cases are somewhere in between.
 
-The data I use is primarily collected by someone else. We collect social surveys in Russia every few years, but still, most of my dataset are produces by statistical agencies as Eurostat or Rosstat, or research projects such as European Social Survey. In most cases it is survey data that has information about individuals and households, and therefore access to the data is often restricted. At the same time, I do use country and region level indicators of economic and social development that come close to *open data*. 
+The data I use is primarily collected by someone else, for instance statistical agencies as Eurostat or Rosstat, or research projects such as European Social Survey. In most cases it is survey data that has information about individuals and households, and therefore access to the data is often restricted. At the same time, I do use country and region level indicators of economic and social development that come close to *open data*. 
 
-Using data collected by others is very typical for my kind of analysis, where you have big survey datasets from many countries across several years with hundreds or thousands of users. This type of analysis would, in my opinion, greatly benefit from *open research methods*: from crafting and sharing code and software, though there is virtually none of it. As many of you know the SPSS-software stands for *Statistical Package for the Social Sciences*, but unfortunately, very little has changed since the introduction of the software in late 60's, in terms of openness of the software or research methods, at least.
+Using data collected by others is very typical for my kind of analysis, where you have big datasets with hundreds of thousands individuals covering many countries across several years with *thousands of users*. This type of analysis would, in my opinion, greatly benefit from *open research methods*: from crafting and sharing code and software, but there is virtually none of it. As many of you know the SPSS-software stands for *Statistical Package for the Social Sciences*, but unfortunately, very little has changed since the introduction of the software in late 60's, in terms of openness of the software or research methods, at least.
 
 <!--When talking about the absence of *open research methods*, it is important to be aware of great divide of the field into qualitative and quantitative camps. The qualitative camp hasn't relied on computer software much until recently, whereas quantitative social research has a long history. As many of you know the SPSS-software stands for *Statistical Package for the Social Sciences*. Unfortunately, not much has changed since the introduction of the software in late 60's, in terms of openness of the software or research methods, at least.-->
+
 
 ----
 
@@ -37,85 +41,76 @@ But, as the time is limited, I decided to asses the roadmap from my researchers 
 
 <!--Commentators before my adressed both the *open access to publications* and *the openness of the research data* in such a compherensive manner, that I feel that I should look upon the "openness of research methods" in more details. -->
 
-From my grassroot point of view I feel that openness of the research methods could have the greatest impact on the daily practises researchers, and for same reason, may be the toughest to implement.
+From my grassroot point of view I feel that openness of the research methods could have the greatest impact on the daily practises researchers, and for same reason, may be the toughest to implement. We don't publish research papers or data that often, that changing it would be a great change. 
 
-My interest in open source research software started from very practical issues. Once I realized how much I had to learn to do master the analysis, I thought I don't want to be dependent on institutions paying my licence costs nor restricted by software lisences for what kind analysis I'm allowed to do. Also, when I realized the practise of my teachers I thought there must be more coherent ways for doing this stuff that I found from computer sciences.
+My interest in open source research software started once I realized how much time and effort I had to inverst in mastering the analysis. I simply thought I don't want to be dependent on institutions paying my licence costs nor restricted by software lisences for what kind analysis I'm allowed to do. And, I didn't feel software piracy sustainable. Also, when I realized the *information management practises* of my teachers I thought there must be better ways out there.
 
-I took a bit of gut, to transfer your skills in proprietary software into open source world, while you had to *get things done* at the same time. While being a phd student is a good time for that. However, it also required a lot of extra work as open source software is not supported by university IT departments. So, in practise, I had to buy the hardware with my own money and learn to maintain my software from operating systems to research software, from data management to version control of my texts. I was very lucky, that during the same period, the open source community in scientific software really took of, and there were better and better resources for learning things. Taking this path delayed my graduation a fair bit, but I was comforted by [2014 Dice Tech Salary Survey ](http://marketing.dice.com/pdf/Dice_TechSalarySurvey_2014.pdf) that ranked *R* skills attracting the highest salaries in US.
+<!--I took a bit of gut, to transfer your skills in proprietary software into open source world, while you had to *get things done* at the same time. While being a phd student is a good time for that. -->
+
+However, it was not an smooth path in my field. It meant that had to learn to support my software, maintain my systems and manage the data, by myself. I was lucky though, as during the same period, the open source community in scientific software really took of, and there were better and better resources for learning things. Taking this path was a major delay for my graduation. 
+
+So as an end result of this experience, I feel that a skilled and informed researcher, in my field and with digital services already available in the web, does not need much of a national infrastructure to make his research efficient, oepn and sustainable. Therefore, as a general remark, *I am slighly worried about by central role of research organisation, services and infrastructure in the roadmap, and absence of researcher views.* We should participate more.
 
 ## Liberate and empower the researcher
 
-Gary King, the professor of political science and Director of the Institute for Quantitative Social Science in Harvard University stated
+The value of Open Source research software does not come from the savings in licence costs, but from the potential of research community together develope tools for analysis of very spesific research problems.
 
->Leaving computer technology to the university IT department does not work, no matter how qualified they are because they are first to satisfy the 95% with vanilla services, whereas cutting-edge methods researchers are usually in the remaining 5%. [(King, Gary. “Restructuring the Social Sciences: Reflections from Harvard’s Institute for Quantitative Social Science.” PS: Political Science and Politics 47.1 (2014): p. 171](http://gking.harvard.edu/ations/restructuring-social-science)
+Gary King, the professor of political science and Director of the Institute for Quantitative Social Science in Harvard University stated on the role of university IT:
 
-So what follows from my experience, and from what I have learned for colleagues abroad, is that researchers have to have full control over their computers and software. They have to be able to learn and apply new software the same way they can learn and apply new theories from books in library. There cannot be anyone deciding on what books and software you can learn if researcher wants to be on the cutting edge of his or her discipline. This is a challenge for university IT as they have moved to opposite direction in recent years. One size may fit all the bureaucrats, but not cutting egde research.
+>Leaving computer technology to the university IT department does not work, no matter how qualified they are because they are first to satisfy the 95% with vanilla services, whereas cutting-edge methods researchers are usually in the remaining 5%. [(King, Gary. “Restructuring the Social Sciences: Reflections from Harvard’s Institute for Quantitative Social Science.” PS: Political Science and Politics 47.1 (2014): p. 171](http://gking.harvard.edu/ations/restructuringuu-social-science)
 
-## What we need is network effect
+So what follows from my experience, and from what I have learned for colleagues abroad, is that researchers have to have full control over their computers and software. **Researchers have to be able to learn and apply new software the same way they can learn and apply new theories from books in library. There cannot be anyone deciding on the behalf of the research, what books and software he or she is allowed use, IF we want our research be world leading.** This is a challenge for university IT as, to my experience, they have moved to opposite direction in recent years. We must remember that one-size-(may-)fit all the bureaucrats, but not cutting egde research.
 
-What could follow from unchaining the software environment the great majority of researcher use, is the [network effect](http://en.wikipedia.org/wiki/Network_effect). 
+## We need network effect
 
->In economics and business, a network effect (also called network externality or demand-side economies of scale) is the effect that one user of a good or service has on the value of that product to other people. When a network effect is present, the value of a product or service is dependent on the number of others using it.
+What must be kept in mind here is that digital technologies, when well planned, scale well. What we could behefit from unchaining the software environment that the great majority of researcher use, is the so called [network effect](http://en.wikipedia.org/wiki/Network_effect). 
 
-Again using myself as an example, my scientific output would greatly be improved if my reserarch group could fully utilize the potential of open source research software, my expertise and software. If I'm just learning new things and the gap between myself and colleagues is widening, it does not make much difference. At the national level, this is true as well. We could improve a lot if the majority of researcher would adopt some skills in sustainable information management, in choosing sustainable software and so forth. 
+>In economics and business, a network effect (also called network externality or demand-side economies of scale) is the effect that one user of a good or service has on the value of that product to other people. When a network effect is present, the value of a product or service is dependent on the number of others using it [wikipedia](http://en.wikipedia.org/wiki/Network_effect).
 
-Science fiction novellist William Gibsonin has once stated that "*The future is already here. It’s just not evenly distributed yet*". in this vein, I think that ATT should focus on *redistributing this future*, the good and top practises in research, to the masses, rather than building new infrastructures.
+Again using myself as an example, the quality and amount of my research would be greatly improved if my research group could fully utilize the potential of open source research software, my expertise and software. If I'm just learning new things and the gap between myself and colleagues is widening, it does not make much difference. At the national level, this is true as well. We could improve our performance a lot if the majority of researcher would adopt skills in sustainable information management, choosing sustainable software for their research and so forth. 
 
+As science fiction novellist William Gibson once stated: "*The future is already here. It’s just not evenly distributed yet*". in this vein, I think that ATT should focus on *redistribution of this future*, the good and top practises in research, to the masses, rather than building new infrastructures.
 
-ok, loppuun tuli paatosta. sitten vielä pari vinkkiä motivointiin..
+## What should be done
 
+Until here I have been an optimist, but from here on it gets more problematic.
 
-## Motivation
+What I'm curious about are the mechanism that are believed to bring all these changes into daily practises of researcher. How can you make such fundamental changes into extremely busy and uncertain life of a academic reseacher?
 
+I often ask from fellow researchers when I run workshop or tutorials in the issues, *how many analytical applications  and how many bureaucratic applications have you adopted in the past five years*? Usually the results is that bureaucratic applications overcome the analytical. 
 
-**What I'm curious about are the mechanism that are believed to bring all this into daily practises of researcher. How can you make such fundamental changes into extremely busy and uncertain life of a academic reseacher?**
+So before crafting policies for one should have a realistic picture of what are the information management practises, understanding and capabilities of researchers, how they differ between disciplines. We are asking our political decision making to be *evidence based*, and so should be this iniative.
 
+## Carrots, more carrots
 
+Workshops on how to write a successfull ERC application are popular, but workshops on version control or reproducible analysis are less so.
 
-## Sustainable software & practises
+Personally I agree with [Sustainable research software manifesto](http://www.software.ac.uk/policy/manifesto) that I'm quoting here:
 
-	We believe that the full benefits of software in research will only be realised when software is accepted as a valid research output.
+>We believe that the full benefits of software in research will only be realised when software is accepted as a valid research output.
 
-	We call for all researchers to have access to basic software training to help them harness the power of software for their research.
+>We call for all researchers to have access to basic software training to help them harness the power of software for their research.
 
-	We say that there must be reward and recognition for Research Software Engineers: the people who contribute to research by developing software.
+>We say that there must be reward and recognition for Research Software Engineers: the people who contribute to research by developing software.
 
-	Finally, we argue that good software practices create better software, and that better software improves the reproducibility and reusability of research.
+>Finally, we argue that good software practices create better software, and that better software improves the reproducibility and reusability of research.
 
-A basic introduction to software development should be a core part of any researcher's training,
+In more details, we need clear commitment from university directors, adjustments in academic and financial incentives to make open pratices attreactive ja substantial reformulation of doctoral training. At the same time it is important to bear in mind that cultural changes do not occur from above.
 
-The value of Open Source research software does not come from the savings in licence costs, but from the potential of research community to together develope tools for analysis of very spesific research problems
+--- 
 
+Currently, in my experience, there is a increasing outflow of good researchers from university. In many cases there are more *push factors*, than *pull factors*. Another timely topic is the academic unemployment, that applies more and more to researcher with doctoral degree. There have been comments on low labour market capabilities of researchers. Personally, I was delighted to read earlier this year [2014 Dice Tech Salary Survey ](http://marketing.dice.com/pdf/Dice_TechSalarySurvey_2014.pdf) that ranked *R*-language skills returning the highest salaries in US last year. Most probably value of these methods increasing also here in Finland. Hopefully, universities and reseach organisations, across disciplines, will do their best to lessen the *push factors* and promote these new open research methods to create more *pull factors* for graduating researchers.
 
-
-
-## Summary
-
-What I want to empsize here is that I'm an outlier when it comes to distributions of open science ideas or software skills in the academia. No national policy should be designed based on my needs or people alike, if we want to 
-
-I often ask from fellow researchers when I run workshop or tutorials in the issues, that in the past five years, how many analytical applications have you learned and how many bureaucratic applications have you adopted.
-
-
-There is a constant flow of good researchers from university. Often there are more "push factors", than "pull factors".
+Thank you for this opportunity!
 
 
-Russian longitudinal survey, package(zoo)
+---
 
-mefa: Multivariate Data Handling in Ecology and Biogeography
-zoo: S3 Infrastructure for Regular and Irregular Time Series (Z's ordered observations)
+### My other work related to ATT
 
+- <http://portti.avointiede.fi/tutkimusmenetelmat/kuinka-menetelmien-avoimuus-sujuvoittaa-tutkimustyota>
+- <https://www.youtube.com/watch?v=xMAPN3ljwWA>
 
-Currently 
-
-
-Improving the quality of science is not enough
-
-Improving their (academic) labour market potential
-
-
- working on social change in Russia & Eastern Europe, specifically studying the development of living conditions and capacity of social policies in the region.
-
-Russian 
 
 [jekyll-gh]: https://github.com/mojombo/jekyll
 [jekyll]:    http://jekyllrb.com
